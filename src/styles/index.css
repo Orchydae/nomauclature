@@ -1,0 +1,12 @@
+/* + GLOBAL CSS VARIABLES + */
+:root {
+  --title-font: 'Playfair Display', serif;
+  --text-font: 'Source Sans 3', sans-serif;
+  --primary-color: #C91212;
+}
+
+html {
+  margin: 0;
+  font-family: var(--text-font);
+}
+
