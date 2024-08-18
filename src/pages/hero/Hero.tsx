@@ -22,7 +22,7 @@ function Hero() {
                 </div>
                 <div className="hero-title">
                     <span className='title-prefix'>NOM</span>
-                    <span className='special' style={{fontSize: '1.4em', color: 'var(--primary-color)'}}>à</span>
+                    <span className='special' style={{ fontSize: '1.4em', color: 'var(--primary-color)' }}>à</span>
                     <span className='title-suffix'>UCLATURE</span>
                 </div>
                 <div className="hero-scroll-down">
