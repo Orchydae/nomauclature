@@ -4,6 +4,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Stack } from '@mui/material';
+import { TextField } from '@mui/material';
+import { Button } from '@mui/material';
 
 function Footer() {
     const footerItems = [
@@ -25,18 +27,35 @@ function Footer() {
         },
         {
             title: "Réseaux sociaux",
-            links: (
+            links: [
                 <Stack direction="row" spacing={2}>
                     <FacebookIcon />
                     <LinkedInIcon />
                     <XIcon />
                     <InstagramIcon />
                 </Stack>
-            )
+            ]
         },
         {
             title: "© Nomàuclature",
             links: [new Date().getFullYear(), "Tous droits réservés"]
+        },
+        {
+            title: "Subscribe to our newsletter",
+            links: (
+                <form>
+                <TextField
+                  label="Email"
+                  placeholder="Subscribe to our newsletter"
+                  variant="outlined"
+                  fullWidth
+                  margin="normal"
+                />
+                <Button variant="contained" color="primary" type="submit">
+                  Subscribe
+                </Button>
+              </form>
+            )
         }
     ];
 
@@ -48,7 +67,9 @@ function Footer() {
                     <ul className="footer-list">
                         {Array.isArray(section.links) ? (
                             section.links.map((link, linkIndex) => (
-                                <li key={linkIndex} className="footer-list-item">{link}</li>
+                                <li key={linkIndex} className="footer-list-item">
+                                    {typeof link === "string" || typeof link === "number" ? link.toString() : link}
+                                </li>
                             ))
                         ) : (
                             <li className="footer-list-item">{section.links}</li>
