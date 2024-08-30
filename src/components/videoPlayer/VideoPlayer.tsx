@@ -8,6 +8,7 @@ interface VideoPlayerProps {
     controls?: boolean;
     autoPlay?: boolean;
     loop?: boolean;
+    muted?: boolean;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -18,6 +19,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     controls,
     autoPlay,
     loop,
+    muted,
 }) => {
     return (
         <video
@@ -28,6 +30,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             controls={controls}
             autoPlay={autoPlay}
             loop={loop}
+            muted={muted}
         />
     );
 };

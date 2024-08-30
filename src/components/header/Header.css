@@ -1,16 +1,15 @@
 header {
-  /* font-family: 'Spectral', 'Times New Roman', 'serif'; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   color: white;
   font-size: 1rem;
+  background-color: #333;
+  z-index: 1000;
 }
 
-header a {
-  margin: 10px;
-  text-decoration: none;
-  color: white;
-}

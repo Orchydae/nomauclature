@@ -7,18 +7,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
 }
 
 .hero-container {
-    width: 95vw;
-    padding-top: 35rem;
+    /* width: 95vw; */
+    padding-top: 25rem;
     display: flex;
     flex-direction: column;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .hero-description {
@@ -28,13 +28,13 @@
 
 .hero-title {
     text-align: center;
-    /* font-family: 'Karla', sans-serif; */
     font-size: 11vw;
     font-weight: 700;
 }
 
 .hero-title span {
     font-family: var(--title-font);
+    font-weight: 600;
 }
 
 
