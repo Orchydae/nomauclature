@@ -1,8 +1,10 @@
 import VideoPlayer from "../../components/videoPlayer/VideoPlayer";
-import lavaLamp from "../../assets/lava-lamp.mp4";
+import lavaLamp from "../../assets/lava-lamp-diffusion.mp4";
 import Hero from './hero/Hero';
 
 import {Parallax} from 'react-scroll-parallax';
+
+import Footer from '../../components/footer/Footer';
 
 function App() {
 
@@ -28,7 +30,7 @@ function App() {
         <p>More content here...</p>
       </section> */}
       <Component color='orange'/>
-      <Component color='blue'/>
+      <Footer/>
       
     </div>
   )
