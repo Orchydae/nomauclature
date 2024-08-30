@@ -1,7 +1,7 @@
 import './Footer.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Stack } from '@mui/material';
 
@@ -9,7 +9,7 @@ function Footer() {
     const footerItems = [
         {
             title: "À propos de nous",
-            links: ["Nous", "info@nomauclature.com, 514-123-4567"]
+            links: ["Nous", "info@nomauclature.com", "514-123-4567"]
         },
         {
             title: "Portfolio",
@@ -29,7 +29,7 @@ function Footer() {
                 <Stack direction="row" spacing={2}>
                     <FacebookIcon />
                     <LinkedInIcon />
-                    <TwitterIcon />
+                    <XIcon />
                     <InstagramIcon />
                 </Stack>
             )
