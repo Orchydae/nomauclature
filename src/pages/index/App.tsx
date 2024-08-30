@@ -43,11 +43,11 @@ function App() {
             </div>
           </div>
           <div className="description-approach">
-            <p style={{textIndent: '2em'}}>Studio créatif passionné par la conception de sites web innovants et de produits uniques. 
-            Récompensés pour la qualité de notre travail, nous excellons dans la création de marques, le design sur mesure,
-            et le développement de solutions <i>adaptées</i>. À l'intersection du design et de la technologie, 
-            nous nous engageons à créer des œuvres numériques <i>personnalisées</i>, offrant des expériences immersives inégalées. 
-            Notre approche repose sur la simplicité et l'efficacité, en mettant vos besoins au cœur de chaque projet, pour donner vie à vos idées avec clarté et impact.</p>
+            <p style={{ textIndent: '2em' }}>Studio créatif passionné par la conception de sites web innovants et de produits uniques.
+              Récompensés pour la qualité de notre travail, nous excellons dans la création de marques, le design sur mesure,
+              et le développement de solutions <i>adaptées</i>. À l'intersection du design et de la technologie,
+              nous nous engageons à créer des œuvres numériques <i>personnalisées</i>, offrant des expériences immersives inégalées.
+              Notre approche repose sur la simplicité et l'efficacité, en mettant vos besoins au cœur de chaque projet, pour donner vie à vos idées avec clarté et impact.</p>
 
           </div>
         </div>
