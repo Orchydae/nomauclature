@@ -11,7 +11,7 @@ function Hero() {
             <div className="hero-container">
                 <div className="hero-description">
                     <span>Basé au Québec</span>
-                    <span>&copy;{currentYear}</span>
+                    <span>(&copy;{currentYear})</span>
                 </div>
                 <div className="hero-title">
                     <span className='title-prefix'>NOM</span>
