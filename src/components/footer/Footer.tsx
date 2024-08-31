@@ -34,8 +34,8 @@ function Footer() {
             title: "Réseaux sociaux",
             links: [
                 <Stack direction="row" spacing={2}>
-                    <FacebookIcon />
-                    <LinkedInIcon />
+                    <FacebookIcon style={{ color: "blue" }} />
+                    <LinkedInIcon style={{ color: "blue" }} />
                     <XIcon />
                     <InstagramIcon />
                 </Stack>
