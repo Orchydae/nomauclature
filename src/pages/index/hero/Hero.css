@@ -1,6 +1,7 @@
 .hero-section {
     display: flex;
     justify-content: center;
+    height: 100vh;
 }
 
 .hero-video {
@@ -14,19 +15,17 @@
 }
 
 .hero-container {
-    /* width: 95vw; */
-    padding-top: 25rem;
+    padding-top: 70vh;
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
 }
 
 .hero-description {
     display: flex;
     justify-content: space-between;
     padding: 0 0.5vw;
-    font-size: var(--default-font-size);
-    font-weight: 500;
+    font-size: 1.5vw;
+    font-weight: 400;
 }
 
 .hero-title {
@@ -38,7 +37,7 @@
 .hero-description,
 .hero-title {
     margin: 0;
-    line-height: 0.5;
+    line-height: 0.3;
 }
 
 .hero-title span {
@@ -51,6 +50,3 @@
     text-align: center;
 }
 
-.description-container .description-approach p {
-    font-size: var(--default-font-size);
-}

@@ -4,6 +4,7 @@
   --text-font: 'Source Sans 3', sans-serif;
   --primary-color: #C91212;
   --default-font-size: 1.5em;
+  --dynamic-font-size: 2vw;
 }
 
 html {
@@ -12,63 +13,90 @@ html {
 }
 
 .main-container .description-section {
-  background: white;
+  background: blue;
   position: absolute;
   left: 0;
   width: 100%;
-
+  overflow: hidden;
 }
 
 .main-container .description-container {
   display: flex;
-  height: 40vh;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4.2vw;
-  text-align: justify;
+  justify-content: space-around;
+  align-items: flex-start;
+  background: green;
+  height: 80vh;
+  margin: 5vh 15vw;
+  overflow: hidden;
+}
+
+.main-container .description-container button {
+  font-size: var(--default-font-size);
+  font-weight: 500;
+  font-family: var(--text-font);
+  line-height: 0.5;
+  margin: 0;
+  margin-top: 2em;
+  width: fit-content;
+  padding: 1em 2em;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .main-container .description-container .left-side {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: red;
+  flex: 2;
+  margin-right: 8vw;
+}
+
+.main-container .description-container .left-side .marquee {
   font-family: var(--title-font);
   font-weight: 600;
   font-size: 5vw;
-  /* background: red; */
-  width: 35vw;
+  height: 100%;
   border-top: 1px solid black;
-
 }
 
-.main-container .description-container .left-side.marquee-container {
+.description-container .description-approach p {
+  font-size: var(--default-font-size);
+  font-weight: 500;
+  font-family: var(--text-font);
+  line-height: 1.2;
+  margin: 0;
+  margin-top: 2em;
+  width: fit-content;
+}
+
+.description-container .right-side {
+  height: 100%;
+  background: pink;
+  flex: 1;
+} 
+
+.description-container .right-side img {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.author-section {
   display: flex;
-  gap: 1em;
-  /* width: 100%; */
-  overflow: hidden;
+  justify-content: center;
+
+  background: yellow;
+  margin: 5vh 15vw;
 }
 
-.description-container .description-approach {
-  width: 50vw;
-  /* background: pink; */
+.biography-section {
+  background: red;
 }
 
-.marquee {
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
-  display: flex;
-}
-
-.marquee span {
-  display: inline-block;
-  padding-left: 42%;
-  animation: marquee 7s linear infinite;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translate(0, 0); /* Starts from the right */
-  }
-  100% {
-    transform: translate(-100%, 0); /* Ends at the left */
-  }
-}
 

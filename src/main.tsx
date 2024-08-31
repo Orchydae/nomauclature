@@ -1,7 +1,11 @@
+'use client'
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ParallaxProvider } from 'react-scroll-parallax'
+
+import ReactLenis from 'lenis/react'
 
 import './styles/index.css'
 
@@ -22,8 +26,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ParallaxProvider>
-      <RouterProvider router={router} />
-    </ParallaxProvider>
+    <ReactLenis root>
+      <ParallaxProvider>
+        <RouterProvider router={router} />
+      </ParallaxProvider>
+    </ReactLenis>
   </React.StrictMode>,
 )
