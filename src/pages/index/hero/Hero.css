@@ -24,6 +24,9 @@
 .hero-description {
     display: flex;
     justify-content: space-between;
+    padding: 0 0.5vw;
+    font-size: var(--default-font-size);
+    font-weight: 500;
 }
 
 .hero-title {
@@ -32,12 +35,22 @@
     font-weight: 700;
 }
 
+.hero-description,
+.hero-title {
+    margin: 0;
+    line-height: 0.5;
+}
+
 .hero-title span {
     font-family: var(--title-font);
     font-weight: 600;
 }
 
-
 .hero-scroll-down {
+    margin-top: 5em;
     text-align: center;
+}
+
+.description-container .description-approach p {
+    font-size: var(--default-font-size);
 }

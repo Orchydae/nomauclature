@@ -3,6 +3,7 @@
   --title-font: 'Playfair Display', serif;
   --text-font: 'Source Sans 3', sans-serif;
   --primary-color: #C91212;
+  --default-font-size: 1.5em;
 }
 
 html {
@@ -10,11 +11,64 @@ html {
   font-family: var(--text-font);
 }
 
-.parallax {
-  height: 100vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.main-container .description-section {
+  background: white;
+  position: absolute;
+  left: 0;
+  width: 100%;
 
 }
+
+.main-container .description-container {
+  display: flex;
+  height: 40vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4.2vw;
+  text-align: justify;
+}
+
+.main-container .description-container .left-side {
+  height: 100%;
+  font-family: var(--title-font);
+  font-weight: 600;
+  font-size: 5vw;
+  /* background: red; */
+  width: 35vw;
+  border-top: 1px solid black;
+
+}
+
+.main-container .description-container .left-side.marquee-container {
+  display: flex;
+  gap: 1em;
+  /* width: 100%; */
+  overflow: hidden;
+}
+
+.description-container .description-approach {
+  width: 50vw;
+  /* background: pink; */
+}
+
+.marquee {
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  display: flex;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 42%;
+  animation: marquee 7s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0); /* Starts from the right */
+  }
+  100% {
+    transform: translate(-100%, 0); /* Ends at the left */
+  }
+}
+
