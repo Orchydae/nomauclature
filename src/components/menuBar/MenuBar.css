@@ -11,3 +11,10 @@
     z-index: 1000;
 
 }
+
+.nav-bar {
+    display: flex;
+    overflow: auto;
+    height: auto;
+    font-size: 500%;
+}
