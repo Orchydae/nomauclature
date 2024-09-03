@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     height: 100vh;
+    width: 100%;
 }
 
 .hero-video {
@@ -15,9 +16,14 @@
 }
 
 .hero-container {
-    padding-top: 70vh;
     display: flex;
     flex-direction: column;
+
+    margin-top: 70vh;
+
+    background: red;
+
+    width: 100%;
 }
 
 .hero-description {
@@ -45,8 +51,4 @@
     font-weight: 600;
 }
 
-.hero-scroll-down {
-    margin-top: 5em;
-    text-align: center;
-}
 
