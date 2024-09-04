@@ -8,6 +8,8 @@
   position: sticky;
   top: 0;
 
+  overflow: hidden;
+
   .card {
     display: flex;
 
@@ -73,7 +75,7 @@
     }
 
     .rightSide img {
-      width: 100%;
+      width: 110%;
       height: auto;
       /* object-fit: cover; */
 

@@ -12,13 +12,22 @@ html {
   font-family: var(--text-font);
 }
 
+canvas {
+  position: relative;
+  z-index: 1000;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background: yellow;
+  /* background: yellow; */
+}
+
+canvas {
+  height: 100vh !important;
 }
 
 /* + ABOUT SECTION + */

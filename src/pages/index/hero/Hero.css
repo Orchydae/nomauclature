@@ -1,7 +1,7 @@
 .hero-section {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
 }
 
@@ -19,7 +19,10 @@
     display: flex;
     flex-direction: column;
 
-    margin-top: 70vh;
+    position: absolute;
+    top: 65vh;
+
+    /* margin-top: 70vh; */
 
     background: red;
 
