@@ -1,26 +1,44 @@
-'use client'
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ParallaxProvider } from 'react-scroll-parallax'
-
 import ReactLenis from 'lenis/react'
-
-import './styles/index.css'
-
 import App from './pages/index/App'
-import Layout from './components/layout/Layout'
+import './styles/index.css'
+import ErrorPage from './pages/index/ErrorPage'
+import Contact from './pages/index/Contact'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Layout>
-        <App />
-      </Layout>
-    ),
+    element: <App />,
+    errorElement: <ErrorPage />,
   },
+
+  {
+    path: "/nous",
+    // element: <Nous />,
+  },
+
+  {
+    path: "/portfolio",
+    // element: <Portfolio />,
+  },
+
+  {
+    path: "/approche",
+    // element: <Approche />,
+  },
+
+  {
+    path: "/contacts/:contactId",
+    element: <Contact />,
+  },
+
+  {
+    path: "/404",
+    element: <ErrorPage />,
+  }
   // Add more routes here if needed
 ]);
 
