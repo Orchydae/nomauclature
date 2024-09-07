@@ -1,3 +1,5 @@
+@import "../../styles/index.css";
+
 .footer {
     display: flex;
     justify-content: center;
@@ -29,3 +31,13 @@
     font-size: 14px;
   }
   
+  .links {
+    text-decoration: none;
+    color: var(--tertiary-color); 
+    transition: color 0.3s ease;
+  }
+
+  .links:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+  }

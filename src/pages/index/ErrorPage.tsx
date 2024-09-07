@@ -5,12 +5,9 @@ export default function ErrorPage() {
     console.error(error);
 
     return (
-        <div id="error-page">
+        <div id="error404">
             <h1>Oops!</h1>
-            <p>Sorry, an unexpected error has occurred.</p>
-            <p>
-                <i>{(error as { statusText?: string; message?: string }).statusText || (error as { statusText?: string; message?: string }).message}</i>
-            </p>
+            <p> Il semblerait que la page que vous recherchez n'existe pas.</p>
         </div>
     );
 }

@@ -3,6 +3,9 @@
   --title-font: 'Playfair Display', serif;
   --text-font: 'Source Sans 3', sans-serif;
   --primary-color: #C91212;
+  --secondary-color: #E0CA3C;
+  --tertiary-color: #272932;
+  --quaternary-color: #FCFCFF;
   --default-font-size: 1.5em;
   --dynamic-font-size: 2vw;
 }
@@ -77,7 +80,7 @@ html {
   height: 100%;
   background: pink;
   flex: 1;
-} 
+}
 
 .description-container .right-side img {
   /* position: absolute; */
@@ -98,5 +101,3 @@ html {
 .biography-section {
   background: red;
 }
-
-
