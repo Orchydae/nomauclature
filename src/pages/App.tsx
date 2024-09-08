@@ -26,57 +26,57 @@ function App() {
   return (
     <div ref={container}>
       <main className="main-container">
-      <Suspense fallback={<LoadingScreen />}>
-        <Scene />
-      </Suspense>
+        <Suspense fallback={<LoadingScreen />}>
+          <Scene />
+        </Suspense>
 
-      <VideoPlayer
-        className="hero-video"
-        src={lavaLamp}
-        controls={false}
-        autoPlay={true}
-        loop={true}
-        muted={true}
-      />
-      <Hero />
-      <section className="about-section">
-        <div className="left-side">
-          <span className="title">✦ Qui somme-nous?</span>
-          <span className="resume">Donner (vie) à des aspirations éveillées de (sens)</span>
-          <span className="description" style={{ textIndent: '3em' }}> À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
-            des voyages immersifs où chaque détail émerveille. Notre démarche, empreinte de simplicité et d'efficacité,
-            place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté <i>éclatante</i> et un impact <i>inoubliable</i>.
-          </span>
-          <button>Connaître ☀</button>
-        </div>
-        <div className="right-side">
-          <Parallax translateY={[-20, 20]} speed={10}>
-            <img src={danielOlah} alt="Daniel Olah" />
-          </Parallax>
-        </div>
-      </section>
+        <VideoPlayer
+          className="hero-video"
+          src={lavaLamp}
+          controls={false}
+          autoPlay={true}
+          loop={true}
+          muted={true}
+        />
+        <Hero />
+        <section className="about-section">
+          <div className="left-side">
+            <span className="title">✦ Qui somme-nous?</span>
+            <span className="resume">Donner (vie) à des aspirations éveillées de (sens)</span>
+            <span className="description" style={{ textIndent: '3em' }}> À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
+              des voyages immersifs où chaque détail émerveille. Notre démarche, empreinte de simplicité et d'efficacité,
+              place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté <i>éclatante</i> et un impact <i>inoubliable</i>.
+            </span>
+            <button>Connaître ☀</button>
+          </div>
+          <div className="right-side">
+            <Parallax translateY={[-20, 20]} speed={10}>
+              <img src={danielOlah} alt="Daniel Olah" />
+            </Parallax>
+          </div>
+        </section>
 
-      <section className="us-section">
-        <div className="title">✦ Notre équipe</div>
-        {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          members.map((member: any, index: any) => {
-            const targetScale = 1 - ((members.length - index) * 0.05);
-            return (
-              <ProfileCard key={index} i={index} {...member} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale} />
-            )
-          })
-        }
-      </section>
+        <section className="us-section">
+          <div className="title">✦ Notre équipe</div>
+          {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            members.map((member: any, index: any) => {
+              const targetScale = 1 - ((members.length - index) * 0.05);
+              return (
+                <ProfileCard key={index} i={index} {...member} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale} />
+              )
+            })
+          }
+        </section>
 
-      <section className="work-section">
-        <div className="title">✦ Nos réalisations</div>
+        <section className="work-section">
+          <div className="title">✦ Nos réalisations</div>
 
-      </section>
+        </section>
 
-      <Footer />
-    </main>
-  </div>
+        <Footer />
+      </main>
+    </div>
   )
 }
 
