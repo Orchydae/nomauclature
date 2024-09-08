@@ -14,7 +14,7 @@ function Hero() {
                 </div>
                 <div className="hero-title">
                     <span className='title-prefix'>NOM</span>
-                    <span className='special' style={{fontSize: '2em', color: 'var(--primary-color)'}}>à</span>
+                    <span className='special' style={{fontSize: '1.7em', color: 'var(--primary-color)'}}>à</span>
                     <span className='title-suffix'>UCLATURE</span>
                 </div>
             </div>

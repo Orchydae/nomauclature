@@ -17,7 +17,8 @@ const socialIcons = {
     github: GitHubIcon
 }
 
-function ProfileCard({ i, name, title, color, socialMedias = [], avatar, progress, range, targetScale }: { i: number, name: string, title: string, color: string, socialMedias: Array<any>, avatar: string, progress: any, range: any, targetScale: number }) {
+function ProfileCard({ i, name, title, color, socialMedias = [], avatar, progress, range, targetScale }: 
+    { i: number, name: string, title: string, color: string, socialMedias: Array<any>, avatar: string, progress: any, range: any, targetScale: number }) {
 
     const container = useRef(null);
     const { scrollYProgress } = useScroll({

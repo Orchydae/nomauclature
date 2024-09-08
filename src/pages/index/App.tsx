@@ -3,6 +3,7 @@ import lavaLamp from "../../assets/lava-lamp-diffusion.mp4";
 import Hero from './hero/Hero';
 import Footer from '../../components/footer/Footer';
 import ProfileCard from '../../components/profileCard/ProfileCard';
+import LoadingScreen from "../../components/loading/LoadingScreen";
 
 import React, { useRef, Suspense } from 'react';
 import { Parallax } from 'react-scroll-parallax';
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <main className="main-container">
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LoadingScreen/>}>
         <Scene />
       </Suspense>
 

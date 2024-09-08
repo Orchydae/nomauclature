@@ -27,7 +27,7 @@ export default function Model() {
 
 
     return (
-        <group scale={viewport.width / 5}>
+        <group scale={viewport.width / 7}>
             <mesh ref={mesh} {...nodes.Object_3 }>
                 <MeshTransmissionMaterial 
                 {...materialProps} 

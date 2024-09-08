@@ -4,16 +4,15 @@
   align-items: center;
 
   height: 90vh;
+  margin: 40vh 0;
 
   position: sticky;
   top: 0;
 
-  overflow: hidden;
-
   .card {
     display: flex;
 
-    width: 55vw;
+    width: 45vw;
     height: 350px;
 
     border-radius: 15px;
@@ -75,13 +74,15 @@
     }
 
     .rightSide img {
-      width: 110%;
+      width: 100%;
       height: auto;
       /* object-fit: cover; */
 
+      border-radius: 15px;
+
       position: absolute;
       bottom: 0;
-      left: 10%;
+      left: 5%;
     }
   }
 
