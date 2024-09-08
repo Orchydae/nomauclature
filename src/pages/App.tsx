@@ -3,23 +3,35 @@ import lavaLamp from "../../assets/lava-lamp-diffusion.mp4";
 import Hero from './index/hero/Hero';
 import Footer from '../components/footer/Footer';
 import ProfileCard from '../components/profileCard/ProfileCard';
+import LoadingScreen from "../components/loading/LoadingScreen";
 
+import React, { useRef, Suspense } from 'react';
 import { Parallax } from 'react-scroll-parallax';
+import { useScroll } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { Environment, OrbitControls } from '@react-three/drei';
+// import GlassCrane from '../../../public/Glass-crane';
 
-import davidAvatar from '../../assets/david-avatar-champagne-.png';
-import paulAvatar from '../../assets/paul-avatar-heart-.png';
 import danielOlah from '../../assets/daniel-olah-unsplash.jpg';
+
+import { members } from '../data/members';
+
+const Scene = React.lazy(() => import('../components/scene/Scene'));
 
 function App() {
 
-  const Component = ({ color }) => (
-    <Parallax translateY={[-40, 10]}>
-      <div style={{ position: 'relative', height: '500px', margin: '0', padding: '0', background: color }}>Scrolling down</div>
-    </Parallax>
-  )
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end'],
+  })
 
   return (
     <main className="main-container">
+      <Suspense fallback={<LoadingScreen />}>
+        <Scene />
+      </Suspense>
+
       <VideoPlayer
         className="hero-video"
         src={lavaLamp}
@@ -29,62 +41,42 @@ function App() {
         muted={true}
       />
       <Hero />
-      {/* <section style={{ height: '100vh', backgroundColor: 'orange' }}>
-        <h2>Scroll down to see the effect</h2>
-        <p>More content here...</p>
-      </section> */}
-      {/* <Component color='orange'/> */}
-      <section className="description-section">
-        {/* <Parallax translateY={[50, 0]} speed={20}> */}
-        <section className="description-container">
-          <div className="left-side">
-            <div className="marquee-container">
-              <div className="marquee">
-                <span>Nous</span>
-              </div>
-            </div>
-            <div className="description-approach">
-              <p style={{ textIndent: '3em' }}> À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
-                des voyages immersifs où chaque détail émerveille. Notre démarche, empreinte de simplicité et d'efficacité,
-                place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté <i>éclatante</i> et un impact <i>inoubliable</i>.
-              </p>
-            </div>
-            <button>
-              En savoir plus ✦
-            </button>
-          </div>
-          <div className="right-side">
-            <Parallax translateY={[-50, 50]} speed={20}>
-              <img src={danielOlah} alt="rodion-kutsaiev-colorful" />
-            </Parallax>
-          </div>
-
-        </section>
-
-        {/* </Parallax> */}
-
-        {/* <Parallax translateY={[50, -50]} speed={40}> */}
-        <section className="author-section">
-          <ProfileCard src={davidAvatar} alt="david-avatar-champagne" name="David" title="Artiste à temps perdu" width="300" socialMedia={[
-            { platform: 'x', url: 'https://www.x.com' },
-            { platform: 'linkedin', url: 'https://www.linkedin.com' },
-            { platform: 'instagram', url: 'https://www.instagram.com' },
-            { platform: 'facebook', url: 'https://www.facebook.com' },
-            { platform: 'github', url: 'https://www.github.com' },
-          ]} />
-          <ProfileCard src={paulAvatar} alt="paul-avatar-heart" name="Paul" title="Étudiant en génie logiciel" width="290" socialMedia={[
-            { platform: 'linkedin', url: 'https://www.linkedin.com' },
-          ]} />
-          <ProfileCard src={"https://via.placeholder.com/250"} alt="yuka-avatar-" name="Yuka" title="Designer graphique" width="300px" socialMedia={[
-            { platform: 'linkedin', url: 'https://www.linkedin.com' },
-            { platform: 'instagram', url: 'https://www.instagram.com' },
-          ]} />
-        </section>
-        {/* </Parallax> */}
-
-
-        <Footer />
+      <section className="about-section">
+        <div className="left-side">
+          <span className="title">✦ Qui somme-nous?</span>
+          <span className="resume">Donner (vie) à des aspirations éveillées de (sens)</span>
+          <span className="description" style={{ textIndent: '3em' }}> À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
+            des voyages immersifs où chaque détail émerveille. Notre démarche, empreinte de simplicité et d'efficacité,
+            place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté <i>éclatante</i> et un impact <i>inoubliable</i>.
+          </span>
+          <button>Connaître ☀</button>
+        </div>
+        <div className="right-side">
+          <Parallax translateY={[-20, 20]} speed={10}>
+            <img src={danielOlah} alt="Daniel Olah" />
+          </Parallax>
+        </div>
       </section>
+
+      <section className="us-section">
+        <div className="title">✦ Notre équipe</div>
+        {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          members.map((member: any, index: any) => {
+            const targetScale = 1 - ((members.length - index) * 0.05);
+            return (
+              <ProfileCard key={index} i={index} {...member} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale} />
+            )
+          })
+        }
+      </section>
+
+      <section className="work-section">
+        <div className="title">✦ Nos réalisations</div>
+
+      </section>
+
+      <Footer />
 
     </main>
   )
