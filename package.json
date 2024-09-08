@@ -14,9 +14,9 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
-    "@react-three/drei": "^9.111.5",
-    "@react-three/fiber": "^8.17.6",
-    "framer-motion": "^11.3.31",
+    "@react-three/drei": "^9.112.0",
+    "@react-three/fiber": "^8.17.7",
+    "framer-motion": "^11.5.4",
     "lenis": "^1.1.13",
     "leva": "^0.9.35",
     "react": "^18.3.1",
@@ -26,6 +26,7 @@
     "three": "^0.168.0"
   },
   "devDependencies": {
+    "@types/offscreencanvas": "^2019.7.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",

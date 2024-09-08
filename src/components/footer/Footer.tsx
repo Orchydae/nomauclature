@@ -50,7 +50,6 @@ function Footer() {
                         placeholder="Subscribe to our newsletter"
                         variant="outlined"
                         fullWidth
-                        margin="normal"
                     />
                     <Button variant="contained" color="primary" type="submit">
                         Subscribe
