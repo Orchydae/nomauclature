@@ -1,19 +1,16 @@
 import VideoPlayer from "../components/videoPlayer/VideoPlayer";
-import lavaLamp from "../../assets/lava-lamp-diffusion.mp4";
+import lavaLamp from "../assets/lava-lamp-diffusion.mp4";
 import Hero from './index/hero/Hero';
 import Footer from '../components/footer/Footer';
 import ProfileCard from '../components/profileCard/ProfileCard';
 import LoadingScreen from "../components/loading/LoadingScreen";
-
 import React, { useRef, Suspense } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import { useScroll } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { Environment, OrbitControls } from '@react-three/drei';
-// import GlassCrane from '../../../public/Glass-crane';
-
-import danielOlah from '../../assets/daniel-olah-unsplash.jpg';
-
+import GlassCrane from '../../../public/Glass-crane';
+import danielOlah from '../assets/daniel-olah-unsplash.jpg';
 import { members } from '../data/members';
 
 const Scene = React.lazy(() => import('../components/scene/Scene'));
@@ -27,7 +24,8 @@ function App() {
   })
 
   return (
-    <main className="main-container">
+    <div ref={container}>
+      <main className="main-container">
       <Suspense fallback={<LoadingScreen />}>
         <Scene />
       </Suspense>
@@ -77,8 +75,8 @@ function App() {
       </section>
 
       <Footer />
-
     </main>
+  </div>
   )
 }
 
