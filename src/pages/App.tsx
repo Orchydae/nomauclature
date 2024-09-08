@@ -1,8 +1,8 @@
-import VideoPlayer from "../../components/videoPlayer/VideoPlayer";
+import VideoPlayer from "../components/videoPlayer/VideoPlayer";
 import lavaLamp from "../../assets/lava-lamp-diffusion.mp4";
-import Hero from './hero/Hero';
-import Footer from '../../components/footer/Footer';
-import ProfileCard from '../../components/profileCard/ProfileCard';
+import Hero from './index/hero/Hero';
+import Footer from '../components/footer/Footer';
+import ProfileCard from '../components/profileCard/ProfileCard';
 
 import { Parallax } from 'react-scroll-parallax';
 

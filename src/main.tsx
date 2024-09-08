@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ReactLenis from 'lenis/react'
-import App from './pages/index/App'
+import App from './pages/App'
 import './styles/index.css'
-import ErrorPage from './pages/index/ErrorPage'
-import Contact from './pages/index/Contact'
+import ErrorPage from './pages/ErrorPage'
+import Contact from './pages/Contact'
 
 const router = createBrowserRouter([
   {
