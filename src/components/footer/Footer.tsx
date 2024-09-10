@@ -6,6 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { Stack } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function Footer() {
 
@@ -24,7 +25,7 @@ function Footer() {
         },
         {
             title: "Contact",
-            links: ["Vient jaser"]
+            links: [<Link to="/contact" className="links">Vient jaser</Link>]
         },
         {
             title: "Légal",
