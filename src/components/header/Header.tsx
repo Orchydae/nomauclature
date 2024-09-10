@@ -1,5 +1,6 @@
 import "./Header.css";
 
+import paperCrane from "../../assets/paper-crane.png";
 import { useState } from "react";
 
 import MenuBar from "../menuBar/MenuBar";
@@ -13,8 +14,8 @@ function Header() {
 
     return (
         <header>
-            <div className="logo">Logo</div>
-            <button onClick={toggleMenu}>asdasd+</button>
+            <img className="logo" src={paperCrane} alt="Paper crane logo"/>
+            <button onClick={toggleMenu}>+</button>
             {isMenuOpen && <MenuBar />}
         </header>
     );

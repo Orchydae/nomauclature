@@ -1,11 +1,13 @@
 /* + GLOBAL CSS VARIABLES + */
 :root {
-  --title-font: 'Playfair Display', serif;
-  --text-font: 'Source Sans 3', sans-serif;
+  --title-font: 'Ojuju', serif;
+  --text-font: 'Lato', sans-serif;
   --primary-color: #C91212;
   --secondary-color: #E0CA3C;
   --tertiary-color: #272932;
   --quaternary-color: #FCFCFF;
+  --accent-color: #E0CA3C;
+  --subtitle-color: rgb(63, 63, 63);
   --default-font-size: 1.5em;
   --dynamic-font-size: 2vw;
 }
@@ -17,53 +19,89 @@ html {
 
 canvas {
   position: relative;
-  z-index: 1000;
+  left: 225px;
+
+  height: 100vh !important;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
   /* background: yellow; */
 }
 
-canvas {
-  height: 100vh !important;
-}
-
 /* + ABOUT SECTION + */
 .main-container .about-section {
   display: flex;
+  justify-content: space-around;
 
-  background: blue;
+  background: white;
+  border-radius: 15px;
   width: 100%;
-  height: 50vh;
-  margin: 0 0 30vh 0;
+  height: 70vh;
+  margin: 2vh 0;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 .main-container .about-section .left-side {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex: 1;
+
+  padding: 0 5rem;
 }
+
+  .main-container .about-section .left-side .title,
+  .us-section .title {
+    font-family: var(--title-font);
+    font-size: 3rem;
+    font-weight: 600;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .main-container .about-section .left-side .resume {
+    font-family: var(--text-font);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--subtitle-color);
+  }
+
+  .main-container .about-section .left-side .description {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 
 .about-section .left-side button {
   width: fit-content;
 }
 
 .about-section .right-side {
-  flex: 2;
+  /* flex: 2; */
+  width: 30vw;
+  overflow: hidden;
 }
 
 /* + AUTHOR SECTION + */
 .us-section {
   width: 100%;
-  background-color: black;
+  background-color: white;
+
+  border-radius: 15px;
 }
+
+.us-section .title {
+  padding: 0 5rem;
+
+}
+
 .author-section {
   display: flex;
   justify-content: center;

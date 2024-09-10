@@ -11,8 +11,8 @@ export default function Model() {
     console.log(nodes);
     
     useFrame(() => {
-        mesh.current.rotation.x += 0.005;
-        mesh.current.rotation.y += 0.003;
+        mesh.current.rotation.x += 0.001;
+        mesh.current.rotation.y += 0.002;
     });
 
     const materialProps = useControls({
@@ -27,7 +27,7 @@ export default function Model() {
 
 
     return (
-        <group scale={viewport.width / 7}>
+        <group scale={viewport.width / 10}>
             <mesh ref={mesh} {...nodes.Object_3 }>
                 <MeshTransmissionMaterial 
                 {...materialProps} 

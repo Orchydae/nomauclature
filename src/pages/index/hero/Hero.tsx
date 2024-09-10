@@ -1,23 +1,23 @@
 
 import "./Hero.css";
 
+import TextCarousel from "../../../components/textCarousel/TextCarousel";
+
 function Hero() {
 
     const currentYear = new Date().getFullYear();
 
     return (
         <div className="hero-section">
+            <TextCarousel />
             <div className="hero-container">
-                <div className="hero-description">
-                    <span>Basé au Québec</span>
-                    <span>(&copy;{currentYear})</span>
-                </div>
+            <span className="copyright">(&#169; {currentYear})</span>
+                <span className="based-in">45°30′32″N 73°33′15″W</span>
                 <div className="hero-title">
-                    <span className='title-prefix'>NOM</span>
-                    <span className='special' style={{fontSize: '1.7em', color: 'var(--primary-color)'}}>à</span>
-                    <span className='title-suffix'>UCLATURE</span>
+                    <span>Nomàuclature</span>
                 </div>
             </div>
+            {/* <div className="circle"></div> */}
         </div>
 
     )

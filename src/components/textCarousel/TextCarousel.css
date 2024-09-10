@@ -1,0 +1,10 @@
+.text-carousel {
+    align-self: center;
+
+    margin-bottom: 20px;
+}
+.carousel-text {
+    font-size: 4vw;
+    font-weight: 200;
+    color: white;
+}

@@ -68,7 +68,7 @@ function Footer() {
     return (
         <>
             <div className="footer-quote">
-                <p> La vie en couleur.</p>
+                <p>Les couleurs que j'aperçois, les perçois-tu aussi?</p>
             </div>
 
             <div className="contact-us">

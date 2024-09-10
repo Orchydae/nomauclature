@@ -1,8 +1,15 @@
 .hero-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
     /* height: 100vh; */
     width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    /* background: red; */
 }
 
 .hero-video {
@@ -19,39 +26,67 @@
     display: flex;
     flex-direction: column;
 
-    position: absolute;
-    top: 65vh;
+    margin-bottom: 30px;
 
-    /* margin-top: 70vh; */
-
-    background: red;
-
-    width: 100%;
+    /* background: blue; */
+    color: white;
+    
 }
 
-.hero-description {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0.5vw;
-    font-size: 1.5vw;
-    font-weight: 400;
+.hero-container .based-in,
+.hero-container .copyright {
+    font-family: var(--text-font);
+    font-weight: 500;
+}
+
+.hero-container .copyright {
+    position: relative;
+    /* top: 10vh; */
+}
+
+.hero-container .based-in {
+    margin-bottom: 20px;
 }
 
 .hero-title {
-    text-align: center;
-    font-size: 11vw;
-    font-weight: 700;
-}
-
-.hero-description,
-.hero-title {
-    margin: 0;
-    line-height: 0.3;
+    font-size: 15vw;
+    transform: scaley(2.5);
+    padding-bottom: 3vh;
 }
 
 .hero-title span {
     font-family: var(--title-font);
     font-weight: 600;
+    letter-spacing: -5px;
+
+    background: linear-gradient(to right, white, var(--accent-color));
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
 }
 
+.circle {
+    width: 700px;
+    height: 700px;
+    background-color: transparent; /* No fill */
+    position: absolute;
+    top: 10vh;
+    left: 40vw;
+    z-index: -1;
+    border-radius: 50%; /* Ensures the element is circular */
+}
 
+.circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Circular gradient */
+    padding: 10px; /* This is the thickness of the border */
+    background: radial-gradient(var(--primary-color), var(--accent-color)); /* Gradient border */
+    -webkit-mask: 
+        radial-gradient(farthest-side, transparent calc(100% - 10px), white); /* Transparent inner space */
+    mask: radial-gradient(farthest-side, transparent calc(100% - 10px), white);
+    z-index: -1; /* Behind other content */
+}

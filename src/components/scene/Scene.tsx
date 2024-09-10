@@ -11,7 +11,7 @@ export default function Scene() {
             <Canvas>
                 <directionalLight intensity={3} position={([3, 3, 2])} />
                 <Environment files="golden_bay_4k.exr" />
-                <Model />
+                {/* <Model /> */}
             </Canvas>
         </>
     )
