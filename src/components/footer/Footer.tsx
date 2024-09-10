@@ -9,6 +9,11 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 function Footer() {
+
+    const handleClick = () => {
+        window.location.href = "mailto:info@nomauclature.com";
+    };
+
     const footerItems = [
         {
             title: "À propos de nous",
@@ -30,8 +35,8 @@ function Footer() {
             title: "Réseaux sociaux",
             links: [
                 <Stack direction="row" spacing={2}>
-                    <FacebookIcon />
-                    <LinkedInIcon />
+                    <FacebookIcon style={{ color: "blue" }} />
+                    <LinkedInIcon style={{ color: "blue" }} />
                     <XIcon />
                     <InstagramIcon />
                 </Stack>
@@ -47,9 +52,10 @@ function Footer() {
                 <form>
                     <TextField
                         label="Email"
-                        placeholder="Subscribe to our newsletter"
+                        placeholder="john.doe@example.com"
                         variant="outlined"
-                        fullWidth
+                        fullWidth={true}
+                        margin="normal"
                     />
                     <Button variant="contained" color="primary" type="submit">
                         Subscribe
@@ -60,24 +66,36 @@ function Footer() {
     ];
 
     return (
-        <footer className="footer">
-            {footerItems.map((section, index) => (
-                <div key={index} className="footer-column">
-                    <h4 className="footer-title">{section.title}</h4>
-                    <ul className="footer-list">
-                        {Array.isArray(section.links) ? (
-                            section.links.map((link, linkIndex) => (
-                                <li key={linkIndex} className="footer-list-item">
-                                    {typeof link === "string" || typeof link === "number" ? link.toString() : link}
-                                </li>
-                            ))
-                        ) : (
-                            <li className="footer-list-item">{section.links}</li>
-                        )}
-                    </ul>
-                </div>
-            ))}
-        </footer>
+        <>
+            <div className="footer-quote">
+                <p> La vie en couleur.</p>
+            </div>
+
+            <div className="contact-us">
+                <Button variant="contained" onClick={handleClick}>
+                    Contactez-nous
+                </Button>
+            </div>
+
+            <footer className="footer">
+                {footerItems.map((section, index) => (
+                    <div key={index} className="footer-column">
+                        <h4 className="footer-title">{section.title}</h4>
+                        <ul className="footer-list">
+                            {Array.isArray(section.links) ? (
+                                section.links.map((link, linkIndex) => (
+                                    <li key={linkIndex} className="footer-list-item">
+                                        {typeof link === "string" || typeof link === "number" ? link.toString() : link}
+                                    </li>
+                                ))
+                            ) : (
+                                <li className="footer-list-item">{section.links}</li>
+                            )}
+                        </ul>
+                    </div>
+                ))}
+            </footer>
+        </>
     );
 }
 
