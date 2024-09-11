@@ -5,22 +5,17 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* Align all items at the top */
   text-align: center;
-  /* Align text to the left for better readability */
   background-color: #f1f1f1;
   padding: 20px;
   flex-wrap: wrap;
-  /* Allow wrapping on smaller screens */
 }
 
-/* Individual footer columns */
 .footer-column {
   margin: 10px 20px;
   min-width: 150px;
 }
 
-/* Footer title styling */
 .footer-title {
   margin-bottom: 10px;
   font-size: 18px;
@@ -46,7 +41,6 @@
   font-family: var(--text-font);
 }
 
-/* Contact us button container */
 .contact-us {
   display: flex;
   justify-content: center;
