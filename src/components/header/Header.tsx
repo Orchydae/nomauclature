@@ -1,8 +1,6 @@
 import "./Header.css";
-
 import paperCrane from "../../assets/paper-crane.png";
 import { useState } from "react";
-
 import MenuBar from "../menuBar/MenuBar";
 
 function Header() {
@@ -14,7 +12,7 @@ function Header() {
 
     return (
         <header>
-            <img className="logo" src={paperCrane} alt="Paper crane logo"/>
+            <img className="logo" src={paperCrane} alt="Paper crane logo" />
             <button onClick={toggleMenu}>+</button>
             {isMenuOpen && <MenuBar />}
         </header>
