@@ -14,7 +14,7 @@ function Hero() {
             <span className="copyright">(&#169; {currentYear})</span>
                 <span className="based-in">45°30′32″N 73°33′15″W</span>
                 <div className="hero-title">
-                    <span>Nomàuclature</span>
+                    <span>NoMàUclaTure</span>
                 </div>
             </div>
             {/* <div className="circle"></div> */}

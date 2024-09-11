@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ReactLenis from 'lenis/react'
 import App from './pages/index/App'
+
 import './styles/index.css'
+import './styles/customFonts.css'
+
 import ErrorPage from './pages/ErrorPage'
 import Contact from './pages/Contact'
 import Layout from './components/layout/Layout'

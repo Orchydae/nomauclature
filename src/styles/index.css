@@ -1,6 +1,6 @@
 /* + GLOBAL CSS VARIABLES + */
 :root {
-  --title-font: 'Ojuju', serif;
+  --title-font: 'Sunmory Regular', serif;
   --text-font: 'Lato', sans-serif;
   --primary-color: #C91212;
   --secondary-color: #E0CA3C;
@@ -10,18 +10,12 @@
   --subtitle-color: rgb(63, 63, 63);
   --default-font-size: 1.5em;
   --dynamic-font-size: 2vw;
+  --title-font-size: 3rem;
 }
 
 html {
   margin: 0;
   font-family: var(--text-font);
-}
-
-canvas {
-  position: relative;
-  left: 225px;
-
-  height: 100vh !important;
 }
 
 .main-container {
@@ -32,61 +26,66 @@ canvas {
   /* background: yellow; */
 }
 
+.text-carousel {
+  margin-bottom: 10vh;
+  align-self: center;
+}
+
 /* + ABOUT SECTION + */
 .main-container .about-section {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 
   background: white;
   border-radius: 15px;
-  width: 100%;
-  height: 70vh;
-  margin: 2vh 0;
 
-  overflow: visible;
+  height: 70vh;
+  margin: 2rem 0;
+  padding: 2rem 6rem;
 }
 
-.main-container .about-section .left-side {
+.about-section .title {
+  font-family: var(--title-font);
+  font-size: var(--title-font-size);
+  color: var(--primary-color);
+
+  position: sticky;
+  top: 4px;
+
+}
+
+.about-section .container {
+  display: flex;
+  gap: 5rem;
+  height: 100%;
+}
+
+.about-section .left-side {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1;
-
-  padding: 0 5rem;
+  align-items: flex-end;
+  flex: 2;
 }
 
-  .main-container .about-section .left-side .title,
-  .us-section .title {
-    font-family: var(--title-font);
-    font-size: 3rem;
-    font-weight: 600;
-
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  .main-container .about-section .left-side .resume {
-    font-family: var(--text-font);
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--subtitle-color);
-  }
-
-  .main-container .about-section .left-side .description {
-    margin: 2rem 0;
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
+.about-section .left-side .resume {
+  text-align: end;
+  font-size: 1.8rem;
+}
 
 .about-section .left-side button {
   width: fit-content;
 }
 
 .about-section .right-side {
-  /* flex: 2; */
-  width: 30vw;
-  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+
+.about-section .right-side .description {
+  font-size: 1.2rem;
 }
 
 /* + AUTHOR SECTION + */

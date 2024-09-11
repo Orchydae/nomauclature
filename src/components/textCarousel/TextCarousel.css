@@ -1,10 +1,64 @@
-.text-carousel {
-    align-self: center;
-
-    margin-bottom: 20px;
+.text-carousel .left-side, 
+.text-carousel .center-side, 
+.text-carousel .right-side {
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+    /* font-size: 2rem; */
 }
-.carousel-text {
-    font-size: 4vw;
+
+.text-carousel .actual-word {
+    font-size: 3.5vw;
     font-weight: 200;
     color: white;
+}
+
+.text-carousel .right-side .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* width: 250px; */
+    overflow: hidden;
+
+    position: relative;
+}
+
+.text-carousel .right-side .carousel-container .actual-word {
+    animation: slideInOutV1 5s ease-in-out infinite;
+}
+
+.text-carousel .right-side .carousel-container .next-word,
+.text-carousel .right-side .carousel-container .previous-word {
+    animation: slideInOutV2 5s ease-in-out infinite;
+}
+
+@keyframes slideInOutV1 {
+    0% {
+        transform: translateX(-20%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(20%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInOutV2 {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0%);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
 }
