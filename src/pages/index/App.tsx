@@ -1,6 +1,6 @@
 import VideoPlayer from "../../components/videoPlayer/VideoPlayer";
 import redGradient from "../../assets/mart-production.mp4";
-import redPaintShooting from "../../assets/mart-production-paint.mp4";
+import redPaintShooting from "../../assets/mart-production-blk-overlay.mp4";
 import Hero from './hero/Hero';
 import Footer from '../../components/footer/Footer';
 import ProfileCard from '../../components/profileCard/ProfileCard';
@@ -53,13 +53,12 @@ function App() {
           <button>Connaître ☀</button>
         </div>
         <div className="right-side">
-          <Parallax translateY={[-20, 20]} speed={10}>
-            <img src={danielOlah} alt="Daniel Olah" />
-          </Parallax>
+          
         </div>
       </section>
+      
 
-      <section className="us-section">
+      {/* <section className="us-section">
         <div className="title">✦ Notre équipe</div>
         {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -70,7 +69,7 @@ function App() {
             )
           })
         }
-      </section>
+      </section> */}
 
       {/* <section className="work-section">
         <div className="title">✦ Nos réalisations</div>
