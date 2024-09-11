@@ -1,23 +1,31 @@
 @import "../../styles/index.css";
 
+/* Footer container */
 .footer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  /* Align all items at the top */
   text-align: center;
+  /* Align text to the left for better readability */
   background-color: #f1f1f1;
   padding: 20px;
   flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
 }
 
+/* Individual footer columns */
 .footer-column {
   margin: 10px 20px;
   min-width: 150px;
 }
 
+/* Footer title styling */
 .footer-title {
   margin-bottom: 10px;
   font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .footer-list {
@@ -35,9 +43,10 @@
   font-size: 100px;
   margin-top: 100px;
   text-align: center;
-  font-family: var(--text-font)
+  font-family: var(--text-font);
 }
 
+/* Contact us button container */
 .contact-us {
   display: flex;
   justify-content: center;
@@ -45,16 +54,24 @@
   font-size: 100px;
   margin-top: 20px;
   font-family: var(--text-font);
-  margin-bottom: 50px;
 }
 
 .links {
   text-decoration: none;
-  color: var(--tertiary-color); 
+  color: var(--tertiary-color);
   transition: color 0.3s ease;
 }
 
 .links:hover {
   color: var(--primary-color);
   cursor: pointer;
+}
+
+.footer-copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px; 
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 15px;
 }

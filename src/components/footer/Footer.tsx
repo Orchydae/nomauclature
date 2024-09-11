@@ -42,12 +42,9 @@ function Footer() {
                 </Stack>
             ]
         },
+
         {
-            title: "© Nomàuclature",
-            links: [new Date().getFullYear(), "Tous droits réservés"]
-        },
-        {
-            title: "Subscribe to our newsletter",
+            title: "Abonnez-vous à notre infolettre",
             links: (
                 <form>
                     <TextField
@@ -58,7 +55,7 @@ function Footer() {
                         margin="normal"
                     />
                     <Button variant="contained" color="primary" type="submit">
-                        Subscribe
+                        Abonnez-vous
                     </Button>
                 </form>
             )
@@ -94,6 +91,11 @@ function Footer() {
                         </ul>
                     </div>
                 ))}
+                {
+                    <div className="footer-copyright">
+                        © {new Date().getFullYear()} Nomàuclature. Tous droits réservés.
+                    </div>
+                }
             </footer>
         </>
     );
