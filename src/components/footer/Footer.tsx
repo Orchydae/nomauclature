@@ -3,6 +3,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { Stack } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
@@ -39,6 +40,7 @@ function Footer() {
                     <LinkedInIcon style={{ color: "blue" }} />
                     <XIcon />
                     <InstagramIcon />
+                    <GitHubIcon />
                 </Stack>
             ]
         },
