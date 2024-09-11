@@ -43,18 +43,20 @@ function App() {
       />
       <Hero />
       <section className="about-section">
-        <div className="left-side">
-          <span className="title">✦ Qui somme-nous?</span>
-          <span className="resume">Donner (vie) à des aspirations éveillées de (sens)</span>
-          <span className="description" style={{ textIndent: '3em' }}> À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
-            des voyages immersifs où chaque détail émerveille. Notre démarche, empreinte de simplicité et d'efficacité,
-            place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté (éclatante) et un impact (inoubliable).
-          </span>
-          <button>Connaître ☀</button>
+        <span className="title">Que faisons-nous? ✦</span>
+        <div className="container">
+          <div className="left-side">
+            <span className="resume">À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
+            des voyages immersifs où chaque détail émerveille. Notre but: donner (vie) à des aspirations éveillées de (sens).</span>
+            <button>Connaître ☀</button>
+          </div>
+          <div className="right-side">
+            <span className="description" style={{ textIndent: '3em' }}> Notre démarche, empreinte de simplicité et d'efficacité,
+              place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté (éclatante) et un impact (inoubliable).
+            </span>
+          </div>
         </div>
-        <div className="right-side">
-          
-        </div>
+
       </section>
       
 

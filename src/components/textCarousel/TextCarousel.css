@@ -1,19 +1,19 @@
-.left-side, 
-.center-side, 
-.right-side {
+.text-carousel .left-side, 
+.text-carousel .center-side, 
+.text-carousel .right-side {
     color: white;
     font-size: 2vw;
     text-align: center;
     /* font-size: 2rem; */
 }
 
-.actual-word {
+.text-carousel .actual-word {
     font-size: 3.5vw;
     font-weight: 200;
     color: white;
 }
 
-.right-side .carousel-container {
+.text-carousel .right-side .carousel-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,12 +24,12 @@
     position: relative;
 }
 
-.right-side .carousel-container .actual-word {
+.text-carousel .right-side .carousel-container .actual-word {
     animation: slideInOutV1 5s ease-in-out infinite;
 }
 
-.right-side .carousel-container .next-word,
-.right-side .carousel-container .previous-word {
+.text-carousel .right-side .carousel-container .next-word,
+.text-carousel .right-side .carousel-container .previous-word {
     animation: slideInOutV2 5s ease-in-out infinite;
 }
 
