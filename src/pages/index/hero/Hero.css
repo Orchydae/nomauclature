@@ -47,7 +47,7 @@
     transform: scaley(2.1);
 }
 
-.hero-title span {
+.hero-title #mau {
     font-family: var(--title-font);
     font-weight: 600;
 
