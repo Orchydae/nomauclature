@@ -14,9 +14,9 @@ function Header() {
 
     return (
         <header>
-            <img className="logo" src={paperCrane} alt="Paper crane logo"/>
+            <img className="logo" src={paperCrane} alt="Paper crane logo" />
             <button onClick={toggleMenu}>+</button>
-            {isMenuOpen && <MenuBar />}
+            {isMenuOpen && <MenuBar toggleMenu={toggleMenu} />}
         </header>
     );
 }
