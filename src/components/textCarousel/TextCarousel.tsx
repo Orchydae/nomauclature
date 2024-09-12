@@ -30,7 +30,7 @@ function TextCarousel() {
             </div>
             <div className="right-side carousel-container">
                 <span className="next-word">{words[nextIndex]}</span>
-                <span className="actual-word">({words[index]}).</span>
+                <span className="actual-word">{words[index]}</span>
                 <span className="previous-word">{words[previousIndex]}</span>
             </div>
         </div>

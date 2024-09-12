@@ -16,6 +16,7 @@ import GlassCrane from '../../../public/Glass-crane';
 import danielOlah from '../../assets/daniel-olah-unsplash.jpg';
 
 import { members } from '../../data/members';
+import AboutUs from "./aboutUs/AboutUs";
 
 const Scene = React.lazy(() => import('../../components/scene/Scene'));
 
@@ -42,26 +43,7 @@ function App() {
         muted={true}
       />
       <Hero />
-      <section className="about-section">
-        <span className="title">Que faisons-nous? ✦</span>
-        <div className="container">
-          <div className="left-side">
-            <span className="resume">À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
-            des voyages immersifs où chaque détail émerveille. Notre but: donner (<span style={{fontFamily: 'var(--title-font)'}}>vie</span>) 
-            à des aspirations éveillées de (<span style={{fontFamily: 'var(--title-font)'}}>sens</span>).</span>
-            <button>
-              <span className="text">Connaître</span>
-              <span className="symbol">☀</span>
-            </button>
-          </div>
-          <div className="right-side">
-            <span className="description" style={{ textIndent: '3em' }}> Notre démarche, empreinte de simplicité et d'efficacité,
-              place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté (éclatante) et un impact (inoubliable).
-            </span>
-          </div>
-        </div>
-
-      </section>
+      <AboutUs />
       
 
       {/* <section className="us-section">

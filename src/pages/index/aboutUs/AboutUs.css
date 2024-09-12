@@ -1,0 +1,72 @@
+.main-container .about-section {
+    display: flex;
+    flex-direction: column;
+  
+    background: white;
+    border-radius: 15px;
+  
+    height: 70vh;
+    margin: 2rem 0;
+    padding: 2rem 6rem;
+  }
+  
+  .about-section .title {
+    font-family: var(--title-outline-font);
+    font-size: var(--title-font-size);
+    color: var(--primary-color);
+  
+    position: sticky;
+    top: 4px;
+
+    z-index: 10;
+  }
+
+  .about-section .title.inverted {
+    mix-blend-mode: difference;
+    color: white;
+  }
+  
+  .about-section .container {
+    display: flex;
+    gap: 5rem;
+    height: 100%;
+  }
+  
+  .about-section .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    flex: 2;
+  }
+  
+  .about-section .left-side .resume {
+    text-align: end;
+    font-size: 1.8rem;
+  }
+  
+  .about-section .left-side button {
+    background: var(--primary-color);
+  
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    height: 50px;
+    width: 200px;
+    
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .about-section .right-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .about-section .right-side .description {
+    color: darkslategray;
+    font-size: 1.2rem;
+  }
