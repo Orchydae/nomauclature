@@ -44,7 +44,6 @@ function Footer() {
                 </Stack>
             ]
         },
-
         {
             title: "Abonnez-vous à notre infolettre",
             links: (
