@@ -47,8 +47,12 @@ function App() {
         <div className="container">
           <div className="left-side">
             <span className="resume">À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
-            des voyages immersifs où chaque détail émerveille. Notre but: donner (vie) à des aspirations éveillées de (sens).</span>
-            <button>Connaître ☀</button>
+            des voyages immersifs où chaque détail émerveille. Notre but: donner (<span style={{fontFamily: 'var(--title-font)'}}>vie</span>) 
+            à des aspirations éveillées de (<span style={{fontFamily: 'var(--title-font)'}}>sens</span>).</span>
+            <button>
+              <span className="text">Connaître</span>
+              <span className="symbol">☀</span>
+            </button>
           </div>
           <div className="right-side">
             <span className="description" style={{ textIndent: '3em' }}> Notre démarche, empreinte de simplicité et d'efficacité,

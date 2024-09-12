@@ -1,6 +1,7 @@
 /* + GLOBAL CSS VARIABLES + */
 :root {
   --title-font: 'Sunmory Regular', serif;
+  --title-outline-font: 'Sunmory Outline', serif;
   --text-font: 'Lato', sans-serif;
   --primary-color: #C91212;
   --secondary-color: #E0CA3C;
@@ -45,7 +46,7 @@ html {
 }
 
 .about-section .title {
-  font-family: var(--title-font);
+  font-family: var(--title-outline-font);
   font-size: var(--title-font-size);
   color: var(--primary-color);
 
@@ -65,6 +66,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  gap: 2rem;
   flex: 2;
 }
 
@@ -74,7 +76,16 @@ html {
 }
 
 .about-section .left-side button {
-  width: fit-content;
+  background: var(--primary-color);
+
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  height: 50px;
+  width: 200px;
+  
+  border: none;
+  border-radius: 5px;
 }
 
 .about-section .right-side {
