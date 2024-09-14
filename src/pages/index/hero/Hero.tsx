@@ -14,9 +14,9 @@ function Hero() {
             <span className="copyright">(&#169; {currentYear})</span>
                 <span className="based-in">45°30′32″N 73°33′15″W</span>
                 <div className="hero-title">
-                    <span style={{fontFamily: 'var(--title-font)', fontWeight: 600}}>No</span>
+                    <span className="basic-font">No</span>
                     <span id="mau">MàU</span>
-                    <span style={{fontFamily: 'var(--title-font)', fontWeight: 600}}>claTure</span>
+                    <span className="basic-font">claTure</span>
                 </div>
             </div>
             {/* <div className="circle"></div> */}

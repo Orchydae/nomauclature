@@ -47,6 +47,12 @@
     transform: scaley(2.1);
 }
 
+.hero-title .basic-font {
+    font-family: var(--title-outline-font);
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
 .hero-title #mau {
     font-family: var(--title-font);
     font-weight: 600;

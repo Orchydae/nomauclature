@@ -1,46 +1,15 @@
 import SunButton from '../../../components/buttons/sunButton/SunButton';
+import InvertedTitle from '../../../components/invertedTitle/InvertedTitle';
 import './AboutUs.css';
 
-import { useState, useEffect } from "react";
-
 function AboutUs() {
-    const [titleIsInverted, setTitleIsInverted] = useState(false);
-
-    useEffect(() => {
-        // Cache elements outside of the scroll handler
-        const titleElement = document.querySelector('.about-section .title');
-        const resumeSpanElement = document.querySelector('.about-section .resume');
-        const connaitreBtn = document.querySelector('.about-section button');
-
-        const handleScroll = () => {
-            if (!titleElement || !resumeSpanElement || !connaitreBtn) return;
-
-            // Get the bounding rectangles
-            const rect = titleElement.getBoundingClientRect();
-            const rectResume = resumeSpanElement.getBoundingClientRect();
-            const rectConnaitreBtn = connaitreBtn.getBoundingClientRect();
-
-            // Check if the title overlaps with either the resume or the button
-            const isOverlapping =
-                rect.bottom > rectResume.top && rect.top < rectResume.bottom ||
-                rect.bottom > rectConnaitreBtn.top && rect.top < rectConnaitreBtn.bottom;
-
-            // Update state only if it changes
-            if (isOverlapping !== titleIsInverted) {
-                setTitleIsInverted(isOverlapping);
-            }
-        };
-
-        // Add scroll event listener
-        window.addEventListener('scroll', handleScroll);
-
-        // Clean up event listener on component unmount
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [titleIsInverted]);
 
     return (
         <section className="about-section">
-            <span className={`title ${titleIsInverted ? 'inverted' : ''}`}>Que faisons-nous? ✦</span>
+            <InvertedTitle
+                text='Que faisons-nous? ✦'
+                triggerElements={['.about-section .resume', '.about-section button']}
+            />
             <div className="container">
                 <div className="left-side">
                     <span className="resume">À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,

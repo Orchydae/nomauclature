@@ -12,6 +12,7 @@ import { Environment, OrbitControls } from '@react-three/drei';
 import GlassCrane from '../../../public/Glass-crane';
 
 import { members } from '../../data/members';
+import Ladder from "../../components/ladder/Ladder";
 
 const Scene = React.lazy(() => import('../../components/scene/Scene'));
 
@@ -39,6 +40,7 @@ function App() {
       />
       <Hero />
       <AboutUs />
+      <Ladder title="Qui sommes-nous?" />
       
 
       <Footer />

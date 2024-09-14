@@ -1,0 +1,15 @@
+.title {
+    font-family: var(--title-outline-font);
+    font-size: var(--title-font-size);
+    color: var(--primary-color);
+
+    position: sticky;
+    top: 4px;
+
+    z-index: 10;
+}
+
+.title.inverted {
+    mix-blend-mode: difference;
+    color: white;
+}

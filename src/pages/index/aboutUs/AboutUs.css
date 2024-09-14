@@ -2,28 +2,15 @@
     display: flex;
     flex-direction: column;
   
-    background: white;
+    background: var(--secondary-color);
     border-radius: 15px;
   
     height: 70vh;
-    margin: 2rem 0;
+    margin: 2rem 0 0 0;
     padding: 2rem 6rem;
-  }
-  
-  .about-section .title {
-    font-family: var(--title-outline-font);
-    font-size: var(--title-font-size);
-    color: var(--primary-color);
-  
-    position: sticky;
-    top: 4px;
 
-    z-index: 10;
-  }
-
-  .about-section .title.inverted {
-    mix-blend-mode: difference;
-    color: white;
+    position: relative;
+    overflow: visible;
   }
   
   .about-section .container {
