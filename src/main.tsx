@@ -11,7 +11,7 @@ import './styles/customFonts.css'
 
 import ErrorPage from './pages/ErrorPage'
 import Contact from './pages/Contact'
-import Layout from './components/layout/Layout'
+import Layout from './components/shared/layout/Layout'
 
 const router = createBrowserRouter([
   {

@@ -13,11 +13,7 @@
 
     position: relative;
 
-<<<<<<< HEAD
     box-shadow: 0 20px 25px rgba(255, 0, 0, 0.3);
-=======
-    box-shadow: 0 20px 25px rgba(255, 0, 0, 0.5);
->>>>>>> 01e26b4498fa7c6bfe22e4d1db006ad7dbd1fa2c
 
     display: flex;
     justify-content: center;

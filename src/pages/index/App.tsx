@@ -1,7 +1,7 @@
 import VideoPlayer from "../../components/videoPlayer/VideoPlayer";
 import redPaintShooting from "../../assets/mart-production-blk-overlay.mp4";
 import Hero from './hero/Hero';
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/shared/footer/Footer';
 import AboutUs from "./aboutUs/AboutUs";
 
 import React, { useRef, Suspense } from 'react';

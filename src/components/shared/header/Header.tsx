@@ -1,5 +1,5 @@
 import "./Header.css";
-import paperCrane from "../../assets/paper-crane.png";
+import paperCrane from "../../../assets/paper-crane.png";
 import { useState } from "react";
 import MenuBar from "../menuBar/MenuBar";
 
