@@ -1,13 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import { createBrowserRouter, BrowserRouter, RouterProvider, Route, Routes } from 'react-router-dom'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ReactLenis from 'lenis/react'
 import App from './pages/index/App'
+
 import './styles/index.css'
+import './styles/customFonts.css'
+
 import ErrorPage from './pages/ErrorPage'
 import Contact from './pages/Contact'
-import Layout from './components/layout/Layout'
+import Layout from './components/shared/layout/Layout'
 
 const router = createBrowserRouter([
   {
@@ -32,7 +36,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/contact/",
+    path: "/contact",
     element: <Contact />,
   },
 
@@ -45,12 +49,17 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ReactLenis root>
-      <ParallaxProvider>
-        <Layout>
-          <RouterProvider router={router} />
-        </Layout>
-      </ParallaxProvider>
-    </ReactLenis>
+    <BrowserRouter>
+      <ReactLenis root>
+        <ParallaxProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Layout>
+        </ParallaxProvider>
+      </ReactLenis>
+    </BrowserRouter>
   </React.StrictMode>,
 )

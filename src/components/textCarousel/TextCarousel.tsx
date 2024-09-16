@@ -1,5 +1,5 @@
 import './TextCarousel.css';
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 function TextCarousel() {
     const [index, setIndex] = useState(0);
@@ -9,19 +9,30 @@ function TextCarousel() {
         "design",
         "programme",
         "crée",
-        "fais plus encore"
+        "développe",
+        "façonne",
     ];
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((index + 1) % words.length);
-        }, 2000);
+            setIndex((prevIndex) => (prevIndex + 1) % words.length);
+        }, 5000);
         return () => clearInterval(interval);
-    }, [index, words.length]);
+    }, [words.length]);
+
+    const previousIndex = (index - 1 + words.length) % words.length;
+    const nextIndex = (index + 1) % words.length;
 
     return (
         <div className="text-carousel">
-            <span className="carousel-text">Je pense, donc je ({words[index]})</span>
+            <div className="left-side">
+                Je pense, donc je
+            </div>
+            <div className="right-side carousel-container">
+                <span className="next-word">{words[nextIndex]}</span>
+                <span className="actual-word">{words[index]}</span>
+                <span className="previous-word">{words[previousIndex]}</span>
+            </div>
         </div>
     );
 }

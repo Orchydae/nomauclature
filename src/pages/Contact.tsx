@@ -10,7 +10,8 @@ import {
 
 export const FormComponent: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     companyName: "",
     phone: "",
     email: "",
@@ -18,18 +19,53 @@ export const FormComponent: React.FC = () => {
     budget: "",
   });
 
+  // Format the phone number as (XXX) XXX-XXXX
+  const formatPhoneNumber = (value: string) => {
+    
+    // Remove all non-numeric characters
+    const cleaned = value.replace(/\D/g, '');
+
+    // Format the cleaned number
+    const match = cleaned.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
+
+    if (match) {
+      const part1 = match[1] ? `(${match[1]}` : "";
+      const part2 = match[2] ? `) ${match[2]}` : "";
+      const part3 = match[3] ? `-${match[3]}` : "";
+
+      return `${part1}${part2}${part3}`.trim();
+    }
+
+    return value;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+
+      const formattedPhone = formatPhoneNumber(value);
+      setFormData({
+        ...formData,
+        phone: formattedPhone,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission, e.g., send data to API or show the input values.
     console.log("Form data submitted:", formData);
   };
+
+
+  if (formData.phone.length !== 14) {
+    console.log("Invalid phone number");
+  }
 
   return (
     <Container maxWidth="sm">
@@ -38,13 +74,25 @@ export const FormComponent: React.FC = () => {
           Vient jaser
         </Typography>
         <form onSubmit={handleSubmit}>
-          <Grid container spacing={3}>
+          <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                label="Name"
-                name="name"
-                value={formData.name}
+                label="First Name"
+                name="firstName"
+                placeholder="John"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Last Name"
+                name="lastName"
+                placeholder="Doe"
+                value={formData.lastName}
                 onChange={handleChange}
                 required
               />
@@ -63,11 +111,12 @@ export const FormComponent: React.FC = () => {
                 fullWidth
                 label="Phone Number"
                 name="phone"
-                placeholder="514-123-4567"
+                placeholder="(123) 456-7890"
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
                 required
+                inputProps={{ maxLength: 14 }} // Restrict length of input to match phone format
               />
             </Grid>
             <Grid item xs={12}>
@@ -87,6 +136,7 @@ export const FormComponent: React.FC = () => {
                 fullWidth
                 label="Project Detail"
                 name="projectDetail"
+                placeholder="Tell us about your project. Describe your requirements, timeline, etc."
                 value={formData.projectDetail}
                 onChange={handleChange}
                 multiline

@@ -1,0 +1,46 @@
+.main-container .about-section {
+    display: flex;
+    flex-direction: column;
+  
+    background: var(--secondary-color);
+    border-radius: 15px;
+  
+    height: 70vh;
+    margin: 2rem 0 0 0;
+    padding: 2rem 6rem;
+
+    position: relative;
+    overflow: visible;
+  }
+  
+  .about-section .container {
+    display: flex;
+    gap: 5rem;
+    height: 100%;
+  }
+  
+  .about-section .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    flex: 2;
+  }
+  
+  .about-section .left-side .resume {
+    text-align: end;
+    font-size: 1.8rem;
+  }
+  
+  .about-section .right-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .about-section .right-side .description {
+    color: darkslategray;
+    font-size: 1.2rem;
+  }

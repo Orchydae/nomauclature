@@ -26,8 +26,6 @@
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 30px;
-
     /* background: blue; */
     color: white;
     
@@ -44,49 +42,22 @@
     /* top: 10vh; */
 }
 
-.hero-container .based-in {
-    margin-bottom: 20px;
-}
-
 .hero-title {
-    font-size: 15vw;
-    transform: scaley(2.5);
-    padding-bottom: 3vh;
+    font-size: 12vw;
+    transform: scaley(2.1);
 }
 
-.hero-title span {
+.hero-title .basic-font {
+    font-family: var(--title-outline-font);
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+.hero-title #mau {
     font-family: var(--title-font);
     font-weight: 600;
-    letter-spacing: -5px;
 
-    background: linear-gradient(to right, white, var(--accent-color));
+    background: linear-gradient(to right, white, var(--primary-color));
     -webkit-background-clip: text; /* Clips the gradient to the text */
     -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
-}
-
-.circle {
-    width: 700px;
-    height: 700px;
-    background-color: transparent; /* No fill */
-    position: absolute;
-    top: 10vh;
-    left: 40vw;
-    z-index: -1;
-    border-radius: 50%; /* Ensures the element is circular */
-}
-
-.circle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Circular gradient */
-    padding: 10px; /* This is the thickness of the border */
-    background: radial-gradient(var(--primary-color), var(--accent-color)); /* Gradient border */
-    -webkit-mask: 
-        radial-gradient(farthest-side, transparent calc(100% - 10px), white); /* Transparent inner space */
-    mask: radial-gradient(farthest-side, transparent calc(100% - 10px), white);
-    z-index: -1; /* Behind other content */
 }
