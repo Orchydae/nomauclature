@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { createBrowserRouter, BrowserRouter, RouterProvider, Route, Routes } from 'react-router-dom'
+import { createBrowserRouter, BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ReactLenis from 'lenis/react'
 import App from './pages/index/App'
