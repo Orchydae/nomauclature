@@ -34,7 +34,7 @@
 
 .sunButton:hover {
     width: 200px;
-    transition-delay: 0.3s;
+    transition-delay: 0.1s;
 
     .text {
         visibility: visible;

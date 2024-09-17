@@ -4,7 +4,8 @@ import yuka from '../assets/yuka-avatar.png'
 
 export const members = [
     {
-        name: 'David',
+        firstName: 'David',
+        lastName: 'Nguyen',
         title: 'Artiste à temps perdu',
         color: '#C91212',
         socialMedias: [
@@ -16,7 +17,8 @@ export const members = [
         avatar: david
     },
     {
-        name: 'Paul',
+        firstName: 'Paul',
+        lastName: 'Nguyen',
         title: 'Étudiant en génie logiciel',
         color: '#3772FF',
         socialMedias: [
@@ -25,7 +27,8 @@ export const members = [
         avatar: paul
     },
     {
-        name: 'Yuka',
+        firstName: 'Yuka',
+        lastName: 'Suzuki',
         title: 'Designer graphique',
         color: '#B3AF8F',
         socialMedias: [

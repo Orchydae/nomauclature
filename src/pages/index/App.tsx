@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import VideoPlayer from "../../components/videoPlayer/VideoPlayer";
 import redPaintShooting from "../../assets/mart-production-blk-overlay.mp4";
 import Hero from './hero/Hero';
@@ -22,7 +23,16 @@ function App() {
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end'],
-  })
+  });
+
+  const renderMember = (member: any) => {
+    return (
+      <div className="member-ladder">
+        <div className="left-side">{member.firstName}</div>
+        <div className="right-side">{member.title}</div>
+      </div>
+    );
+  }
 
   return (
     <main className="main-container">
@@ -40,8 +50,8 @@ function App() {
       />
       <Hero />
       <AboutUs />
-      <Ladder title="Qui sommes-nous?" />
-      
+      <Ladder title="Qui sommes-nous? ✼" items={members} renderItem={renderMember} />
+
 
       <Footer />
 
