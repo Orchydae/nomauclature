@@ -1,11 +1,12 @@
 .footer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   background-color: #f1f1f1;
   padding: 20px;
   flex-wrap: wrap;
+  margin-top: 150px;
 }
 
 .footer-column {
@@ -16,6 +17,8 @@
 .footer-title {
   margin-bottom: 10px;
   font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .footer-list {
@@ -33,7 +36,7 @@
   font-size: 100px;
   margin-top: 100px;
   text-align: center;
-  font-family: var(--text-font)
+  font-family: var(--text-font);
 }
 
 .contact-us {
@@ -43,16 +46,24 @@
   font-size: 100px;
   margin-top: 20px;
   font-family: var(--text-font);
-  margin-bottom: 50px;
 }
 
 .links {
   text-decoration: none;
-  color: var(--tertiary-color); 
+  color: var(--tertiary-color);
   transition: color 0.3s ease;
 }
 
 .links:hover {
   color: var(--primary-color);
   cursor: pointer;
+}
+
+.footer-copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px; 
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 15px;
 }

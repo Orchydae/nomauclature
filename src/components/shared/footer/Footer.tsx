@@ -3,6 +3,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { Stack } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
@@ -39,15 +40,12 @@ function Footer() {
                     <LinkedInIcon style={{ color: "blue" }} />
                     <XIcon />
                     <InstagramIcon />
+                    <GitHubIcon />
                 </Stack>
             ]
         },
         {
-            title: "© Nomàuclature",
-            links: [new Date().getFullYear(), "Tous droits réservés"]
-        },
-        {
-            title: "Subscribe to our newsletter",
+            title: "Abonnez-vous à notre infolettre",
             links: (
                 <form>
                     <TextField
@@ -58,7 +56,7 @@ function Footer() {
                         margin="normal"
                     />
                     <Button variant="contained" color="primary" type="submit">
-                        Subscribe
+                        Abonnez-vous
                     </Button>
                 </form>
             )
@@ -94,6 +92,11 @@ function Footer() {
                         </ul>
                     </div>
                 ))}
+                {
+                    <div className="footer-copyright">
+                        © {new Date().getFullYear()} Nomàuclature. Tous droits réservés.
+                    </div>
+                }
             </footer>
         </>
     );

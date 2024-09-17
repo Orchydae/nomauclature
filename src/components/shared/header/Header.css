@@ -21,9 +21,12 @@ header .logo {
 }
 
 header button {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
   background-color: white;
   color: black;
-  
+  z-index: 3000;
   border-radius: 50%;
   border: none;
 
