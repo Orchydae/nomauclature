@@ -8,7 +8,9 @@
   --tertiary-color: #E0CA3C;
   --quaternary-color: #FCFCFF;
   --accent-color: #E0CA3C;
+
   --subtitle-color: rgb(63, 63, 63);
+  --title-color: black;
   --default-font-size: 1.5em;
   --dynamic-font-size: 2vw;
   --title-font-size: 3rem;
@@ -26,37 +28,11 @@ html, body {
   flex-direction: column;
   align-items: center;
 
+  overflow: visible;
   /* background: yellow; */
 }
 
 .text-carousel {
   margin-bottom: 10vh;
   align-self: center;
-}
-
-/* + AUTHOR SECTION + */
-.us-section {
-  width: 100%;
-  background-color: white;
-
-  border-radius: 15px;
-}
-
-.us-section .title {
-  padding: 0 5rem;
-
-}
-
-.author-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  background: yellow;
-  margin: 5vh 15vw;
-}
-
-.biography-section {
-  background: red;
 }

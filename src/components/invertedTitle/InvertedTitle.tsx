@@ -27,6 +27,7 @@ function InvertedTitle({ text, triggerElements }: InvertedTitleProps) {
                 const element = document.querySelector(triggerElement);
                 if (element) {
                     const elementRect = element.getBoundingClientRect();
+
                     if (rect.bottom > elementRect.top && rect.top < elementRect.bottom) {
                         isOverlapping = true;
                     }
@@ -41,7 +42,7 @@ function InvertedTitle({ text, triggerElements }: InvertedTitleProps) {
 
         // Clean up event listener on component unmount
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [titleIsInverted, triggerElements]);
+    }, [triggerElements]);
 
     return (
         <span className={`${styles.title} ${titleIsInverted ? styles.inverted : ''}`}>{text}</span>
