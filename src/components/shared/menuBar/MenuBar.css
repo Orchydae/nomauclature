@@ -13,8 +13,10 @@
 }
 
 .nav-bar {
+    background-color: var(--primary-color);
+    width: 100vw;
     display: flex;
     overflow: auto;
-    height: auto;
+    height: 100vh;
     font-size: 500%;
 }
