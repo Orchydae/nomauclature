@@ -20,7 +20,7 @@ function Ladder({ title, items, titleKey, descriptionKey, imageUrlKey }: LadderP
         <div className={styles.contentContainer}>
             <InvertedTitle
                 text={title}
-                triggerElements={[`.${styles.contentContainer}`, `html`]}
+                triggerElements={[`.${styles.contentContainer}`]}
             />
             <div className={styles.ladderContainer}>
                 {items.map((item, index) => (
