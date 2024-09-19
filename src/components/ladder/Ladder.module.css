@@ -12,6 +12,8 @@
     box-sizing: border-box;
     padding: 2rem 6rem;
 
+    z-index: 2;
+
     .ladderContainer {
         /* background-color: blue; */
         width: 100%;

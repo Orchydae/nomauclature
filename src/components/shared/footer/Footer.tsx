@@ -65,6 +65,9 @@ function Footer() {
 
     return (
         <>
+            <div className="rounded-div-container">
+                <div className="rounded-div"></div>
+            </div>
             <div className="footer-quote">
                 <p>Les couleurs que j'aperçois, les perçois-tu aussi?</p>
             </div>
