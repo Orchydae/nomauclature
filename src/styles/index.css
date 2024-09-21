@@ -2,12 +2,13 @@
 :root {
   --title-font: 'Sunmory Regular', serif;
   --title-outline-font: 'Sunmory Outline', serif;
-  --text-font: 'Lato', sans-serif;
+  --text-font: 'Poppings', sans-serif;
   --primary-color: #C91212;
   --secondary-color: #FFFCF9;
   --tertiary-color: #E0CA3C;
-  --quaternary-color: #FCFCFF;
+  --rich-black-color: #011627;
   --accent-color: #E0CA3C;
+
 
   --subtitle-color: rgb(63, 63, 63);
   --title-color: black;
@@ -35,4 +36,29 @@ html, body {
 .text-carousel {
   margin-bottom: 10vh;
   align-self: center;
+}
+
+.rounded-div-container {
+  background: var(--rich-black-color);
+  /* background: red; */
+  height: 300px;
+  width: 100%;
+
+  position: relative;
+  top: -100px;
+
+}
+
+.rounded-div {
+  background-color: var(--secondary-color);
+  /* background: yellow; */
+  height: 350px;
+  width: 100%;
+  border-radius: 0 0 50% 50%;
+
+  position: relative;
+  top: -20px;
+
+  box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.75);
+
 }

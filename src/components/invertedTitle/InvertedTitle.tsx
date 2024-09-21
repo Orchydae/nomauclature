@@ -54,7 +54,8 @@ function InvertedTitle({ text, triggerElements }: InvertedTitleProps) {
     }, [triggerElements]);
 
     return (
-        <span className={`${styles.title} ${titleIsInverted ? styles.inverted : ''}`}>{text}</span>
+        <span className={`${styles.title} ${styles.inverted}`}>{text}</span>
+        // <span className={`${styles.title} ${titleIsInverted ? styles.inverted : ''}`}>{text}</span>
 
     );
 }

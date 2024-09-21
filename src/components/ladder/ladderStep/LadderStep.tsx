@@ -16,7 +16,7 @@ function LadderStep({ title, description, imageUrl }: LadderStepProps) {
     const cursorRef = useRef<HTMLDivElement>(null);
     const [showCursor, setShowCursor] = useState(false);
     const cursorText = "VOIR-PLUS-VOIR-PLUS-";
-    const cursorRadius = 50;
+    const cursorRadius = 45;
 
     const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (ladderStepRef.current) {

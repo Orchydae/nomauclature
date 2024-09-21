@@ -50,8 +50,19 @@ function App() {
         imageUrlKey="avatar"
       />
 
+      <Parallax translateY={[0, 30]} style={{ width: '100%', height: '150%', zIndex: 1 }}>
+        <div className="rounded-div-container">
+          <Parallax translateY={[30, -35]} style={{ width: '100%', height: '150%' }}>
+            <div className="rounded-div">
 
-      <Footer />
+            </div>
+          </Parallax>
+        </div>
+      </Parallax>
+
+      <Parallax translateY={[-50,50]} style={{width: '100%'}} >
+        <Footer />
+      </Parallax>
 
     </main>
   )

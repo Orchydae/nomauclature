@@ -1,4 +1,4 @@
-import './Footer.css';
+import styles from './Footer.module.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
@@ -9,8 +9,24 @@ import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-function Footer() {
+import SunButton from '../../buttons/sunButton/SunButton';
+import { useEffect, useState } from 'react';
 
+function Footer() {
+    const formatUTCTime = () => {
+        const date = new Date();
+        let hours = date.getUTCHours();
+        const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+        const amOrPm = hours >= 12 ? "P.M." : "A.M.";
+
+        hours = hours % 12 || 12;
+
+        return `${hours}:${minutes} ${amOrPm} EDT+4`;
+    }
+
+    const [time, setTime] = useState(formatUTCTime());
+    
+    
     const handleClick = () => {
         window.location.href = "mailto:info@nomauclature.com";
     };
@@ -63,44 +79,57 @@ function Footer() {
         }
     ];
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setTime(formatUTCTime());
+        }, 60000); // Update the time every minute
+
+        return () => clearInterval(intervalId); // This represents the unmount function, in which you need to clear the interval to prevent memory leaks
+    }, []);
+
     return (
         <>
-            <div className="rounded-div-container">
-                <div className="rounded-div"></div>
-            </div>
-            <div className="footer-quote">
-                <p>Les couleurs que j'aperçois, les perçois-tu aussi?</p>
-            </div>
 
-            <div className="contact-us">
-                <Button variant="contained" onClick={handleClick}>
-                    Contactez-nous
-                </Button>
-            </div>
+            <footer className={styles.footerContainer}>
+                <div className={styles.getInTouchContainer}>
+                    <div className={styles.quoteContainer}>
+                        <p className={styles.quote}>Les couleurs que j'aperçois,</p>
+                        <p className={styles.quote}>les perçois-tu aussi?</p>
+                    </div>
+                    <div className={styles.buttonContainer}>
+                        <SunButton text={"Contacter"} className={"footer-sun-btn"} />
+                    </div>
+                    <div className={styles.contactContainer}>
+                        <button className={styles.contactButton} onClick={handleClick}>
+                            info@nomauclature.com
+                        </button>
+                    </div>
+                </div>
 
-            <footer className="footer">
-                {footerItems.map((section, index) => (
-                    <div key={index} className="footer-column">
-                        <h4 className="footer-title">{section.title}</h4>
-                        <ul className="footer-list">
-                            {Array.isArray(section.links) ? (
-                                section.links.map((link, linkIndex) => (
-                                    <li key={linkIndex} className="footer-list-item">
-                                        {typeof link === "string" || typeof link === "number" ? link.toString() : link}
-                                    </li>
-                                ))
-                            ) : (
-                                <li className="footer-list-item">{section.links}</li>
-                            )}
-                        </ul>
+                <div className={styles.linksContainer}>
+                    <div className={styles.leftSide}>
+                        <div className={styles.versionContainer}>
+                            <p className={styles.bottomTitle}>TOUT DROIT RÉSERVÉ</p>
+                            <p className={styles.versionNumber}>© {new Date().getFullYear()} Nomàuclature</p>
+                        </div>
+                        <div className={styles.timeContainer}>
+                            <p className={styles.bottomTitle}>TEMPS LOCAL</p>
+                            <p className={styles.time}>{formatUTCTime()}</p>
+                        </div>
                     </div>
-                ))}
-                {
-                    <div className="footer-copyright">
-                        © {new Date().getFullYear()} Nomàuclature. Tous droits réservés.
+                    <div className={styles.rightSide}>
+                        <div className={styles.socialsContainer}>
+                            <p className={styles.bottomTitle}>SUIVEZ-NOUS</p>
+                            <div className={styles.socials}>
+                                <FacebookIcon />
+                                <LinkedInIcon />
+                                <InstagramIcon />
+                            </div>
+                        </div>
                     </div>
-                }
+                </div>
             </footer>
+
         </>
     );
 }
