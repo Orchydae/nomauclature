@@ -7,6 +7,11 @@
     top: 4px;
 
     z-index: 10;
+
+    .icon {
+        margin-left: 15px;
+        display: inline-block;
+    }
 }
 
 .title.inverted {

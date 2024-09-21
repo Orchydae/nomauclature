@@ -7,8 +7,8 @@ function AboutUs() {
     return (
         <section className="about-section">
             <InvertedTitle
-                text='Que faisons-nous? ✦'
-                triggerElements={['.about-section .resume', '.about-section button']}
+                text='Que faisons-nous?'
+                icon='✦'
             />
             <div className="container">
                 <div className="left-side">

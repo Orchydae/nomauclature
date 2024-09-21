@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import VideoPlayer from "../../components/videoPlayer/VideoPlayer";
-import redPaintShooting from "../../assets/mart-production-blk-overlay.mp4";
+
 import Hero from './hero/Hero';
 import Footer from '../../components/shared/footer/Footer';
 import AboutUs from "./aboutUs/AboutUs";
@@ -14,7 +13,6 @@ import { Environment, OrbitControls } from '@react-three/drei';
 import GlassCrane from '../../../public/Glass-crane';
 
 import { members } from '../../data/members';
-
 
 const Scene = React.lazy(() => import('../../components/scene/Scene'));
 
@@ -32,18 +30,12 @@ function App() {
         <Scene />
       </Suspense> */}
 
-      <VideoPlayer
-        className="hero-video"
-        src={redPaintShooting}
-        controls={false}
-        autoPlay={true}
-        loop={true}
-        muted={true}
-      />
+    
       <Hero />
       <AboutUs />
       <Ladder
-        title="Qui sommes-nous? ✼"
+        title="Qui sommes-nous?"
+        icon="✼"
         items={members}
         titleKey="firstName"
         descriptionKey="title"
@@ -60,7 +52,7 @@ function App() {
         </div>
       </Parallax>
 
-      <Parallax translateY={[-50,50]} style={{width: '100%'}} >
+      <Parallax translateY={[-50, 50]} style={{ width: '100%' }} >
         <Footer />
       </Parallax>
 

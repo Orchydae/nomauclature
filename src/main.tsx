@@ -12,6 +12,7 @@ import './styles/customFonts.css'
 import ErrorPage from './pages/ErrorPage'
 import Contact from './pages/Contact'
 import Layout from './components/shared/layout/Layout'
+import LoadingScreen from './components/loading/LoadingScreen'
 
 const router = createBrowserRouter([
   {
@@ -47,19 +48,30 @@ const router = createBrowserRouter([
   // Add more routes here if needed
 ]);
 
+const Root = () => {
+  const [loading, setLoading] = React.useState(true);
+
+  return (
+    <>
+      {loading && <LoadingScreen />}
+      <BrowserRouter>
+        <ReactLenis root>
+          <ParallaxProvider>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Layout>
+          </ParallaxProvider>
+        </ReactLenis>
+      </BrowserRouter>
+    </>
+  )
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ReactLenis root>
-        <ParallaxProvider>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<App />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </Layout>
-        </ParallaxProvider>
-      </ReactLenis>
-    </BrowserRouter>
-  </React.StrictMode>,
-)
+    <Root />
+  </React.StrictMode>
+);

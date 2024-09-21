@@ -1,62 +1,43 @@
 import styles from './InvertedTitle.module.css';
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface InvertedTitleProps {
     text: string;
-    triggerElements: string[];
+    icon: string;
+
 }
 
-function InvertedTitle({ text, triggerElements }: InvertedTitleProps) {
-    const [titleIsInverted, setTitleIsInverted] = useState(false);
+function InvertedTitle({ text, icon}: InvertedTitleProps) {
+    const iconRef = useRef<HTMLSpanElement | null>(null);
 
     useEffect(() => {
-        // Cache elements outside of the scroll handler
-        const titleElement = document.querySelector(`.${styles.title}`);
+        const iconElement = iconRef.current;
+        const rotationAnimation = gsap.to(iconElement, {
+            rotation: 360,
+            scrollTrigger: {
+                trigger: iconElement,
+                start: 'top center',
+                end: '+=2000',
+                scrub: true,
+                onRefresh: () => gsap.set(iconElement, { rotation: 0 })
+            }
+        });
 
-        const isOverlapping = (rect1: DOMRect, rect2: DOMRect) => {
-            const overlapThreshold = 5;
-            return (
-                rect1.bottom > rect2.top - overlapThreshold &&
-                rect1.top < rect2.bottom + overlapThreshold
-            );
-        };
-
-        const handleScroll = () => {
-
-            // Get the bounding rectangles
-            if (!titleElement) return;
-
-            const rect = titleElement.getBoundingClientRect();
-            // console.log("title element: ", rect);
-            let hasOverlap = false;
-
-            // Check if the title overlaps with the trigger elements
-            triggerElements.forEach((triggerElement) => {
-                const element = document.querySelector(triggerElement);
-                if (element) {
-                    const triggerRect = element.getBoundingClientRect();
-
-                    if (isOverlapping(rect, triggerRect)) {
-                        hasOverlap = true;
-                    }
-                }
-            });
-
-            setTitleIsInverted(hasOverlap);
-        };
-
-        // Add scroll event listener
-        window.addEventListener('scroll', handleScroll);
-
-        // Clean up event listener on component unmount
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [triggerElements]);
+        return () => {
+            rotationAnimation.kill();
+        }
+    }, []);
 
     return (
-        <span className={`${styles.title} ${styles.inverted}`}>{text}</span>
-        // <span className={`${styles.title} ${titleIsInverted ? styles.inverted : ''}`}>{text}</span>
-
+        <div className={`${styles.title} ${styles.inverted}`}>
+            <span>{text}</span>
+            <span ref={iconRef} className={styles.icon}>{icon}</span>
+        </div>
     );
 }
 

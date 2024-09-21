@@ -9,18 +9,19 @@ interface Item {
 
 interface LadderProps {
     title: string;
+    icon: string;
     items: Item[]; // Generic type for the items
     titleKey: string;
     descriptionKey: string;
     imageUrlKey: string;
 }
 
-function Ladder({ title, items, titleKey, descriptionKey, imageUrlKey }: LadderProps) {
+function Ladder({ title, icon, items, titleKey, descriptionKey, imageUrlKey }: LadderProps) {
     return (
         <div className={styles.contentContainer}>
             <InvertedTitle
                 text={title}
-                triggerElements={[`.${styles.contentContainer}`]}
+                icon={icon}
             />
             <div className={styles.ladderContainer}>
                 {items.map((item, index) => (

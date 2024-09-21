@@ -4,7 +4,7 @@
 
 import Header from "../header/Header";
 
-function Layout({children}: {children: React.ReactNode}) {
+function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <Header />
