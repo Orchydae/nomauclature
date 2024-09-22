@@ -24,6 +24,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
     "react-scroll-parallax": "^3.4.5",
+    "split-type": "^0.3.4",
     "splitting": "^1.1.0",
     "three": "^0.168.0"
   },

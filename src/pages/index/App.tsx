@@ -5,32 +5,15 @@ import Footer from '../../components/shared/footer/Footer';
 import AboutUs from "./aboutUs/AboutUs";
 import Ladder from "../../components/ladder/Ladder";
 
-import React, { useRef, Suspense } from 'react';
 import { Parallax } from 'react-scroll-parallax';
-import { useScroll } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls } from '@react-three/drei';
-import GlassCrane from '../../../public/Glass-crane';
-
 import { members } from '../../data/members';
 
-const Scene = React.lazy(() => import('../../components/scene/Scene'));
 
 function App() {
 
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end'],
-  });
-
   return (
     <main className="main-container">
-      {/* <Suspense fallback={null}>
-        <Scene />
-      </Suspense> */}
-
-    
+     
       <Hero />
       <AboutUs />
       <Ladder

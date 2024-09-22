@@ -26,11 +26,16 @@
     align-items: flex-end;
     gap: 2rem;
     flex: 2;
+
+    position: relative;
   }
   
   .about-section .left-side .resume {
     text-align: end;
     font-size: 1.8rem;
+    display: inline-block;
+
+    overflow: hidden;
   }
   
   .about-section .right-side {
@@ -44,3 +49,13 @@
     color: darkslategray;
     font-size: 1.2rem;
   }
+
+  .about-section .line-wrapper {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .about-section .line {
+    transform: translateY(115px);
+    transition: transform 0.5s;
+  }
+
