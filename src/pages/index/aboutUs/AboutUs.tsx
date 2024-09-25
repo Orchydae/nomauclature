@@ -28,25 +28,41 @@ function AboutUs() {
             });
 
             gsap.to(leftSplit.lines, {
-                    y: 0,
-                    duration: 0.1,
-                    stagger: 0.1,
-                    delay: 1.5,
-                    ease: 'power4.out',
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: 'top 90%',
-                        toggleActions: 'play none none reverse',
-                        markers: true,
-                    }
-                });
-            }
+                y: 0,
+                duration: 0.1,
+                stagger: 0.1,
+                delay: 1,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 70%',
+                    toggleActions: 'play none none reverse',
+                    // markers: true,
+                }
+            });
+        }
 
+        if (rightSideRef.current) {
+
+            gsap.fromTo(rightSideRef.current, {opacity: 0, y: 20}, {
+                y: 0,
+                opacity: 1,
+                delay: 1.5,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 70%',
+                    toggleActions: 'play none none reverse',
+                    // markers: true,
+                }
+            });
+        }
 
         // Clean up
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
+
     }, []);
 
     return (
@@ -61,8 +77,8 @@ function AboutUs() {
                     </span>
                     <SunButton text="Connaître" />
                 </div>
-                <div className="right-side" ref={rightSideRef}>
-                    <span className="description" style={{ textIndent: '3em' }}>
+                <div className="right-side">
+                    <span className="description" style={{ textIndent: '3em' }} ref={rightSideRef}>
                         Notre démarche, empreinte de simplicité et d'efficacité,
                         place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté (<i><b>éclatante</b></i>) et un impact (<i><b>inoubliable</b></i>).
                     </span>

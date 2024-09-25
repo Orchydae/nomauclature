@@ -48,6 +48,7 @@
   .about-section .right-side .description {
     color: darkslategray;
     font-size: 1.2rem;
+    transition: opacity 0.5s;
   }
 
   .about-section .line-wrapper {

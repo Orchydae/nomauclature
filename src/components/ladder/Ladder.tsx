@@ -2,6 +2,10 @@
 import InvertedTitle from '../invertedTitle/InvertedTitle';
 import styles from './Ladder.module.css';
 import LadderStep from './ladderStep/LadderStep';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger)
 
 interface Item {
     [key: string]: any;
@@ -17,6 +21,7 @@ interface LadderProps {
 }
 
 function Ladder({ title, icon, items, titleKey, descriptionKey, imageUrlKey }: LadderProps) {
+
     return (
         <div className={styles.contentContainer}>
             <InvertedTitle

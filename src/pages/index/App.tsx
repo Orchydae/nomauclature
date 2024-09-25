@@ -7,6 +7,7 @@ import Ladder from "../../components/ladder/Ladder";
 
 import { Parallax } from 'react-scroll-parallax';
 import { members } from '../../data/members';
+import Marquee from '../../components/marquee/Marquee';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         descriptionKey="title"
         imageUrlKey="avatar"
       />
+      <Marquee text="NomàuCLATurE"/>
 
       <Parallax translateY={[0, 30]} style={{ width: '100%', height: '150%', zIndex: 1 }}>
         <div className="rounded-div-container">

@@ -1,8 +1,11 @@
-
-import CirclingTextCursor from '../../customCursor/circlingTextCursor/CirclingTextCursor';
 import styles from './LadderStep.module.css';
 
-import { useRef, useState } from 'react';
+import CirclingTextCursor from '../../customCursor/circlingTextCursor/CirclingTextCursor';
+import { useRef, useState, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface LadderStepProps {
     title: string;
@@ -10,13 +13,36 @@ interface LadderStepProps {
     imageUrl?: string;
 }
 
-function LadderStep({ title, description, imageUrl }: LadderStepProps) {
+function LadderStep({ title, description, imageUrl}: LadderStepProps) {
     const imageRef = useRef<HTMLImageElement>(null);
     const ladderStepRef = useRef<HTMLDivElement>(null);
     const cursorRef = useRef<HTMLDivElement>(null);
     const [showCursor, setShowCursor] = useState(false);
     const cursorText = "VOIR-PLUS-VOIR-PLUS-";
     const cursorRadius = 45;
+
+    useEffect(() => {
+        if (ladderStepRef.current) {
+            gsap.fromTo(ladderStepRef.current, 
+                { 
+                    y: 100,  // Starting below the normal position
+                    opacity: 0  // Starting completely invisible
+                }, 
+                { 
+                    y: 0,  // End at normal position
+                    opacity: 1,  // End at full visibility
+                    duration: 1,
+                    delay: 1,
+                    ease: 'power4.out',
+                    scrollTrigger: {
+                        trigger: ladderStepRef.current,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse',
+                        // markers: true,  // For debugging purposes, you can remove this later
+                    },
+                });
+        }
+    }, []);
 
     const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (ladderStepRef.current) {

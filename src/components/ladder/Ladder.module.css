@@ -12,6 +12,8 @@
     box-sizing: border-box;
     padding: 2rem 6rem;
 
+    transition: background-color 0.5s ease;
+
     z-index: 2;
 
     .ladderContainer {
