@@ -32,7 +32,7 @@ function LadderStep({ title, description, imageUrl}: LadderStepProps) {
                     y: 0,  // End at normal position
                     opacity: 1,  // End at full visibility
                     duration: 1,
-                    delay: 1,
+                    delay: 0.5,
                     ease: 'power4.out',
                     scrollTrigger: {
                         trigger: ladderStepRef.current,
