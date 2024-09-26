@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import {useGSAP} from '@gsap/react';
 import {horizontalLoop} from '../../helpers/horizontalLoop';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Marquee.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface MarqueeProps {
     text: string;
@@ -11,18 +13,44 @@ interface MarqueeProps {
 
 const Marquee: React.FC<MarqueeProps> = ({ text, iconPath }) => {
     const marqueeContainerRef = useRef<HTMLDivElement>(null);
-    let currentScroll = 0;
-    let isScrollingDown = true;
+    const currentScroll = useRef(0);
+    const loopRef = useRef<gsap.core.Timeline | null>(null);
 
-    useGSAP(() => {
+    useEffect(() => {
+
         const marquees = gsap.utils.toArray('.marquee');
         const loop = horizontalLoop(marquees, {
             repeat: -1,
             speed: 0.5,
         });
-    }, {
-        scope: marqueeContainerRef,
-    });
+
+        loopRef.current = loop;
+
+        // ScrollTrigger to detect scroll direction
+        const scrollTriggerInstance = ScrollTrigger.create({
+            trigger: marqueeContainerRef.current,
+            start: "top bottom",
+            onUpdate: (self) => {
+                const scrollY = self.scroll(); // Get the current scroll value
+
+                // If scrolling up, reverse the loop
+                if (scrollY < currentScroll.current) {
+                    loop.reverse(); // Reverse the animation
+                } else {
+                    loop.play(); // Normal direction
+                }
+
+                currentScroll.current = scrollY; // Update current scroll value
+            }
+        });
+
+        return () => {
+            // Clean up
+            scrollTriggerInstance.kill();
+            loop.kill();
+        };
+
+    }, []);
 
     return (
         <section className="marquee-container" ref={marqueeContainerRef}>
