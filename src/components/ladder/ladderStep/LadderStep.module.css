@@ -1,0 +1,78 @@
+.ladderStep {
+    border-bottom: 1px solid gray;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0;
+    padding: 5em;
+
+    position: relative;
+
+    cursor: pointer;
+
+    .cursorContainer {
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+    }
+    .title {
+        font-size: calc(var(--dynamic-font-size) + 2em);
+        font-weight: 500;
+        color: var(--title-color);
+
+        flex: 3;
+
+        margin-left: calc(var(--dynamic-font-size) + 1em);
+        transition: 0.5s ease;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        color: var(--subtitle-color);
+        /* background: yellow; */
+        flex: 1;
+
+        min-width: 250px;
+        transition: 0.5s ease;
+    }
+
+    .hoverImage {
+        position: absolute;
+        width: 350px;
+        height: auto;
+        transform: scale(0.3);
+
+        /* background: yellow; */
+        border-radius: 50%;
+
+        opacity: 0;
+        pointer-events: none;
+        
+        transition: opacity 0.3s ease, border-radius 0.5s ease, transform 0.5s ease;
+    }
+
+    &:hover {
+        .hoverImage {
+            transform: scale(1);
+            opacity: 1;
+            border-radius: 15px;
+            pointer-events: all;
+        }
+
+        .title,
+        .description {
+            opacity: 0.5;
+        }
+
+        .title {
+            transform: translateX(-0.5em);
+        }
+
+        .description {
+            transform: translateX(0.5em);
+        }
+
+    }
+}

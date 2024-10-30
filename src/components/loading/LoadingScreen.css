@@ -1,0 +1,31 @@
+.loading-screen-container {
+    background: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--title-font);
+    color: var(--primary-color);
+
+    z-index: 9999;
+}
+
+.hero-title-container {
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 45vh;
+}
+
+.hero-title {
+    display: inline-block;
+    font-size: 9vw;
+    transform: scaley(2.2);
+    font-family: var(--title-font);
+    font-weight: 600;
+}

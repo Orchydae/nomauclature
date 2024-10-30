@@ -1,7 +1,29 @@
 .hero-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+
 }
+
+.hero-video-container {
+    position: relative; 
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .hero-video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
 
 .hero-video {
     width: 100%;
@@ -14,43 +36,31 @@
 }
 
 .hero-container {
-    /* width: 95vw; */
-    padding-top: 25rem;
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
+    color: var(--secondary-color);
 }
 
-.hero-description {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0.5vw;
-    font-size: var(--default-font-size);
+.hero-container span.based-in,
+.hero-container span.copyright {
+    font-family: var(--text-font);
     font-weight: 500;
+    z-index: 1;
 }
 
-.hero-title {
-    text-align: center;
-    font-size: 11vw;
-    font-weight: 700;
+.hero-container .hero-title {
+    font-size: 12vw;
+    transform: scaley(2.2);
+    position: relative;
+
+    overflow: hidden;
 }
 
-.hero-description,
-.hero-title {
-    margin: 0;
-    line-height: 0.5;
-}
-
-.hero-title span {
+.hero-title .title {
     font-family: var(--title-font);
     font-weight: 600;
-}
 
-.hero-scroll-down {
-    margin-top: 5em;
-    text-align: center;
-}
-
-.description-container .description-approach p {
-    font-size: var(--default-font-size);
+    background: linear-gradient(to bottom, white 40%, var(--primary-color));
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
 }

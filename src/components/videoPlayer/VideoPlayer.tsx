@@ -1,5 +1,3 @@
-import "./VideoPlayer.css";
-
 interface VideoPlayerProps {
     className?: string;
     src: string;
