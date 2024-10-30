@@ -8,25 +8,20 @@ import { Stack } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-
 import SunButton from '../../buttons/sunButton/SunButton';
 import { useEffect, useState } from 'react';
 
 function Footer() {
-    const formatUTCTime = () => {
+    const formatLocalTime = () => {
         const date = new Date();
-        let hours = date.getUTCHours();
-        const minutes = date.getUTCMinutes().toString().padStart(2, "0");
-        const amOrPm = hours >= 12 ? "P.M." : "A.M.";
-
-        hours = hours % 12 || 12;
-
-        return `${hours}:${minutes} ${amOrPm} EDT+4`;
+        let hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+        const amOrPm = hours >= 12 ? "PM" : "AM";
+        return `${hours}:${minutes} ${amOrPm}`;
     }
 
-    const [time, setTime] = useState(formatUTCTime());
-    
-    
+    const [time, setTime] = useState(formatLocalTime());
+
     const handleClick = () => {
         window.location.href = "mailto:info@nomauclature.com";
     };
@@ -50,7 +45,7 @@ function Footer() {
         },
         {
             title: "Réseaux sociaux",
-            links: [
+            links: (
                 <Stack direction="row" spacing={2}>
                     <FacebookIcon style={{ color: "blue" }} />
                     <LinkedInIcon style={{ color: "blue" }} />
@@ -58,7 +53,7 @@ function Footer() {
                     <InstagramIcon />
                     <GitHubIcon />
                 </Stack>
-            ]
+            )
         },
         {
             title: "Abonnez-vous à notre infolettre",
@@ -81,15 +76,14 @@ function Footer() {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setTime(formatUTCTime());
+            setTime(formatLocalTime());
         }, 60000); // Update the time every minute
 
-        return () => clearInterval(intervalId); // This represents the unmount function, in which you need to clear the interval to prevent memory leaks
+        return () => clearInterval(intervalId); // Clear interval on component unmount
     }, []);
 
     return (
         <>
-
             <footer className={styles.footerContainer}>
                 <div className={styles.getInTouchContainer}>
                     <div className={styles.quoteContainer}>
@@ -109,12 +103,12 @@ function Footer() {
                 <div className={styles.linksContainer}>
                     <div className={styles.leftSide}>
                         <div className={styles.versionContainer}>
-                            <p className={styles.bottomTitle}>TOUT DROIT RÉSERVÉ</p>
+                            <p className={styles.bottomTitle}>TOUS DROITS RÉSERVÉS</p>
                             <p className={styles.versionNumber}>© {new Date().getFullYear()} Nomàuclature</p>
                         </div>
                         <div className={styles.timeContainer}>
                             <p className={styles.bottomTitle}>TEMPS LOCAL</p>
-                            <p className={styles.time}>{formatUTCTime()}</p>
+                            <p className={styles.time}>{time}</p>
                         </div>
                     </div>
                     <div className={styles.rightSide}>
@@ -129,7 +123,6 @@ function Footer() {
                     </div>
                 </div>
             </footer>
-
         </>
     );
 }
