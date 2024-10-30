@@ -1,9 +1,10 @@
 .menuContainer {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -50%;
+    left: 50%;
 
-    box-sizing: border-box;    ;
+    box-sizing: border-box;
+    border-radius: 50%;
     background-color: var(--rich-black-color);
     width: 100vw;
     height: 100vh;
@@ -12,6 +13,8 @@
     overflow: auto;
 
     display: flex;
+
+    transition: top 0.5s ease-in-out, left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 
     .leftSide,
     .rightSide {
@@ -57,4 +60,9 @@
             transform: translateX(0.3em) scaleY(1.2);
         }
     }
+}
+
+.visible {
+    border-radius: 0;
+
 }
