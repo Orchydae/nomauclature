@@ -1,24 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-import Hero from './pages/index/components/hero/Hero';
-import Footer from './components/shared/footer/Footer';
-import AboutUs from "./pages/index/components/aboutUs/AboutUs";
-import Ladder from "./components/ladder/Ladder";
-
-import { Parallax } from 'react-scroll-parallax';
-import { members } from './data/members';
-import Marquee from './components/marquee/Marquee';
-import Index from './pages/index/Index';
-import Header from './layouts/header/Header';
-
+import Index from './pages/index/App';
 
 function App() {
 
   return (
     <>
-      <Header />
       <Index />
-      <Footer />
     </>
 
     // <main className="main-container">

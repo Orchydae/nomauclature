@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './layouts/rootLayout/RootLayout';
 import ErrorPage from './pages/ErrorPage';
 import Contact from './pages/Contact';
-import App from './App';
+import App from './pages/index/App';
 
 const Root = () => {
     const [loading, setLoading] = useState(true);
