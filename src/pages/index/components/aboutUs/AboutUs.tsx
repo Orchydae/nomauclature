@@ -5,8 +5,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 
-import SunButton from '../../../components/buttons/sunButton/SunButton';
-import InvertedTitle from '../../../components/invertedTitle/InvertedTitle';
+import SunButton from '../../../../components/buttons/sunButton/SunButton';
+import InvertedTitle from '../../../../components/invertedTitle/InvertedTitle';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -8,7 +8,7 @@ import {
   Grid
 } from '@mui/material';
 
-export const FormComponent: React.FC = () => {
+function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -166,4 +166,4 @@ export const FormComponent: React.FC = () => {
   );
 };
 
-export default FormComponent;
+export default Contact;

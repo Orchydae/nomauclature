@@ -1,9 +1,9 @@
 
 import "./Hero.css";
-import VideoPlayer from "../../../components/videoPlayer/VideoPlayer";
+import VideoPlayer from "../../../../components/videoPlayer/VideoPlayer";
 import redPaintShooting from "../../../assets/mart-production-blk-overlay.mp4";
 
-import TextCarousel from "../../../components/textCarousel/TextCarousel";
+import TextCarousel from "../../../../components/textCarousel/TextCarousel";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
