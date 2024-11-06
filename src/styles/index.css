@@ -12,7 +12,7 @@
   --title-color: black;
   --default-font-size: 1.5em;
   --dynamic-font-size: 2vw;
-  --title-font-size: 4em;
+  --title-font-size: 128px;
 }
 
 html, body {

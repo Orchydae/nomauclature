@@ -10,6 +10,8 @@
 
     .leftSide {
         /* background: yellow; */
+        position: relative;
+        top: 5em;
 
         .copyright {
             width: fit-content;
@@ -21,8 +23,17 @@
         .heroTitle {
             font-family: var(--serif-font);
             font-weight: bold;
-            font-size: var(--title-font-size);
+            font-size: clamp(1.5em, calc(1.5em + 6vw), 10vw);
             line-height: 1;
+            text-wrap: nowrap;
+        }
+
+        .yarndings {
+            font-family: 'Yarndings 12';
+            font-size: clamp(0.7em, calc(1.5em + 4vw), 6vw);
+            position: relative;
+            top: -0.7em;
+            left: -0.4em;
         }
 
         .location {

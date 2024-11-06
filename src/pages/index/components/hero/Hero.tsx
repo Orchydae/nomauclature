@@ -60,7 +60,7 @@ function Hero() {
             <div className={styles.leftSide}>
                 <div className={styles.copyright}>&#169; 2021</div>
                 <div className={styles.heroTitle}>
-                    nomàuclature
+                    nomàuclature <span className={styles.yarndings}>j</span>
                 </div>
                 <div className={styles.location}>45°30′32″N 73°33′15″W</div>
             </div>
