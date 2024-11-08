@@ -1,66 +1,44 @@
 
 import styles from '../../styles/hero.module.css'
 
-import TextCarousel from "../../../../components/textCarousel/TextCarousel";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function Hero() {
-    // const heroTitleRef = useRef(null);
-    // const copyrightRef = useRef(null);
-    // const locationRef = useRef(null);
-    // const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
+    const yarndingsRef = useRef(null);
 
-    // useEffect(() => {
-    //     const heroTitleElement = heroTitleRef.current;
-    //     const copyrightElement = copyrightRef.current;
+    useEffect(() => {
+        console.log(yarndingsRef.current);
+        gsap.registerPlugin(ScrollTrigger);
 
-    //     gsap.set(heroTitleElement, { y: -500 });
-    //     gsap.set(copyrightElement, { opacity: 0 });
-    //     gsap.set(locationRef.current, { opacity: 0 });
-    //     const timeout = setTimeout(() => {
-    //         gsap.to(locationRef.current, { opacity: 1, duration: 1.5, ease: 'power4.out' });
-    //         gsap.to(copyrightElement, { opacity: 1, duration: 1.5, ease: 'power4.out' });
-    //         gsap.to(heroTitleElement, { y: 0, duration: 1.5, ease: 'power4.out' });
-    //     }, 3000);
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-    //     return () => {
-    //         clearTimeout(timeout);
-    //     }
+        gsap.to(yarndingsRef.current, {
+            rotation: 360 * 2, // 2 full rotations
+            ease: 'none',
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1,
+                markers: false, // Set to true for debugging
+            }
+        });
 
-    // }, []);
-
-    // return (
-    //     <div className="hero-section">
-    //         {/* <TextCarousel /> */}
-    //         <div className="hero-video-container">
-    //             <VideoPlayer
-    //                 className="hero-video"
-    //                 src={redPaintShooting}
-    //                 controls={false}
-    //                 autoPlay={true}
-    //                 loop={true}
-    //                 muted={true}
-    //             />
-    //         </div>
-    //         <div className="hero-container">
-    //             <span ref={copyrightRef} className="copyright">(&#169; {currentYear})</span>
-    //             <span ref={locationRef} className="based-in">45°30′32″N 73°33′15″W</span>
-    //             <div className="hero-title">
-    //                 <div ref={heroTitleRef} className="title">NomàuCLATurE</div>
-    //             </div>
-    //         </div>
-    //         {/* <div className="circle"></div> */}
-    //     </div>
-
-    // )
+        // Cleanup
+        return () => {
+            ScrollTrigger.getAll().forEach(t => t.kill());
+        };
+    }, []);
 
     return (
         <div className={styles.heroContainer}>
             <div className={styles.leftSide}>
-                <div className={styles.copyright}>&#169; 2021</div>
+                <div className={styles.copyright}>&#169; {currentYear}</div>
                 <div className={styles.heroTitle}>
-                    nomàuclature <span className={styles.yarndings}>j</span>
+                    nomàuclature <span ref={yarndingsRef} className={styles.yarndings}>j</span>
                 </div>
                 <div className={styles.location}>45°30′32″N 73°33′15″W</div>
             </div>

@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 0 3em;
     box-sizing: border-box;
     /* background: white; */
@@ -29,6 +29,7 @@
         }
 
         .yarndings {
+            display: inline-block;
             font-family: 'Yarndings 12';
             font-size: clamp(0.7em, calc(1.5em + 4vw), 6vw);
             position: relative;
@@ -45,76 +46,11 @@
     }
 
     .rightSide {
+        flex: 1;
         background: var(--secondary-color);
         width: 250px;
-        height: 350px;
-        border-radius: 150px 150px 0 0;
+        height: 50vw;
+        max-height: 600px;
+        border-radius: calc(50vw / 2) calc(50vw / 2) 0 0;
     }
-}
-
-.hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    width: 100%;
-    height: 100vh;
-
-}
-
-.hero-video-container {
-    position: relative; 
-    display: inline-block;
-    width: 100%;
-    height: 100vh;
-  }
-  
-  .hero-video-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 110vh;
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-.hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    color: var(--secondary-color);
-}
-
-.hero-container span.based-in,
-.hero-container span.copyright {
-    font-family: var(--text-font);
-    font-weight: 500;
-    z-index: 1;
-}
-
-.hero-container .hero-title {
-    font-size: 12vw;
-    transform: scaley(2.2);
-    position: relative;
-
-    overflow: hidden;
-}
-
-.hero-title .title {
-    font-family: var(--title-font);
-    font-weight: 600;
-
-    background: linear-gradient(to bottom, white 40%, var(--primary-color));
-    -webkit-background-clip: text; /* Clips the gradient to the text */
-    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
 }

@@ -1,4 +1,4 @@
-import './AboutUs.css';
+import styles from '../../styles/about-us.module.css';
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -7,6 +7,7 @@ import SplitType from 'split-type';
 
 import SunButton from '../../../../components/buttons/sunButton/SunButton';
 import InvertedTitle from '../../../../components/invertedTitle/InvertedTitle';
+import MagneticDirectionButton from '../../../../components/buttons/magneticDirection/MagneticDirectionButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +45,7 @@ function AboutUs() {
 
         if (rightSideRef.current) {
 
-            gsap.fromTo(rightSideRef.current, {opacity: 0, y: 20}, {
+            gsap.fromTo(rightSideRef.current, { opacity: 0, y: 20 }, {
                 y: 0,
                 opacity: 1,
                 delay: 1.5,
@@ -65,27 +66,51 @@ function AboutUs() {
 
     }, []);
 
+    // return (
+    //     <section className="about-section" ref={sectionRef}>
+    //         <InvertedTitle text='Que faisons-nous?' icon='✦' />
+    //         <div className="container">
+    //             <div className="left-side">
+    //                 <span className="resume" ref={leftSideRef}>
+    //                     À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
+    //                     des voyages immersifs où chaque détail émerveille. Notre but: donner (<span style={{ fontFamily: 'var(--title-font)' }}>vie</span>)
+    //                     à des aspirations éveillées de (<span style={{ fontFamily: 'var(--title-font)' }}>sens</span>).
+    //                 </span>
+    //                 <SunButton text="Connaître" />
+    //             </div>
+    //             <div className="right-side">
+    //                 <span className="description" style={{ textIndent: '3em' }} ref={rightSideRef}>
+    //                     Notre démarche, empreinte de simplicité et d'efficacité,
+    //                     place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté (<i><b>éclatante</b></i>) et un impact (<i><b>inoubliable</b></i>).
+    //                 </span>
+    //             </div>
+    //         </div>
+    //     </section>
+    // );
+
     return (
-        <section className="about-section" ref={sectionRef}>
-            <InvertedTitle text='Que faisons-nous?' icon='✦' />
-            <div className="container">
-                <div className="left-side">
-                    <span className="resume" ref={leftSideRef}>
-                        À la croisée des chemins entre le design et la technologie, nous tissons des œuvres numériques uniques,
-                        des voyages immersifs où chaque détail émerveille. Notre but: donner (<span style={{ fontFamily: 'var(--title-font)' }}>vie</span>)
-                        à des aspirations éveillées de (<span style={{ fontFamily: 'var(--title-font)' }}>sens</span>).
-                    </span>
-                    <SunButton text="Connaître" />
+        <div className={styles.aboutUsContainer}>
+            <div className={styles.headline}>
+                Tisser des oeuvres numériques, des voyages <i>immersifs</i> où
+                chaque détail <i>émerveille</i>.
+            </div>
+            <div className={styles.subheading}>
+                <div className={styles.yarndings}>
+                    8
                 </div>
-                <div className="right-side">
-                    <span className="description" style={{ textIndent: '3em' }} ref={rightSideRef}>
-                        Notre démarche, empreinte de simplicité et d'efficacité,
-                        place vos aspirations au cœur de chaque création, insufflant à vos idées une clarté (<i><b>éclatante</b></i>) et un impact (<i><b>inoubliable</b></i>).
-                    </span>
+                <div className={styles.callToAction}>
+
+                    <div className={styles.buttonContainer}>
+                        <MagneticDirectionButton text='Connaître' icon='✦' />
+                    </div>
+                    <div className={styles.description}>
+                        Simplicité et efficacité, vos aspirations au coeur de chaque création, insufflant
+                        à vos idées une clarté <i>éclatante</i> et un impact <i>inoubliable</i>.
+                    </div>
                 </div>
             </div>
-        </section>
-    );
+        </div>
+    )
 }
 
 export default AboutUs;

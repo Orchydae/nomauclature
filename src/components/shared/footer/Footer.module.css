@@ -9,8 +9,6 @@
   height: 100vh;
   padding: 200px 100px 50px 100px;
 
-  box-sizing: border-box;
-
   .getInTouchContainer {
     display: flex;
     flex-direction: column;
