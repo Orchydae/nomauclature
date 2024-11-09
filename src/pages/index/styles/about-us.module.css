@@ -26,11 +26,14 @@
             .buttonContainer {
                 height: 150px;
                 /* background: blue; */
+                display: flex;
+                justify-content: center;
                 flex: 1 0 150px;
             }
             .description {
                 font-family: "Be Vietnam Pro", sans-serif;
                 font-weight: 300;
+                flex: 3;
             }
         }
     }

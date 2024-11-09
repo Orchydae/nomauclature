@@ -28,6 +28,12 @@ function RootLayout() {
     }, []); // No dependencies needed since we're using ref
 
     useEffect(() => {
+        // Set initial gradient position on mount 
+        if (gradientRef.current) {
+            gradientRef.current.style.setProperty("--mouse-x", "50%");
+            gradientRef.current.style.setProperty("--mouse-y", "50%");
+        }
+
         window.addEventListener("mousemove", moveGradient);
 
         return () => {
