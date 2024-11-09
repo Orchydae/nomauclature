@@ -1,14 +1,16 @@
-import styles from './styles/app-styling.module.css'
+import styles from './styles/app-style.module.css'
 import { useEffect, useRef, useCallback } from 'react';
 
-import Hero from './components/hero/Hero';
-import AboutUs from './components/aboutUs/AboutUs';
+import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
+import Members from './components/Members';
 
 function App() {
     return (
         <div className={styles.appContainer}>
             <Hero />
             <AboutUs/>
+            <Members/>
         </div>
     );
 }

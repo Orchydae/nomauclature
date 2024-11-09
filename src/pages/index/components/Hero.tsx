@@ -1,5 +1,5 @@
 
-import styles from '../../styles/hero.module.css'
+import styles from '../styles/hero-style.module.css'
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -10,10 +10,7 @@ function Hero() {
     const yarndingsRef = useRef(null);
 
     useEffect(() => {
-        console.log(yarndingsRef.current);
         gsap.registerPlugin(ScrollTrigger);
-
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
         gsap.to(yarndingsRef.current, {
             rotation: 360 * 2, // 2 full rotations

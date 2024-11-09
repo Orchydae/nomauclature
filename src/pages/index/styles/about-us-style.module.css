@@ -11,14 +11,30 @@
         display: flex;
         justify-content: space-between;
         gap: 2em;
-        margin-top: 1em;
+        margin-top: 2em;
 
-        .yarndings {
-            text-align: center;
-            font-family: 'Yarndings 12';
-            font-size: 40px;
-            flex: 1;
+        .yarndingsWrapper {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .yarndings {
+                text-align: center;
+                font-family: 'Yarndings 12';
+                font-size: 40px;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                will-change: transform;
+                transform-origin: center center;
+
+            }
         }
+
         .callToAction {
             display: flex;
             gap: 1em;
