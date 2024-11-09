@@ -16,43 +16,65 @@ function AboutUs() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        requestAnimationFrame(() => {
-            const container = containerRef.current;
-            const yarndings = yarndingsRef.current;
-            if (!container || !yarndingsRef.current) return;
+        const container = containerRef.current;
+        const yarndings = yarndingsRef.current;
+        if (!container || !yarndings) return;
 
-            requestAnimationFrame(() => {
-                const containerHeight = container.getBoundingClientRect().height;
-                gsap.fromTo(yarndings, {
-                    rotation: 0, y: 0
-                }, {
-                    rotation: 360 * 2, // 2 full rotations
-                    y: containerHeight,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: 'body',
-                        start: '30% center',
-                        end: '60% bottom',
-                        scrub: 1,
-                        markers: true, // Set to true for debugging
+        let scrollTriggerInstance: ScrollTrigger;
+        let currentAnimation: gsap.core.Tween;
+        let resizeTimer: number;
 
-                        onRefresh: (self) => {
-                            if (self.progress > 0) {
-                                const newHeight = container.getBoundingClientRect().height;
-                                gsap.to(yarndingsRef.current, {
-                                    y: newHeight,
-                                    duration: 0
-                                });
-                            } 
+        const createAnimation = () => {
+            if (scrollTriggerInstance) scrollTriggerInstance.kill(); // Kill previous instance
+            if (currentAnimation) currentAnimation.kill(); // Kill previous animation
+
+            const containerHeight = container.getBoundingClientRect().height;
+
+            // Set initial position
+            gsap.set(yarndings, { y: 0 });
+
+            // Create new animation
+            gsap.to(yarndings, {
+                rotation: 360 * 2, // 2 full rotations
+                y: containerHeight,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: 'body',
+                    start: '30% center',
+                    end: '60% bottom',
+                    scrub: 1,
+                    markers: true,
+                    onRefresh: (self) => {
+                        const newHeight = container.getBoundingClientRect().height;
+                        if (currentAnimation) {
+                            gsap.set(currentAnimation.vars, { y: newHeight });
                         }
+                        self.refresh();
+                    },
+                    onUpdate: (self) => {
+                        scrollTriggerInstance = self;
                     }
-                });
+                }
             });
+        };
 
-        });
+        // Initial animation creation
+        createAnimation();
 
+        // Debounce resize handler
+        const handleResize = () => {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(createAnimation, 250);
+        };
+
+        // Update position on resize
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup on unmount
         return () => {
-            ScrollTrigger.getAll().forEach(t => t.kill());
+            window.removeEventListener('resize', handleResize);
+            window.clearTimeout(resizeTimer);
+            if (scrollTriggerInstance) scrollTriggerInstance.kill();
         };
     }, []);
 
