@@ -9,4 +9,8 @@
         font-size: clamp(1.5em, calc(1.5em + 6vw), 8vw);
         text-align: center;
     }
+
+    .members {
+        background: pink;
+    }
 }

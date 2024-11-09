@@ -1,4 +1,6 @@
 .aboutUsContainer {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     padding: 0 3em;
 
@@ -11,15 +13,13 @@
         display: flex;
         justify-content: space-between;
         gap: 2em;
+        height: 100%;
         margin-top: 2em;
 
         .yarndingsWrapper {
             position: relative;
             width: fit-content;
-            height: fit-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 100%;
 
             .yarndings {
                 text-align: center;
