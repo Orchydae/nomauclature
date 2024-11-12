@@ -43,7 +43,7 @@ function AboutUs() {
                     start: '30% center',
                     end: '60% bottom',
                     scrub: 1,
-                    markers: true,
+                    markers: false,
                     onRefresh: (self) => {
                         const newHeight = container.getBoundingClientRect().height;
                         if (currentAnimation) {

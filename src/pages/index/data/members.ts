@@ -1,13 +1,12 @@
-import david from '../assets/david-avatar-champagne.png'
-import paul from '../assets/paul-avatar-heart.png'
-import yuka from '../assets/yuka-avatar.png'
+import david from '../../../assets/david-avatar.png'
+import paul from '../../../assets/paul-avatar.png'
+import yuka from '../../../assets/yuka-avatar.png'
 
 export const members = [
     {
         firstName: 'David',
         lastName: 'Nguyen',
-        title: 'Artiste à temps perdu',
-        color: '#C91212',
+        role: 'Artiste à temps perdu',
         socialMedias: [
             { platform: 'facebook', url: 'https://www.facebook.com/' },
             { platform: 'instagram', url: 'https://www.instagram.com/' },
@@ -19,8 +18,7 @@ export const members = [
     {
         firstName: 'Paul',
         lastName: 'Nguyen',
-        title: 'Étudiant en génie logiciel',
-        color: '#3772FF',
+        role: 'Étudiant en génie logiciel',
         socialMedias: [
             { platform: 'facebook', url: 'https://www.facebook.com/' },
         ],
@@ -28,9 +26,8 @@ export const members = [
     },
     {
         firstName: 'Yuka',
-        lastName: 'Suzuki',
-        title: 'Designer graphique',
-        color: '#B3AF8F',
+        lastName: 'Uo',
+        role: 'Designer graphique',
         socialMedias: [
             { platform: 'instagram', url: 'https://www.instagram.com/' },
             { platform: 'linkedin', url: 'https://www.linkedin.com/' },

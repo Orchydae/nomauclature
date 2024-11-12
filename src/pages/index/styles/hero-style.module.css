@@ -18,6 +18,9 @@
             padding: 0 0.5em;
             border: 1px solid var(--secondary-color);
             border-radius: 12px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 300;
+            font-size: 0.8em;
         }
 
         .heroTitle {
@@ -42,6 +45,9 @@
             padding: 0 0.5em;
             border: 1px solid var(--secondary-color);
             border-radius: 12px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 300;
+            font-size: 0.8em;
         }
     }
 

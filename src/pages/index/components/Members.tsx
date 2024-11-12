@@ -1,5 +1,8 @@
 import ImagePopup from '../../../components/imagePopup/ImagePopup';
 import styles from '../styles/members-style.module.css';
+import imagePopupStyles from '../../../components/imagePopup/image-popup.module.css';
+
+import { members } from '../data/members';
 
 function Members() {
     return (
@@ -7,9 +10,22 @@ function Members() {
             <span className={styles.title}>Membres</span>
 
             <div className={styles.members}>
-                <ImagePopup card={{ link: 'https://via.placeholder.com/200', name: 'David' }} />
-                <ImagePopup card={{ link: 'https://via.placeholder.com/200', name: 'Paul' }} />    
-                <ImagePopup card={{ link: 'https://via.placeholder.com/200', name: 'Yuka' }} />
+                {members.map((member, index) => {
+                    const lastNameInitial = member.lastName.charAt(0).toUpperCase();
+                    const isBordered = index !== 0 && index !== members.length - 1;
+                    return (
+                        <ImagePopup
+                            key={index}
+                            index={index}
+                            profile={{
+                                imgSrc: member.avatar,
+                                name: `${member.firstName} ${lastNameInitial}.`,
+                                role: member.role
+                            }}
+                            className={isBordered ? imagePopupStyles.bordered : ''}
+                        />
+                    )
+                })}
             </div>
         </div>
     );
