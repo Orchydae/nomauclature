@@ -7,9 +7,9 @@ function Members() {
             <span className={styles.title}>Membres</span>
 
             <div className={styles.members}>
-                <ImagePopup card={{ link: 'https://via.placeholder.com/200', name: 'David' }} />
-                <ImagePopup card={{ link: 'https://via.placeholder.com/200', name: 'Paul' }} />    
-                <ImagePopup card={{ link: 'https://via.placeholder.com/200', name: 'Yuka' }} />
+                <ImagePopup card={{ link: "https://via.placeholder.com/200", name: "David" }} />
+                <ImagePopup card={{ link: "https://via.placeholder.com/200", name: "Paul" }} />    
+                <ImagePopup card={{ link: "https://via.placeholder.com/200", name: "Yuka" }} />
             </div>
         </div>
     );
