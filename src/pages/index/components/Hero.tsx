@@ -14,11 +14,11 @@ function Hero() {
 
         gsap.to(yarndingsRef.current, {
             rotation: 360 * 2, // 2 full rotations
-            ease: 'none',
+            ease: "none",
             scrollTrigger: {
-                trigger: 'body',
-                start: 'top top',
-                end: 'bottom bottom',
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
                 scrub: 1,
                 markers: false, // Set to true for debugging
             }
