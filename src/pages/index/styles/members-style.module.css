@@ -12,5 +12,13 @@
 
     .members {
         /* background: black; */
+        margin: 3em 0;
+    }
+
+    .yarndingsContainer {
+        /* background: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

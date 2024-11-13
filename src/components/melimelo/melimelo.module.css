@@ -1,0 +1,10 @@
+.yarndingsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+}
+
+.marqueeContainer {
+    margin: 5em 0;
+}
