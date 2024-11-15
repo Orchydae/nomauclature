@@ -32,8 +32,8 @@ function Footer() {
             case "facebook":
                 window.open("https://www.facebook.com/nomauclature", "_blank");
                 break;
-            case "X":
-                window.open("https://www.X.com/nomauclature", "_blank");
+            case "x":
+                window.open("https://www.x.com/nomauclature", "_blank");
                 break;
             case "linkedin":
                 window.open("https://www.linkedin.com/nomauclature", "_blank");
@@ -142,7 +142,7 @@ function Footer() {
                                 />
                                 <XIcon
                                     className={socialMedia.socialIcon}
-                                    onClick={() => socialMediaHandler("X")}
+                                    onClick={() => socialMediaHandler("x")}
                                 />
 
                                 <LinkedInIcon
