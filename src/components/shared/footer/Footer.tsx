@@ -95,8 +95,6 @@ function Footer() {
         }
     ];
 
-
-
     useEffect(() => {
         const intervalId = setInterval(() => {
             setTime(formatLocalTime());
