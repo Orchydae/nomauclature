@@ -56,6 +56,12 @@
         height: 50px;
         padding: 0 25px;
       }
+
+      .contactButton:hover {
+        color: var(--primary-color);
+        transform: scale(1.25);
+        cursor: pointer;
+      }
     }
   }
 

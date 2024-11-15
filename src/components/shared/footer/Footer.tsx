@@ -23,7 +23,7 @@ function Footer() {
 
     const [time, setTime] = useState(formatLocalTime());
 
-    const handleClick = () => {
+    const handleEmailClick = () => {
         window.location.href = "mailto:info@nomauclature.com";
     };
 
@@ -115,7 +115,7 @@ function Footer() {
                         <SunButton text={"Contacter"} className={"footer-sun-btn"} />
                     </div>
                     <div className={styles.contactContainer}>
-                        <button className={styles.contactButton} onClick={handleClick}>
+                        <button className={styles.contactButton} onClick={handleEmailClick}>
                             info@nomauclature.com
                         </button>
                     </div>
