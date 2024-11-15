@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import socialMedia from './SocialMedia.module.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
@@ -25,6 +26,26 @@ function Footer() {
     const handleClick = () => {
         window.location.href = "mailto:info@nomauclature.com";
     };
+
+    const socialMediaHandler = (platform: any) => {
+        switch (platform) {
+            case "facebook":
+                window.open("https://www.facebook.com/nomauclature", "_blank");
+                break;
+            case "X":
+                window.open("https://www.X.com/nomauclature", "_blank");
+                break;
+            case "linkedin":
+                window.open("https://www.linkedin.com/nomauclature", "_blank");
+                break;
+            case "instagram":
+                window.open("https://www.instagram.com/nomauclature", "_blank");
+                break;
+            case "github":
+                window.open("https://github.com/Orchydae/nomauclature", "_blank");
+                break;
+        }
+    }
 
     const footerItems = [
         {
@@ -74,6 +95,8 @@ function Footer() {
         }
     ];
 
+
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             setTime(formatLocalTime());
@@ -115,9 +138,27 @@ function Footer() {
                         <div className={styles.socialsContainer}>
                             <p className={styles.bottomTitle}>SUIVEZ-NOUS</p>
                             <div className={styles.socials}>
-                                <FacebookIcon />
-                                <LinkedInIcon />
-                                <InstagramIcon />
+                                <FacebookIcon
+                                    className={socialMedia.socialIcon}
+                                    onClick={() => socialMediaHandler("facebook")}
+                                />
+                                <XIcon
+                                    className={socialMedia.socialIcon}
+                                    onClick={() => socialMediaHandler("X")}
+                                />
+
+                                <LinkedInIcon
+                                    className={socialMedia.socialIcon}
+                                    onClick={() => socialMediaHandler("linkedin")}
+                                />
+                                <InstagramIcon
+                                    className={socialMedia.socialIcon}
+                                    onClick={() => socialMediaHandler("instagram")}
+                                />
+                                <GitHubIcon
+                                    className={socialMedia.socialIcon}
+                                    onClick={() => socialMediaHandler("github")}
+                                />
                             </div>
                         </div>
                     </div>
