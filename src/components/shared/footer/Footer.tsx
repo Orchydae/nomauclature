@@ -134,7 +134,7 @@ function Footer() {
                     </div>
                     <div className={styles.rightSide}>
                         <div className={styles.socialsContainer}>
-                            <p className={styles.bottomTitle}>SUIVEZ-NOUS</p>
+                            <p className={styles.bottomTitle}>RÉSEAUX SOCIAUX</p>
                             <div className={styles.socials}>
                                 <FacebookIcon
                                     className={socialMedia.socialIcon}
