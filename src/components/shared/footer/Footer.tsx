@@ -108,8 +108,7 @@ function Footer() {
             <footer className={styles.footerContainer}>
                 <div className={styles.getInTouchContainer}>
                     <div className={styles.quoteContainer}>
-                        <p className={styles.quote}>Les couleurs que j'aperçois,</p>
-                        <p className={styles.quote}>les perçois-tu aussi?</p>
+                        <p className={styles.quote}>Viens jaser</p>
                     </div>
                     <div className={styles.buttonContainer}>
                         <SunButton text={"Contacter"} className={"footer-sun-btn"} />

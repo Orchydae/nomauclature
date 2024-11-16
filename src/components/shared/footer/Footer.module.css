@@ -15,6 +15,7 @@
     justify-content: space-between;
     width: 75%;
     height: 300px;
+    cursor: pointer;
 
     .quoteContainer {
       padding-bottom: 70px;
@@ -46,8 +47,8 @@
       justify-self: flex-end;
 
       .contactButton {
-        background: transparent;
-        color: var(--secondary-color);
+        background: white;
+        color: black;
         border: 1px solid gray;
         border-radius: 25px;
 
