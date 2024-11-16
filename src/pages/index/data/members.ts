@@ -4,33 +4,37 @@ import yuka from '../../../assets/yuka-avatar.png'
 
 export const members = [
     {
-        firstName: 'David',
-        lastName: 'Nguyen',
-        role: 'Artiste à temps perdu',
+        firstName: "David",
+        lastName: "Nguyen",
+        role: "Artiste à temps perdu",
         socialMedias: [
-            { platform: 'facebook', url: 'https://www.facebook.com/' },
-            { platform: 'instagram', url: 'https://www.instagram.com/' },
-            { platform: 'linkedin', url: 'https://www.linkedin.com/' },
-            { platform: 'github', url: 'https://www.github.com/' }
+            { platform: "facebook", url: "https://www.facebook.com/" },
+            { platform: "instagram", url: "https://www.instagram.com/" },
+            { platform: "linkedin", url: "https://www.linkedin.com/" },
+            { platform: "github", url: "https://www.github.com/" }
         ],
         avatar: david
     },
     {
-        firstName: 'Paul',
-        lastName: 'Nguyen',
-        role: 'Étudiant en génie logiciel',
+        firstName: "Paul",
+        lastName: "Nguyen",
+        role: "Étudiant en génie logiciel",
         socialMedias: [
-            { platform: 'facebook', url: 'https://www.facebook.com/' },
+            { platform: "facebook", url: "https://www.facebook.com/" },
+            { platform: "instagram", url: "https://www.instagram.com/" },
+            { platform: "linkedin", url: "https://www.linkedin.com/" },
+            { platform: "github", url: "https://www.github.com/" }
         ],
         avatar: paul
     },
     {
-        firstName: 'Yuka',
-        lastName: 'Uo',
-        role: 'Designer graphique',
+        firstName: "Yuka",
+        lastName: "Uo",
+        role: "Designer graphique",
         socialMedias: [
-            { platform: 'instagram', url: 'https://www.instagram.com/' },
-            { platform: 'linkedin', url: 'https://www.linkedin.com/' },
+            { platform: "facebook", url: "https://www.facebook.com/" },
+            { platform: "instagram", url: "https://www.instagram.com/" },
+            { platform: "linkedin", url: "https://www.linkedin.com/" },
         ],
         avatar: yuka
     }

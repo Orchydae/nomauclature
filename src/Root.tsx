@@ -7,6 +7,7 @@ import RootLayout from './layouts/rootLayout/RootLayout';
 import ErrorPage from './pages/ErrorPage';
 import Contact from './pages/Contact';
 import App from './pages/index/App';
+import Members from './pages/index/components/Members';
 
 const Root = () => {
     const [loading, setLoading] = useState(true);
@@ -19,6 +20,10 @@ const Root = () => {
                 {
                     path: "/",
                     element: <App />,
+                },
+                {
+                    path: "/membres",
+                    element: <Members />,
                 },
                 // {
                 //   path: "/nous",
