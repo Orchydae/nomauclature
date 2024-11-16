@@ -23,13 +23,14 @@ function Footer() {
 
     const [time, setTime] = useState(formatLocalTime());
 
-    const handleEmailClick = () => {
-        window.location.href = "mailto:info@nomauclature.com";
-    };
 
-    const handlePhoneClick = () => {
-        window.location.href = "tel:+15141234567";
-    }
+    const handleContactClick = (type: "email" | "phone") => {
+        const protocols = {
+            email: "mailto:info@nomauclature.com",
+            phone: "tel:+15141234567"
+        };
+        window.location.href = protocols[type];
+    };
 
     const socialMediaHandler = (platform: any) => {
         switch (platform) {
@@ -118,10 +119,12 @@ function Footer() {
                         <SunButton text={"Contacter"} className={"footer-sun-btn"} />
                     </div>
                     <div className={styles.contactContainer}>
-                        <button className={styles.emailBtn} onClick={handleEmailClick}>
+                        <button className={styles.emailBtn} onClick={() => handleContactClick("email")}>
                             info@nomauclature.com
                         </button>
-                        <button className={styles.phoneBtn} onClick={handlePhoneClick}>+1 514-123-4567</button>
+                        <button className={styles.phoneBtn} onClick={() => handleContactClick("phone")}>
+                            +1 514-123-4567
+                        </button>
                     </div>
                 </div>
 
