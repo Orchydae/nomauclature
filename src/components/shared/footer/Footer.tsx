@@ -114,7 +114,7 @@ function Footer() {
                         <SunButton text={"Contacter"} className={"footer-sun-btn"} />
                     </div>
                     <div className={styles.contactContainer}>
-                        <button className={styles.contactButton} onClick={handleEmailClick}>
+                        <button className={styles.emailBtn} onClick={handleEmailClick}>
                             info@nomauclature.com
                         </button>
                     </div>

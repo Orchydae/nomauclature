@@ -46,7 +46,7 @@
     .contactContainer {
       justify-self: flex-end;
 
-      .contactButton {
+      .emailBtn {
         background: white;
         color: black;
         border: 1px solid gray;
@@ -58,7 +58,7 @@
         padding: 0 25px;
       }
 
-      .contactButton:hover {
+      .emailBtn:hover {
         color: var(--primary-color);
         transform: scale(1.25);
         cursor: pointer;
