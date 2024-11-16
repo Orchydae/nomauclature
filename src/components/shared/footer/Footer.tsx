@@ -27,6 +27,10 @@ function Footer() {
         window.location.href = "mailto:info@nomauclature.com";
     };
 
+    const handlePhoneClick = () => {
+        window.location.href = "tel:+15141234567";
+    }
+
     const socialMediaHandler = (platform: any) => {
         switch (platform) {
             case "facebook":
@@ -117,6 +121,7 @@ function Footer() {
                         <button className={styles.emailBtn} onClick={handleEmailClick}>
                             info@nomauclature.com
                         </button>
+                        <button className={styles.phoneBtn} onClick={handlePhoneClick}>+1 514-123-4567</button>
                     </div>
                 </div>
 

@@ -63,6 +63,24 @@
         transform: scale(1.25);
         cursor: pointer;
       }
+
+      .phoneBtn {
+        background: white;
+        color: black;
+        border: 1px solid gray;
+        border-radius: 25px;
+
+        font-size: 1em;
+        font-weight: 600;
+        height: 50px;
+        padding: 0 25px;
+      }
+
+      .phoneBtn:hover {
+        color: var(--primary-color);
+        transform: scale(1.25);
+        cursor: pointer;
+      }
     }
   }
 
