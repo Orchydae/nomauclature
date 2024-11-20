@@ -40,8 +40,8 @@ function AboutUs() {
                 ease: 'none',
                 scrollTrigger: {
                     trigger: 'body',
-                    start: '30% center',
-                    end: '60% bottom',
+                    start: '20% center',
+                    end: '50% bottom',
                     scrub: 1,
                     markers: false,
                     onRefresh: (self) => {
