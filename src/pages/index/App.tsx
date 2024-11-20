@@ -11,11 +11,12 @@ function App() {
     return (
         <div className={styles.appContainer}>
             <Hero />
-            <AboutUs/>
-            <Members/>
-            <MeliMelo/>
-            <SlidingImages/>
-            <CurvyTransition/>
+            <AboutUs />
+            <Members />
+            <MeliMelo />
+            <SlidingImages />
+            
+
         </div>
     );
 }

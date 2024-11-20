@@ -1,7 +1,6 @@
 .circleContainer {
     position: relative;
-    margin-top: 100px;
-    height: 10px;
+    margin-bottom: auto;
 
     .circle {
         box-shadow: 0 60px 50px rgba(0, 0, 0, 0.748);
@@ -9,8 +8,8 @@
         height: 1550%;
         width: 120%;
         left: -10%;
-        /* background: white; */
         border-radius: 0 0 50% 50%;
+        background: var(--secondary-color);
         z-index: 5;
     }
 }

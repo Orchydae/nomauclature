@@ -20,7 +20,6 @@ function CurvyTransition() {
             scrub: 1,
             onUpdate: (self) => {
                 const height = 50 - (self.progress * 50);
-                console.log(height);
                 gsap.set(circleContainer, { 
                     height: `${height}px`, 
                     overwrite: true 

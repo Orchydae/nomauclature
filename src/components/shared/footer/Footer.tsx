@@ -109,67 +109,65 @@ function Footer() {
     }, []);
 
     return (
-        <>
-            <footer className={styles.footerContainer}>
-                <div className={styles.getInTouchContainer}>
-                    <div className={styles.quoteContainer}>
-                        <p className={styles.quote}>Viens jaser</p>
+        <footer className={styles.footerContainer}>
+            <div className={styles.getInTouchContainer}>
+                <div className={styles.quoteContainer}>
+                    <p className={styles.quote}>Viens jaser</p>
+                </div>
+                <div className={styles.buttonContainer}>
+                    <SunButton text={"Contacter"} className={"footer-sun-btn"} />
+                </div>
+                <div className={styles.contactContainer}>
+                    <button className={styles.emailBtn} onClick={() => handleContactClick("email")}>
+                        info@nomauclature.com
+                    </button>
+                    <button className={styles.phoneBtn} onClick={() => handleContactClick("phone")}>
+                        +1 514-123-4567
+                    </button>
+                </div>
+            </div>
+
+            <div className={styles.linksContainer}>
+                <div className={styles.leftSide}>
+                    <div className={styles.versionContainer}>
+                        <p className={styles.bottomTitle}>TOUS DROITS RÉSERVÉS</p>
+                        <p className={styles.versionNumber}>© {new Date().getFullYear()} Nomàuclature</p>
                     </div>
-                    <div className={styles.buttonContainer}>
-                        <SunButton text={"Contacter"} className={"footer-sun-btn"} />
-                    </div>
-                    <div className={styles.contactContainer}>
-                        <button className={styles.emailBtn} onClick={() => handleContactClick("email")}>
-                            info@nomauclature.com
-                        </button>
-                        <button className={styles.phoneBtn} onClick={() => handleContactClick("phone")}>
-                            +1 514-123-4567
-                        </button>
+                    <div className={styles.timeContainer}>
+                        <p className={styles.bottomTitle}>TEMPS LOCAL</p>
+                        <p className={styles.time}>{time}</p>
                     </div>
                 </div>
+                <div className={styles.rightSide}>
+                    <div className={styles.socialsContainer}>
+                        <p className={styles.bottomTitle}>RÉSEAUX SOCIAUX</p>
+                        <div className={styles.socials}>
+                            <FacebookIcon
+                                className={socialMedia.socialIcon}
+                                onClick={() => socialMediaHandler("facebook")}
+                            />
+                            <XIcon
+                                className={socialMedia.socialIcon}
+                                onClick={() => socialMediaHandler("x")}
+                            />
 
-                <div className={styles.linksContainer}>
-                    <div className={styles.leftSide}>
-                        <div className={styles.versionContainer}>
-                            <p className={styles.bottomTitle}>TOUS DROITS RÉSERVÉS</p>
-                            <p className={styles.versionNumber}>© {new Date().getFullYear()} Nomàuclature</p>
-                        </div>
-                        <div className={styles.timeContainer}>
-                            <p className={styles.bottomTitle}>TEMPS LOCAL</p>
-                            <p className={styles.time}>{time}</p>
-                        </div>
-                    </div>
-                    <div className={styles.rightSide}>
-                        <div className={styles.socialsContainer}>
-                            <p className={styles.bottomTitle}>RÉSEAUX SOCIAUX</p>
-                            <div className={styles.socials}>
-                                <FacebookIcon
-                                    className={socialMedia.socialIcon}
-                                    onClick={() => socialMediaHandler("facebook")}
-                                />
-                                <XIcon
-                                    className={socialMedia.socialIcon}
-                                    onClick={() => socialMediaHandler("x")}
-                                />
-
-                                <LinkedInIcon
-                                    className={socialMedia.socialIcon}
-                                    onClick={() => socialMediaHandler("linkedin")}
-                                />
-                                <InstagramIcon
-                                    className={socialMedia.socialIcon}
-                                    onClick={() => socialMediaHandler("instagram")}
-                                />
-                                <GitHubIcon
-                                    className={socialMedia.socialIcon}
-                                    onClick={() => socialMediaHandler("github")}
-                                />
-                            </div>
+                            <LinkedInIcon
+                                className={socialMedia.socialIcon}
+                                onClick={() => socialMediaHandler("linkedin")}
+                            />
+                            <InstagramIcon
+                                className={socialMedia.socialIcon}
+                                onClick={() => socialMediaHandler("instagram")}
+                            />
+                            <GitHubIcon
+                                className={socialMedia.socialIcon}
+                                onClick={() => socialMediaHandler("github")}
+                            />
                         </div>
                     </div>
                 </div>
-            </footer>
-        </>
+            </div>
+        </footer>
     );
 }
 

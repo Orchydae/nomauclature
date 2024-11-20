@@ -1,4 +1,4 @@
-import styles from './sliding-images-style.module.css';
+import styles from './sliding-images.module.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -60,7 +60,6 @@ function SlidingImages() {
             end: "bottom top",
             markers: false,
             onUpdate: self => {
-                console.log(self.progress);
                 const x1Progress = self.progress * 150;
                 const x2Progress = self.progress * -150;
                 gsap.to(slider1, { x: x1Progress, overwrite: true });

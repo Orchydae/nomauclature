@@ -4,10 +4,10 @@
   justify-content: flex-end;
   align-items: center;
   gap: 10em;
-  background: var(--rich-black-color);
+  background: black;
   width: 100%;
-  height: 100vh;
-  padding: 200px 100px 50px 100px;
+  height: 101vh;
+  z-index: -1;
 
   .getInTouchContainer {
     display: flex;

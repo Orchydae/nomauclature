@@ -1,11 +1,14 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 
 import { Outlet } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../../components/shared/footer/Footer";
+import CurvyTransition from "../../components/curvyTransition/CurvyTransition";
+import QuoteTransition from "../../components/quoteTransition/QuoteTransition";
 
 function RootLayout() {
-    const gradientRef = useRef(null);
+    const gradientRef = useRef<HTMLDivElement>(null);
+    const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 });
 
     // Memoize the moveGradient function to prevent unnecessary re-renders
     const moveGradient = useCallback((e: MouseEvent) => {
@@ -48,7 +51,10 @@ function RootLayout() {
             <main>
                 <Outlet />
             </main>
+            <QuoteTransition />
             <Footer />
+            
+
         </div>
     )
 }
