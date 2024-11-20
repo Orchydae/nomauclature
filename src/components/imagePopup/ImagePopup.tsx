@@ -32,7 +32,6 @@ function ImagePopup({ index, profile, className }: ImagePopupProps) {
 
     const handleImageLoad = () => {
         if (imageRef.current) {
-            console.log('image loaded', imageRef.current.offsetHeight);
             setImageHeight(imageRef.current.offsetHeight * 5);
         }
     };

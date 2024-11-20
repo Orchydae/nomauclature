@@ -4,6 +4,8 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Members from './components/Members';
 import MeliMelo from '../../components/melimelo/MeliMelo';
+import SlidingImages from '../../components/slidingImages/SlidingImages';
+import CurvyTransition from '../../components/curvyTransition/CurvyTransition';
 
 function App() {
     return (
@@ -12,6 +14,8 @@ function App() {
             <AboutUs/>
             <Members/>
             <MeliMelo/>
+            <SlidingImages/>
+            <CurvyTransition/>
         </div>
     );
 }
