@@ -6,7 +6,7 @@
   gap: 10em;
   background: black;
   width: 100%;
-  height: 101vh;
+  height: 102vh;
   z-index: -1;
 
   .getInTouchContainer {
@@ -17,16 +17,16 @@
     height: 300px;
     cursor: pointer;
 
-    .quoteContainer {
-      padding-bottom: 70px;
-      border-bottom: 1px solid dimgray;
+    .messageContainer {
+      /* background: red; */
+      display: flex;
 
-      .quote {
+      .message {
         color: var(--secondary-color);
         padding: 0;
         margin: 0;
 
-        font-size: calc(var(--dynamic-font-size) + var(--default-font-size));
+        font-size: clamp(3em, calc(1.5em + 8vw), 10vw);
         font-weight: 500;
       }
     }
@@ -37,14 +37,25 @@
       justify-content: flex-end;
 
       position: relative;
-      top: -35px;
-
       padding-right: 5em;
 
     }
 
+    .buttonContainer::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0.5px;
+      background-color: var(--accent-color); 
+    }
+
     .contactContainer {
+      display: flex;
       justify-self: flex-end;
+      gap: 1em;
+      /* background: blue; */
 
       .emailBtn {
         background: white;
@@ -87,14 +98,21 @@
   .linksContainer {
     display: flex;
     justify-content: space-between;
+    padding: 0 5em;
 
     width: 100%;
+    box-sizing: border-box;
     color: var(--secondary-color);
 
     .leftSide {
       display: flex;
       gap: 2em;
       flex: 2;
+
+      .endText {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        font-size: 0.8em;
+      }
 
       .bottomTitle {
         color: gray;
@@ -105,8 +123,6 @@
 
     .rightSide {
       display: flex;
-      flex: 1;
-      justify-content: space-between;
 
       .bottomTitle {
         color: gray;

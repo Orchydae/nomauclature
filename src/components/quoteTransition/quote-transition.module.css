@@ -1,8 +1,0 @@
-
-.quoteContainer {
-    font-size: clamp(1.5em, calc(1.5em + 6vw), 10vw);
-    display: flex;
-    justify-content: center;
-    background: var(--secondary-color);
-    color: var(--dark-color);
-}

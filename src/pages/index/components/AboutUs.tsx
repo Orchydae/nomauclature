@@ -5,77 +5,50 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 
-import SunButton from '../../../components/buttons/sunButton/SunButton';
 import InvertedTitle from '../../../components/invertedTitle/InvertedTitle';
 import MagneticDirectionButton from '../../../components/buttons/magneticDirection/MagneticDirectionButton';
+import SpinYarndings from '../../../components/spinYarndings/SpinYarndings';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function AboutUs() {
-    const yarndingsRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    const yarndingsRef = useRef<HTMLDivElement>(null);
+    const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
-    useEffect(() => {
+    const updateAnimation = () => {
         const container = containerRef.current;
         const yarndings = yarndingsRef.current;
         if (!container || !yarndings) return;
 
-        let scrollTriggerInstance: ScrollTrigger;
-        let currentAnimation: gsap.core.Tween;
-        let resizeTimer: number;
+        scrollTriggerRef.current?.kill();
 
-        const createAnimation = () => {
-            if (scrollTriggerInstance) scrollTriggerInstance.kill(); // Kill previous instance
-            if (currentAnimation) currentAnimation.kill(); // Kill previous animation
+        scrollTriggerRef.current = ScrollTrigger.create({
+                trigger: container,
+                start: 'top center',
+                end: 'bottom center',
+                scrub: 1,
+                markers: false,
+                animation: gsap.to(yarndings, {
+                    y: () => container.getBoundingClientRect().height,
+                    rotation: 360,
+                }),
+        });
+    };
 
-            const containerHeight = container.getBoundingClientRect().height;
+    useEffect(() => {
+        updateAnimation();
 
-            // Set initial position
-            gsap.set(yarndings, { y: 0 });
-
-            // Create new animation
-            gsap.to(yarndings, {
-                rotation: 360 * 2, // 2 full rotations
-                y: containerHeight,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: 'body',
-                    start: '20% center',
-                    end: '50% bottom',
-                    scrub: 1,
-                    markers: false,
-                    onRefresh: (self) => {
-                        const newHeight = container.getBoundingClientRect().height;
-                        if (currentAnimation) {
-                            gsap.set(currentAnimation.vars, { y: newHeight });
-                        }
-                        self.refresh();
-                    },
-                    onUpdate: (self) => {
-                        scrollTriggerInstance = self;
-                    }
-                }
-            });
-        };
-
-        // Initial animation creation
-        createAnimation();
-
-        // Debounce resize handler
         const handleResize = () => {
-            window.clearTimeout(resizeTimer);
-            resizeTimer = window.setTimeout(createAnimation, 250);
-        };
+            updateAnimation();
+        }
 
-        // Update position on resize
         window.addEventListener('resize', handleResize);
 
-        // Cleanup on unmount
         return () => {
             window.removeEventListener('resize', handleResize);
-            window.clearTimeout(resizeTimer);
-            if (scrollTriggerInstance) scrollTriggerInstance.kill();
-        };
+            scrollTriggerRef.current?.kill();
+        }
     }, []);
 
 
@@ -86,9 +59,9 @@ function AboutUs() {
                 chaque détail <i>émerveille</i>.
             </div>
             <div className={styles.subheading}>
-                <div className={styles.yarndingsWrapper} ref={containerRef} >
-                    <div ref={yarndingsRef} className={styles.yarndings}>
-                        8
+                <div className={styles.yTranslationContainer} ref={containerRef}>
+                    <div className={styles.yarndingsWrapper} ref={yarndingsRef} >
+                        <SpinYarndings char='8' onScroll={true} />
                     </div>
                 </div>
                 <div className={styles.callToAction}>

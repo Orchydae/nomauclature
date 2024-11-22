@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState, useRef } from "react";
 
 import { Outlet } from "react-router-dom";
 import Header from "../header/Header";
-import Footer from "../../components/shared/footer/Footer";
-import CurvyTransition from "../../components/curvyTransition/CurvyTransition";
-import QuoteTransition from "../../components/quoteTransition/QuoteTransition";
+import Footer from "../footer/Footer";
+import CurvyTransition from "../../components/transitions/curvyTransition/CurvyTransition";
+import QuoteTransition from "../../components/transitions/quoteTransition/QuoteTransition";
 
 function RootLayout() {
     const gradientRef = useRef<HTMLDivElement>(null);

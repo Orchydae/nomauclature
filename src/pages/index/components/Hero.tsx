@@ -11,7 +11,7 @@ function Hero() {
             <div className={styles.leftSide}>
                 <div className={styles.copyright}>&#169; {currentYear}</div>
                 <div className={styles.heroTitle}>
-                    nomàuclature <SpinYarndings char="j" top= "-0.7em" left= "-0.4em" /> 
+                    nomàuclature <SpinYarndings char="j" onScroll={true} style={{top: '-0.7em', left: '-0.4em'}} /> 
                 </div>
                 <div className={styles.location}>45°30′32″N 73°33′15″W</div>
             </div>

@@ -6,37 +6,47 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface SpinYarndingsProps {
     char: string;
-    top?: string;
-    left?: string;
+    style?: React.CSSProperties;
+    onScroll: boolean;
 }
 
-function SpinYarndings({ char, top, left }: SpinYarndingsProps) {
+function SpinYarndings({ char, style, onScroll }: SpinYarndingsProps) {
 
     const yarndingsRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(yarndingsRef.current, {
-            rotation: 360 * 2, // 2 full rotations
-            ease: "none",
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-                markers: false, // Set to true for debugging
-            }
-        });
+        if (onScroll) {
+            gsap.to(yarndingsRef.current, {
+                rotation: 360 * 2, // 2 full rotations
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    markers: false, // Set to true for debugging
+                }
+            });
+        } else {
+            gsap.to(yarndingsRef.current, {
+                rotation: 360 * 2, // 2 full rotations
+                ease: "linear",
+                repeat: -1,
+                duration: 5,
+            });
+        }
+
 
         // Cleanup
         return () => {
             ScrollTrigger.getAll().forEach(t => t.kill());
         };
-    }, []);
+    }, [onScroll]);
 
     return (
-        <span ref={yarndingsRef} className={styles.yarndings} style={{top: top, left: left}}>
+        <span ref={yarndingsRef} className={styles.yarndings} style={style}>
             {char}
         </span>
     )

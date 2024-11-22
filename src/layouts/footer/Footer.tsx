@@ -1,4 +1,4 @@
-import styles from './Footer.module.css';
+import styles from './footer.module.css';
 import socialMedia from './SocialMedia.module.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -9,13 +9,15 @@ import { Stack } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import SunButton from '../../buttons/sunButton/SunButton';
+
 import { useEffect, useState } from 'react';
+import MagneticDirectionButton from '../../components/buttons/magneticDirection/MagneticDirectionButton';
+import SpinYarndings from '../../components/spinYarndings/SpinYarndings';
 
 function Footer() {
     const formatLocalTime = () => {
         const date = new Date();
-        let hours = date.getHours();
+        const hours = date.getHours();
         const minutes = date.getMinutes().toString().padStart(2, "0");
         const amOrPm = hours >= 12 ? "PM" : "AM";
         return `${hours}:${minutes} ${amOrPm}`;
@@ -111,19 +113,46 @@ function Footer() {
     return (
         <footer className={styles.footerContainer}>
             <div className={styles.getInTouchContainer}>
-                <div className={styles.quoteContainer}>
-                    <p className={styles.quote}>Viens jaser</p>
+                <div className={styles.messageContainer}>
+                    <p className={styles.message}>Viens jaser</p>
+                    <div className={styles.yarndingsContainer}>
+                        <SpinYarndings
+                            char='q'
+                            onScroll={false}
+                            style={{ 
+                                color: 'var(--secondary-color)',
+                                left: '0.5em',
+                            }}
+                        />
+                    </div>
                 </div>
                 <div className={styles.buttonContainer}>
-                    <SunButton text={"Contacter"} className={"footer-sun-btn"} />
+                    <MagneticDirectionButton
+                        text="Contacter"
+                        style={{ backgroundColor: "var(--dark-color)" }}
+                    />
                 </div>
                 <div className={styles.contactContainer}>
-                    <button className={styles.emailBtn} onClick={() => handleContactClick("email")}>
-                        info@nomauclature.com
-                    </button>
-                    <button className={styles.phoneBtn} onClick={() => handleContactClick("phone")}>
-                        +1 514-123-4567
-                    </button>
+                    <MagneticDirectionButton
+                        text="info@nomauclature.com"
+                        style={{
+                            height: '50px',
+                            width: 'fit-content',
+                            padding: '0 25px',
+                            borderRadius: '25px',
+                            fontSize: '1em'
+                        }}
+                    />
+                    <MagneticDirectionButton
+                        text="+1 514-123-4567"
+                        style={{
+                            height: '50px',
+                            width: 'fit-content',
+                            padding: '0 25px',
+                            borderRadius: '25px',
+                            fontSize: '1em'
+                        }}
+                    />
                 </div>
             </div>
 
@@ -131,11 +160,11 @@ function Footer() {
                 <div className={styles.leftSide}>
                     <div className={styles.versionContainer}>
                         <p className={styles.bottomTitle}>TOUS DROITS RÉSERVÉS</p>
-                        <p className={styles.versionNumber}>© {new Date().getFullYear()} Nomàuclature</p>
+                        <p className={styles.endText}>© {new Date().getFullYear()} Nomàuclature</p>
                     </div>
                     <div className={styles.timeContainer}>
                         <p className={styles.bottomTitle}>TEMPS LOCAL</p>
-                        <p className={styles.time}>{time}</p>
+                        <p className={styles.endText}>{time}</p>
                     </div>
                 </div>
                 <div className={styles.rightSide}>
@@ -158,10 +187,6 @@ function Footer() {
                             <InstagramIcon
                                 className={socialMedia.socialIcon}
                                 onClick={() => socialMediaHandler("instagram")}
-                            />
-                            <GitHubIcon
-                                className={socialMedia.socialIcon}
-                                onClick={() => socialMediaHandler("github")}
                             />
                         </div>
                     </div>

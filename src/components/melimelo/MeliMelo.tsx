@@ -7,7 +7,7 @@ function MeliMelo() {
     return (
         <div className={styles.melimeloContainer}>
             <div className={styles.yarndingsContainer}>
-                <SpinYarndings char="a" />
+                <SpinYarndings char="a" onScroll={true} />
             </div>
             <div className={styles.marqueeContainer}>
                 <Marquee text="NOMÀUCLATURE" />

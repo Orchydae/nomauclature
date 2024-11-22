@@ -3,10 +3,11 @@ import styles from './magnetic-direction-button.module.css';
 
 interface MagneticDirectionButtonProps {
     text: string;
-    icon: string;
+    icon?: string;
+    style?: React.CSSProperties;
 }
 
-function MagneticDirectionButton({ text, icon }: MagneticDirectionButtonProps) {
+function MagneticDirectionButton({ text, icon, style }: MagneticDirectionButtonProps) {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [exitDirection, setExitDirection] = useState({ x: 0, y: 0 });
 
@@ -94,7 +95,7 @@ function MagneticDirectionButton({ text, icon }: MagneticDirectionButtonProps) {
     }, [exitDirection]);
 
     return (
-        <button ref={buttonRef} className={styles.buttonContainer}>
+        <button ref={buttonRef} className={styles.buttonContainer} style={style}>
             <span>{text}</span>
             <span>{icon}</span>
         </button>
