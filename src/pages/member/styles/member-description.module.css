@@ -1,0 +1,51 @@
+.mainContainer {
+    /* background: pink; */
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em;
+
+    .gridItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* background: white; */
+
+        .profilePictureContainer {
+            width: 100%;
+            height: 95%;
+            background: red;
+            border-radius: 50% 50% 0 0;
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 50% 50% 0 0;
+            }
+        }
+
+        .titleContainer {
+            color: var(--primary-color);
+
+            .yarndings {
+                font-family: 'Yarndings 12';
+                margin-right: 2em;
+            }
+
+            .title {
+                font-weight: bold;
+            }
+        }
+
+        .descriptionContainer {
+
+            p {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

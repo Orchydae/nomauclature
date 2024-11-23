@@ -6,8 +6,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './layouts/rootLayout/RootLayout';
 import ErrorPage from './pages/ErrorPage';
 import Contact from './pages/Contact';
-import App from './pages/index/App';
+import App from './pages/index/Index';
 import Members from './pages/index/components/Members';
+import Member from './pages/member/Member';
 
 const Root = () => {
     const [loading, setLoading] = useState(true);
@@ -25,10 +26,10 @@ const Root = () => {
                     path: "/membres",
                     element: <Members />,
                 },
-                // {
-                //   path: "/nous",
-                //   // element: <Nous />,
-                // },
+                {
+                  path: "/membre",
+                  element: <Member/>,
+                },
                 // {
                 //   path: "/portfolio",
                 //   // element: <Portfolio />,
