@@ -1,11 +1,13 @@
 import styles from '../styles/member-description.module.css'
 
+import David from '../../../assets/David.jpg'
+
 function MemberDescription() {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.gridItem}>
                 <div className={styles.profilePictureContainer}>
-                    <img src="https://via.placeholder.com/150" alt="Profile" />
+                    <img src={David} alt="profile-pic" />
                 </div>
             </div>
             <div className={styles.gridItem}>
