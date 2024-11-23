@@ -43,7 +43,7 @@ function QuoteTransition() {
 
         const spinningTrigger = ScrollTrigger.create({
                 trigger: container,
-                start: 'center center',
+                start: 'top center',
                 end: 'bottom center',
                 scrub: 5,
                 markers: false,
