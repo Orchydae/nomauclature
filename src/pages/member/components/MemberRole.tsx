@@ -1,11 +1,14 @@
 import styles from '../styles/member-role.module.css'
 
-function MemberRole() {
+interface MemberRoleProps {
+    // React component
+    role: React.ReactNode,
+}
+
+function MemberRole({role}: MemberRoleProps) {
     return (
         <div className={styles.memberRoleContainer}>
-            <span>Technologue créatif</span>
-            <span>Développeur & Designer</span>
-            <span>Full-Stack</span>
+            {role}
         </div>
     );
 }

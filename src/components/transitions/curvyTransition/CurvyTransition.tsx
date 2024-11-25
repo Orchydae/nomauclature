@@ -3,46 +3,48 @@ import styles from './curvy-transition.module.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useLocation } from 'react-router-dom';
 
 function CurvyTransition() {
+    gsap.registerPlugin(ScrollTrigger);
+    const location = useLocation();
     const circleContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const circleContainer = circleContainerRef.current;
         if (!circleContainer) return;
 
-        const updateHeight = () => {
-            ScrollTrigger.create({
-                trigger: circleContainer,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-                onUpdate: (self) => {
-                    const height = 50 - (self.progress * 50);
-                    gsap.set(circleContainer, {
-                        height: `${height}px`,
-                        overwrite: true
-                    });
-                },
-            });
-        };
+        ScrollTrigger.getAll().forEach(t => t.kill());
 
-        updateHeight();
+        const scrollTrigger = ScrollTrigger.create({
+            trigger: circleContainer,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+            markers: true,
+            id: `curvy-transition-${location.pathname}`,
+            onUpdate: (self) => {
+                const height = 50 - (self.progress * 50);
+                gsap.set(circleContainer, {
+                    height: `${height}px`,
+                    overwrite: true
+                });
+            },
+        });
+
+        ScrollTrigger.refresh(true);
 
         const resizeObserver = new ResizeObserver(() => {
-            ScrollTrigger.refresh();
-            updateHeight();
-        })
+            ScrollTrigger.refresh(true);
+        });
 
         resizeObserver.observe(circleContainer);
 
         return () => {
+            scrollTrigger.kill();
             resizeObserver.disconnect();
-            ScrollTrigger.getAll().forEach(instance => instance.kill());
-        }
-    });
+        };
+    }, [location]);
 
     return (
         <div ref={circleContainerRef} className={styles.circleContainer}>

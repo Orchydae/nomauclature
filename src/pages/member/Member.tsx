@@ -1,13 +1,32 @@
 import styles from './styles/member-style.module.css'
 
+import { useParams } from 'react-router-dom'
+
 import MemberRole from './components/MemberRole'
 import MemberDescription from './components/MemberDescription'
 
+import { membersData } from './data/membersData'
+import ScrollToTop from '../../components/scrollToTop/ScrollToTop'
+
+
 function Member() {
+    const { id } = useParams<{ id: string }>(); // Get the 'id' parameter from the URL
+    const member = membersData[id]; // Get the member data from the membersData object
+
+    if (!member) {
+        return <div>Member not found</div>
+    }
+
     return (
         <div className={styles.mainContainer}>
-            <MemberRole/>
-            <MemberDescription/>
+            <ScrollToTop />
+            <MemberRole role={member.role} />
+            <MemberDescription
+                pictureSrc={member.pictureSrc}
+                description={member.description}
+                experience={member.experience}
+                contact={member.contact}
+            />
         </div>
     )
 }

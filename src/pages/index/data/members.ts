@@ -6,6 +6,7 @@ export const members = [
     {
         firstName: "David",
         lastName: "Nguyen",
+        id: 1,
         role: "Artiste à temps perdu",
         socialMedias: [
             { platform: "facebook", url: "https://www.facebook.com/" },
@@ -18,6 +19,7 @@ export const members = [
     {
         firstName: "Paul",
         lastName: "Nguyen",
+        id: 2,
         role: "Étudiant en génie logiciel",
         socialMedias: [
             { platform: "facebook", url: "https://www.facebook.com/" },
@@ -30,6 +32,7 @@ export const members = [
     {
         firstName: "Yuka",
         lastName: "Uo",
+        id: 3,
         role: "Designer graphique",
         socialMedias: [
             { platform: "facebook", url: "https://www.facebook.com/" },
