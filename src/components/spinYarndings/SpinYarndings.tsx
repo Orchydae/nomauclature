@@ -16,18 +16,20 @@ function SpinYarndings({ char, style, onScroll }: SpinYarndingsProps) {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
+        let trigger: ScrollTrigger | undefined;
 
         if (onScroll) {
-            gsap.to(yarndingsRef.current, {
-                rotation: 360 * 2, // 2 full rotations
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "body",
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1,
-                    markers: false, // Set to true for debugging
-                }
+            trigger = ScrollTrigger.create({
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                markers: false,
+                onUpdate: self => {
+                    gsap.set(yarndingsRef.current, {
+                        rotation: 360 * 2 * self.progress,
+                    });
+                },
             });
         } else {
             gsap.to(yarndingsRef.current, {
@@ -41,7 +43,7 @@ function SpinYarndings({ char, style, onScroll }: SpinYarndingsProps) {
 
         // Cleanup
         return () => {
-            ScrollTrigger.getAll().forEach(t => t.kill());
+            trigger?.kill();
         };
     }, [onScroll]);
 

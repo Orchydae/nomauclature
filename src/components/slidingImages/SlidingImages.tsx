@@ -54,7 +54,7 @@ function SlidingImages() {
         const slider1 = slider1Ref.current;
         const slider2 = slider2Ref.current;
 
-        ScrollTrigger.create({
+        const slidingTrigger = ScrollTrigger.create({
             trigger: container,
             start: "top bottom",
             end: "bottom top",
@@ -68,7 +68,7 @@ function SlidingImages() {
         });
 
         return () => {
-            ScrollTrigger.getAll().forEach(t => t.kill());
+            slidingTrigger.kill();
         };
     }, []);
 

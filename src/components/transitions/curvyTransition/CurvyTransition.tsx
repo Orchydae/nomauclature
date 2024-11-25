@@ -5,8 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+gsap.registerPlugin(ScrollTrigger);
+
 function CurvyTransition() {
-    gsap.registerPlugin(ScrollTrigger);
     const location = useLocation();
     const circleContainerRef = useRef<HTMLDivElement>(null);
 
@@ -14,14 +15,12 @@ function CurvyTransition() {
         const circleContainer = circleContainerRef.current;
         if (!circleContainer) return;
 
-        ScrollTrigger.getAll().forEach(t => t.kill());
-
         const scrollTrigger = ScrollTrigger.create({
             trigger: circleContainer,
             start: "top bottom",
             end: "bottom top",
             scrub: 1,
-            markers: true,
+            markers: false,
             id: `curvy-transition-${location.pathname}`,
             onUpdate: (self) => {
                 const height = 50 - (self.progress * 50);
