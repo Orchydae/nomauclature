@@ -21,7 +21,7 @@ function Contact() {
 
   // Format the phone number as (XXX) XXX-XXXX
   const formatPhoneNumber = (value: string) => {
-    
+
     // Remove all non-numeric characters
     const cleaned = value.replace(/\D/g, '');
 
@@ -71,7 +71,7 @@ function Contact() {
     <Container maxWidth="sm">
       <Box sx={{ mt: 5 }}>
         <Typography variant="h4" align="center">
-          Vient jaser
+          Viens jaser
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
