@@ -9,14 +9,15 @@ interface ImagePopupProps {
         role: string;
     };
     className?: string;
+    handleOnClick?: () => void;
 }
 
-function ImagePopup({ index, profile, className }: ImagePopupProps) {
+function ImagePopup({ index, profile, className, handleOnClick }: ImagePopupProps) {
     const [isHovered, setIsHovered] = useState(false);
     const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
+    const [imageHeight, setImageHeight] = useState(0);
     const containerClassName = `${styles.imagePopupContainer} ${className || ''}`.trim();
     const imageRef = useRef<HTMLImageElement>(null);
-    const [imageHeight, setImageHeight] = useState(0);
 
     useEffect(() => {
         const handleWindowMouseMove = (event: MouseEvent) => {
@@ -39,9 +40,11 @@ function ImagePopup({ index, profile, className }: ImagePopupProps) {
 
     return (
         <div
+            style={{ cursor: 'pointer' }}
             className={containerClassName}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={handleOnClick}
         >
             <div className={styles.content}>
                 <span className={`${styles.name} ${isHovered ? styles.hovered : ''}`}>{profile.name}</span>
@@ -59,8 +62,6 @@ function ImagePopup({ index, profile, className }: ImagePopupProps) {
                 className={isHovered ? styles.hovered : ''}
                 style={{
                     position: 'fixed',
-                    // top: 250,
-                    // left: 250,
                     top: (mousePosition?.y ?? 0) - (imageHeight / 2),
                     left: (mousePosition?.x ?? 0) + 20,
                     pointerEvents: 'none', // Prevent image from blocking other interactions

@@ -36,14 +36,14 @@ function QuoteTransition() {
                     const progress = self.progress;
                     const r = Math.floor(203 * progress);
                     const g = Math.floor(46 * progress);
-                    const b = Math.floor(46 * progress);
+                    const b = Math.floor(46 * (1-progress));
                     yarndings.style.color = `rgb(${r}, ${g}, ${b})`;
                 },
             });
 
         const spinningTrigger = ScrollTrigger.create({
                 trigger: container,
-                start: 'center center',
+                start: 'top center',
                 end: 'bottom center',
                 scrub: 5,
                 markers: false,
