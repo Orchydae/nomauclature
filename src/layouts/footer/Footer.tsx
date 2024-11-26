@@ -9,7 +9,7 @@ import { Stack } from '@mui/material';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MagneticDirectionButton from '../../components/buttons/magneticDirection/MagneticDirectionButton';
 import SpinYarndings from '../../components/spinYarndings/SpinYarndings';
@@ -23,6 +23,7 @@ function Footer() {
         return `${hours}:${minutes} ${amOrPm}`;
     }
 
+    const navigate = useNavigate();
     const [time, setTime] = useState(formatLocalTime());
 
 
@@ -117,21 +118,24 @@ function Footer() {
                     <p className={styles.message}>Viens jaser</p>
                     <div className={styles.yarndingsContainer}>
                         <SpinYarndings
-                            char='q'
+                            char="q"
                             onScroll={false}
-                            style={{ 
-                                color: 'var(--secondary-color)',
-                                left: '0.5em',
+                            style={{
+                                color: "var(--secondary-color)",
+                                left: "0.5em",
                             }}
                         />
                     </div>
                 </div>
+
                 <div className={styles.buttonContainer}>
                     <MagneticDirectionButton
                         text="Contacter"
                         style={{ backgroundColor: "var(--dark-color)" }}
+                        onClick={() => navigate("/contact")}
                     />
                 </div>
+
                 <div className={styles.contactContainer}>
                     <MagneticDirectionButton
                         text="info@nomauclature.com"
@@ -142,6 +146,7 @@ function Footer() {
                             borderRadius: '25px',
                             fontSize: '1em'
                         }}
+                        onClick={() => handleContactClick("email")}
                     />
                     <MagneticDirectionButton
                         text="+1 514-123-4567"
@@ -152,6 +157,7 @@ function Footer() {
                             borderRadius: '25px',
                             fontSize: '1em'
                         }}
+                        onClick={() => handleContactClick("phone")}
                     />
                 </div>
             </div>

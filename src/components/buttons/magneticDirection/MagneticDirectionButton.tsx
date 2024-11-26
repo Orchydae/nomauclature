@@ -5,9 +5,10 @@ interface MagneticDirectionButtonProps {
     text: string;
     icon?: string;
     style?: React.CSSProperties;
+    onClick?: () => void;
 }
 
-function MagneticDirectionButton({ text, icon, style }: MagneticDirectionButtonProps) {
+function MagneticDirectionButton({ text, icon, style, onClick }: MagneticDirectionButtonProps) {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [exitDirection, setExitDirection] = useState({ x: 0, y: 0 });
 
@@ -44,7 +45,7 @@ function MagneticDirectionButton({ text, icon, style }: MagneticDirectionButtonP
     const directionAware = (e: MouseEvent) => {
         const button = buttonRef.current;
         if (!button) return;
-        
+
         const rect = button.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -85,17 +86,17 @@ function MagneticDirectionButton({ text, icon, style }: MagneticDirectionButtonP
         const handleMouseMove = (e: MouseEvent) => magneticEffectWithDirection(e);
         const handleMouseLeave = () => resetPosition();
 
-        button.addEventListener('mousemove', handleMouseMove);
-        button.addEventListener('mouseleave', handleMouseLeave);
+        button.addEventListener("mousemove", handleMouseMove);
+        button.addEventListener("mouseleave", handleMouseLeave);
 
         return () => {
-            button.removeEventListener('mousemove', handleMouseMove);
-            button.removeEventListener('mouseleave', handleMouseLeave);
+            button.removeEventListener("mousemove", handleMouseMove);
+            button.removeEventListener("mouseleave", handleMouseLeave);
         };
     }, [exitDirection]);
 
     return (
-        <button ref={buttonRef} className={styles.buttonContainer} style={style}>
+        <button ref={buttonRef} className={styles.buttonContainer} style={style} onClick={onClick}>
             <span>{text}</span>
             <span>{icon}</span>
         </button>
