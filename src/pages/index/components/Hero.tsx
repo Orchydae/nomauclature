@@ -2,6 +2,9 @@
 import styles from '../styles/hero-style.module.css'
 
 import SpinYarndings from '../../../components/spinYarndings/SpinYarndings';
+import VideoPlayer from '../../../components/videoPlayer/VideoPlayer';
+
+import FlowerButterflySrc from '../../../assets/flower-butterfly.mp4';
 
 function Hero() {
     const currentYear = new Date().getFullYear();
@@ -16,6 +19,19 @@ function Hero() {
                 <div className={styles.location}>45°30′32″N 73°33′15″W</div>
             </div>
             <div className={styles.rightSide}>
+                <VideoPlayer 
+                    src={FlowerButterflySrc} 
+                    autoPlay={true} 
+                    loop={true}
+                    muted={true}
+                    style={{
+                        width: 'auto', 
+                        height: '100%',
+                        position: 'relative',
+                        top: '-39px',
+                        left: '-220px'
+                    }}
+                />
             </div>
         </div>
     )

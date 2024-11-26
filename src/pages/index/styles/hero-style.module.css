@@ -44,10 +44,12 @@
 
     .rightSide {
         flex: 1;
-        background: var(--secondary-color);
+        /* background: var(--secondary-color); */
         width: 250px;
         height: 50vw;
         max-height: 600px;
         border-radius: calc(50vw / 2) calc(50vw / 2) 0 0;
+        overflow: hidden;
+        background-size: cover;
     }
 }

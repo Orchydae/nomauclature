@@ -11,6 +11,7 @@
     background-size: 200%;
     background-position: 50% 50%;
     will-change: transform, background-position;
+    cursor: pointer;
 }
 
 .buttonContainer span {

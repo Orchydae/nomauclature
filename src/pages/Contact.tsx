@@ -164,6 +164,6 @@ function Contact() {
       </Box>
     </Container>
   );
-};
+}
 
 export default Contact;
