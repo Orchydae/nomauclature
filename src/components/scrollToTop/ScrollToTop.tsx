@@ -8,7 +8,6 @@ function ScrollToTop() {
 
     useEffect(() => {
         if (lenis) {
-            console.log('Scrolling to top', lenis);
             lenis.scrollTo(0, {immediate: true});
         }
     }, [location, lenis]);

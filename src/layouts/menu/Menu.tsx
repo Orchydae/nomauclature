@@ -2,6 +2,9 @@ import styles from './menu-style.module.css';
 
 import { useState, useContext } from 'react';
 import { LenisContext } from 'lenis/react';
+
+import menuBg from '../../assets/menuBg.jpg';
+
 function Menu() {
     const lenis = useContext(LenisContext);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -18,6 +21,7 @@ function Menu() {
             htmlElement.style.overflow = 'hidden';
         }
     }
+
     return (
         <>
             <div className={styles.menuButtonContainer}>
@@ -25,7 +29,10 @@ function Menu() {
                     {menuOpen ? '-' : '+'}
                 </button>
             </div>
-            <div className={`${styles.menuContainer} ${menuOpen ? styles.active : ''}`}>
+            <div 
+                className={`${styles.menuContainer} ${menuOpen ? styles.active : ''}`}
+                style={{ backgroundImage: `url(${menuBg})`, backgroundSize: 'cover' }}
+            >
                 <div className={styles.contentContainer}>
                     <div className={styles.leftSide}>
                         <div className={styles.addressContainer}>
