@@ -49,7 +49,8 @@ function Menu() {
 
         const sectionElement = document.getElementById(section);
         if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: 'smooth' });
+            console.log(sectionElement);
+            sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }
 
@@ -82,8 +83,8 @@ function Menu() {
                     </div>
                     <div className={styles.rightSide}>
                         <ul>
-                            <li>Home</li>
-                            <li>About</li>
+                            <li onClick={() => handleMenuItemClick('/', "home")}>Home</li>
+                            <li onClick={() => handleMenuItemClick('/', "about")}>About</li>
                             <li>Services</li>
                             <li>Portfolio</li>
                             <li>Contact</li>

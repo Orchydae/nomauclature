@@ -49,9 +49,15 @@ function App() {
     return (
         <>
             <div className={styles.appContainer}>
-                <Hero />
-                <AboutUs />
-                <Members />
+                <section id="home">
+                    <Hero />
+                </section>
+                <section id="about">
+                    <AboutUs />
+                </section>
+                <section id="members">
+                    <Members />
+                </section>
                 <MeliMelo />
                 <SlidingImages />
 

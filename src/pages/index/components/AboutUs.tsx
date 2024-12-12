@@ -107,6 +107,8 @@ function AboutUs() {
                 scrollTrigger: {
                     trigger: headlineRef.current,
                     start: 'top 80%',
+                    end: 'bottom 50%',
+                    // markers: true,
                     toggleActions: 'play none reverse none',
                 },
             });
@@ -122,6 +124,8 @@ function AboutUs() {
                 scrollTrigger: {
                     trigger: descriptionRef.current,
                     start: 'top 85%',
+                    end: 'top 50%',
+                    // markers: true,
                     toggleActions: 'play none reverse none',
                 },
             });
