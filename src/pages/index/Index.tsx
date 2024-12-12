@@ -1,6 +1,6 @@
 import styles from './styles/app-style.module.css'
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
