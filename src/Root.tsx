@@ -13,12 +13,11 @@ const Root = () => {
 
     const router = createBrowserRouter([
         {
-            path: "/nomauclature",
             element: <RootLayout />,
             errorElement: <ErrorPage />,
             children: [
                 {
-                    path: "/",
+                    index: true,
                     element: <App />,
                 },
                 {
