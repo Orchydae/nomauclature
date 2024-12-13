@@ -1,0 +1,69 @@
+{
+  "name": "@darkroom.engineering/tempus",
+  "version": "0.0.46",
+  "description": "one rAF to rule them all",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "source": "src/index.js",
+  "main": "dist/tempus.js",
+  "umd:main": "dist/tempus.umd.js",
+  "module": "dist/tempus.mjs",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    "require": "./dist/tempus.js",
+    "types": "./dist/types/index.d.ts",
+    "default": "./dist/tempus.modern.mjs"
+  },
+  "scripts": {
+    "dev": "npm-run-all --parallel watch vite",
+    "vite": "vite",
+    "clean": "npm-run-all --parallel clean:bundled clean:dist",
+    "clean:bundled": "rimraf bundled",
+    "clean:dist": "rimraf dist",
+    "postpublish": "git push --follow-tags",
+    "prepublishOnly": "npm version patch",
+    "preversion": "npm run build",
+    "watch": "microbundle watch -i src/ --o ./dist",
+    "build": "npm-run-all --parallel clean build:dist build:types",
+    "build:types": "tsc --allowJs -d --emitDeclarationOnly --declarationDir ./dist/types --removeComments ./src/index.js",
+    "build:dist": "microbundle build -i src/ --o ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkroomengineering/tempus.git"
+  },
+  "keywords": [
+    "raf",
+    "ticker"
+  ],
+  "author": "darkroom.engineering",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darkroomengineering/tempus/issues"
+  },
+  "homepage": "https://github.com/darkroomengineering/tempus",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "microbundle": "^0.15.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.6",
+    "rimraf": "^4.4.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1"
+  },
+  "size-limit": [
+    {
+      "limit": "2 kB",
+      "path": "dist/index.js"
+    }
+  ]
+}
