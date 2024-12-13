@@ -3,7 +3,7 @@ import styles from './menu-style.module.css';
 import { useState, useContext } from 'react';
 import { LenisContext } from 'lenis/react';
 import { useNavigate, useLocation } from 'react-router-dom';
-
+import { socialMediaHandler } from '../footer/socialMediaHandler';
 import menuBg from '../../assets/menuBg.jpg';
 
 function Menu() {
@@ -33,7 +33,7 @@ function Menu() {
     const handleMenuItemClick = (path: string, section?: string) => {
         if (location.pathname !== path) {
             navigate(path);
-            
+
             setTimeout(() => {
                 scrollToSection(section);
             }, 100);
@@ -42,7 +42,7 @@ function Menu() {
         }
 
         toggleMenu();
-    } 
+    }
 
     const scrollToSection = (section?: string) => {
         if (!section) return;
@@ -61,7 +61,7 @@ function Menu() {
                     {menuOpen ? '-' : '+'}
                 </button>
             </div>
-            <div 
+            <div
                 className={`${styles.menuContainer} ${menuOpen ? styles.active : ''}`}
                 style={{ backgroundImage: `url(${menuBg})`, backgroundSize: 'cover' }}
             >
@@ -74,17 +74,17 @@ function Menu() {
                         </div>
                         <div className={styles.socialMediasContainer}>
                             <span className={styles.title}>Réseaux sociaux</span>
-                            <a className={styles.text} >Instagram: @nomauclature</a>
-                            <a className={styles.text}>LinkedIn: Nomàuclature</a>
-                            <div className={styles.socialMedia}>
-                                <i className="fab fa-instagram"></i>
-                            </div>
+                            <a className={styles.socialMedia} onClick={() => socialMediaHandler("facebook")}> Facebook</a>
+                            <a className={styles.socialMedia} onClick={() => socialMediaHandler("x")}> X</a>
+                            <a className={styles.socialMedia} onClick={() => socialMediaHandler("linkedin")}> LinkedIn</a>
+                            <a className={styles.socialMedia} onClick={() => socialMediaHandler("instagram")}> Instagram</a>
+                            <a className={styles.socialMedia} onClick={() => socialMediaHandler("github")}> GitHub</a>
                         </div>
                     </div>
                     <div className={styles.rightSide}>
                         <ul>
-                            <li onClick={() => handleMenuItemClick('/', "home")}>Home</li>
-                            <li onClick={() => handleMenuItemClick('/', "about")}>About</li>
+                            <li onClick={() => handleMenuItemClick('/', "home")}>Accueil</li>
+                            <li onClick={() => handleMenuItemClick('/', "about")}>À propos</li>
                             <li>Services</li>
                             <li>Portfolio</li>
                             <li>Contact</li>
