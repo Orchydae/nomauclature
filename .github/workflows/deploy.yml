@@ -27,7 +27,6 @@ jobs:
     # Step 4: Install dependencies and build the project
     - name: Install dependencies and build
       run: |
-        cd Nomauclature/nomauclature
         npm install
         npm run build
 
