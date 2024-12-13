@@ -25,7 +25,11 @@ jobs:
           node-version: '18'  # Use your required Node.js version
 
       # Step 4: Install dependencies and build the project
-      - name: Install dependencies and build
+      - name: Install dependencies
+        run: |
+          npm ci
+          chmod +x node_modules/.bin/vite
+      - name: Build project
         run: |
           npm install
           npm run build
