@@ -9,7 +9,7 @@ import { members } from '../data/members';
 function Members() {
     const navigate = useNavigate();
 
-    const handleOnClick = (id) => {
+    const handleOnClick = (id: number) => {
         navigate(`/membre/${id}`);
     }
 

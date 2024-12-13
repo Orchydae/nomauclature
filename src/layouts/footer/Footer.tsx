@@ -4,11 +4,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import { Stack } from '@mui/material';
-import { TextField } from '@mui/material';
-import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MagneticDirectionButton from '../../components/buttons/magneticDirection/MagneticDirectionButton';
@@ -55,53 +51,53 @@ function Footer() {
         }
     }
 
-    const footerItems = [
-        {
-            title: "À propos de nous",
-            links: ["Nous", "info@nomauclature.com", "514-123-4567"]
-        },
-        {
-            title: "Portfolio",
-            links: ["Notre approche", "Nos projets"]
-        },
-        {
-            title: "Contact",
-            links: [<Link to="/contact" className="links">Vient jaser</Link>]
-        },
-        {
-            title: "Légal",
-            links: ["Politique de confidentialité", "Conditions de service"]
-        },
-        {
-            title: "Réseaux sociaux",
-            links: (
-                <Stack direction="row" spacing={2}>
-                    <FacebookIcon style={{ color: "blue" }} />
-                    <LinkedInIcon style={{ color: "blue" }} />
-                    <XIcon />
-                    <InstagramIcon />
-                    <GitHubIcon />
-                </Stack>
-            )
-        },
-        {
-            title: "Abonnez-vous à notre infolettre",
-            links: (
-                <form>
-                    <TextField
-                        label="Email"
-                        placeholder="john.doe@example.com"
-                        variant="outlined"
-                        fullWidth={true}
-                        margin="normal"
-                    />
-                    <Button variant="contained" color="primary" type="submit">
-                        Abonnez-vous
-                    </Button>
-                </form>
-            )
-        }
-    ];
+    // const footerItems = [
+    //     {
+    //         title: "À propos de nous",
+    //         links: ["Nous", "info@nomauclature.com", "514-123-4567"]
+    //     },
+    //     {
+    //         title: "Portfolio",
+    //         links: ["Notre approche", "Nos projets"]
+    //     },
+    //     {
+    //         title: "Contact",
+    //         links: [<Link to="/contact" className="links">Vient jaser</Link>]
+    //     },
+    //     {
+    //         title: "Légal",
+    //         links: ["Politique de confidentialité", "Conditions de service"]
+    //     },
+    //     {
+    //         title: "Réseaux sociaux",
+    //         links: (
+    //             <Stack direction="row" spacing={2}>
+    //                 <FacebookIcon style={{ color: "blue" }} />
+    //                 <LinkedInIcon style={{ color: "blue" }} />
+    //                 <XIcon />
+    //                 <InstagramIcon />
+    //                 <GitHubIcon />
+    //             </Stack>
+    //         )
+    //     },
+    //     {
+    //         title: "Abonnez-vous à notre infolettre",
+    //         links: (
+    //             <form>
+    //                 <TextField
+    //                     label="Email"
+    //                     placeholder="john.doe@example.com"
+    //                     variant="outlined"
+    //                     fullWidth={true}
+    //                     margin="normal"
+    //                 />
+    //                 <Button variant="contained" color="primary" type="submit">
+    //                     Abonnez-vous
+    //                 </Button>
+    //             </form>
+    //         )
+    //     }
+    // ];
 
     useEffect(() => {
         const intervalId = setInterval(() => {

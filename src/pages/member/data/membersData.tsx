@@ -1,6 +1,20 @@
 import DavidPicture from  '../../../assets/davidPic.png'
 
-export const membersData = {
+export interface Member {
+    firstName: string;
+    lastName: string;
+    pictureSrc: string;
+    role: JSX.Element;
+    description: JSX.Element;
+    experience: JSX.Element;
+    contact: JSX.Element;
+}
+
+export interface MembersDataType {
+    [key: number]: Member;
+}
+
+export const membersData: MembersDataType = {
     1: {
         firstName: 'David',
         lastName: 'Nguyen',

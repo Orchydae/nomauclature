@@ -2,7 +2,6 @@ import './styles/index.css'
 
 import ReactDOM from 'react-dom/client'
 
-import LoadingScreen from './components/loading/LoadingScreen'
 import React from 'react'
 import Root from './Root'
 

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import {horizontalLoop} from './helpers/horizontalLoop.js';
+// @ts-expect-error - No type definitions available
+import { horizontalLoop } from './helpers/horizontalLoop.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Marquee.css';
 
