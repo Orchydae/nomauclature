@@ -1,0 +1,9 @@
+.cursor {
+    position: absolute;
+
+    .cursorText {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}

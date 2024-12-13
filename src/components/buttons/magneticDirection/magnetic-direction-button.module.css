@@ -1,0 +1,43 @@
+.buttonContainer {
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent);
+    color: darkgray;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.2, 0.885, 0.4, 1.5), background-position 0.4s ease-out;
+    background-size: 200%;
+    background-position: 50% 50%;
+    will-change: transform, background-position;
+    cursor: pointer;
+}
+
+.buttonContainer span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s;
+}
+
+.buttonContainer:hover {
+    color: var(--secondary-color);
+}
+
+.buttonContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(calc(var(--x, 0px) - 50%), calc(var(--y, 0px) - 50%));
+    background: var(--primary-color);
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    transition: width 0.5s ease-out, height 0.5s ease-out;
+}
+
+.buttonContainer:hover::before {
+    width: 200px;
+    height: 200px;
+}

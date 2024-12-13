@@ -1,0 +1,10 @@
+.socialIcon {
+    color: var(--secondary-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+.socialIcon:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+    cursor: pointer;
+}

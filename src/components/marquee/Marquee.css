@@ -1,0 +1,30 @@
+.marquee-container {
+    /* background-color: var(--secondary-color); */
+    display: flex;
+    overflow: hidden;
+
+    padding: 5vw 0;
+    width: 100%;
+    position: relative;
+
+    z-index: 5;
+}
+
+.marquee-inner {
+    display: flex;
+    width: 200%;
+}
+
+.marquee {
+    flex: 1;
+    display: flex;
+    gap: 5rem;
+}
+
+.marquee-text{ 
+    color: var(--secondary-color);
+    font-family: var(--title-outline-font);
+    font-size: calc(var(--dynamic-font-size) + var(--title-font-size));
+    font-weight: bold;
+    transform: scaleY(2);
+}

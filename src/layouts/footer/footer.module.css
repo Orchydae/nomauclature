@@ -1,0 +1,140 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10em;
+  background: black;
+  width: 100%;
+  height: 101vh;
+  z-index: -1;
+
+  .getInTouchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 300px;
+
+    .messageContainer {
+      /* background: red; */
+      display: flex;
+
+      .message {
+        color: var(--secondary-color);
+        padding: 0;
+        margin: 0;
+
+        font-size: clamp(3em, calc(1.5em + 8vw), 10vw);
+        font-weight: 500;
+      }
+    }
+
+    .buttonContainer {
+      /* background: yellow; */
+      display: flex;
+      justify-content: flex-end;
+
+      position: relative;
+      padding-right: 5em;
+
+    }
+
+    .buttonContainer::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0.5px;
+      background-color: var(--accent-color); 
+    }
+
+    .contactContainer {
+      display: flex;
+      justify-self: flex-end;
+      gap: 1em;
+      /* background: blue; */
+
+      .emailBtn {
+        background: white;
+        color: black;
+        border: 1px solid gray;
+        border-radius: 25px;
+
+        font-size: 1em;
+        font-weight: 600;
+        height: 50px;
+        padding: 0 25px;
+      }
+
+      .emailBtn:hover {
+        color: var(--primary-color);
+        transform: scale(1.25);
+        cursor: pointer;
+      }
+
+      .phoneBtn {
+        background: white;
+        color: black;
+        border: 1px solid gray;
+        border-radius: 25px;
+
+        font-size: 1em;
+        font-weight: 600;
+        height: 50px;
+        padding: 0 25px;
+      }
+
+      .phoneBtn:hover {
+        color: var(--primary-color);
+        transform: scale(1.25);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .linksContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5em;
+
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--secondary-color);
+
+    .leftSide {
+      display: flex;
+      gap: 2em;
+      flex: 2;
+
+      .endText {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        font-size: 0.8em;
+      }
+
+      .bottomTitle {
+        color: gray;
+        font-size: 0.8em;
+        font-weight: 600;
+      }
+    }
+
+    .rightSide {
+      display: flex;
+
+      .bottomTitle {
+        color: gray;
+        font-size: 0.8em;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .socials {
+        display: flex;
+        gap: 1em;
+      }
+
+    }
+  }
+}

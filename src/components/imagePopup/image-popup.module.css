@@ -1,0 +1,68 @@
+.imagePopupContainer {
+    height: 200px;
+    width: 100%;
+    /* background-color: red; */
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .name {
+            font-size: 2em;
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease-in-out;
+        }
+
+        .name.hovered {
+            left: -5em;
+        }
+
+        .roleContainer {
+            display: flex;
+            align-items: center;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 300;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            border: 1px solid var(--secondary-color);
+            border-radius: 12px;
+            padding: 0 0.5em;
+
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease-in-out;
+
+
+            .yarndingsIndex {
+                font-family: 'Yarndings 12';
+                margin-right: 0.5em;
+            }
+        }
+
+        .roleContainer.hovered {
+            left: 5em;
+        }
+    }
+
+    img {
+        width: 50px;
+        height: auto;
+        transition: width 0.7s ease-out;
+        opacity: 0;
+    }
+
+    img.hovered {
+        width: 300px;
+        opacity: 1;
+    }
+
+}
+
+.bordered {
+    border-top: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
