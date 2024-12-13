@@ -35,4 +35,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: main          # Deploy directly to the main branch
-        folder: nomauclature/dist  # Specify the build folder
+        folder: dist  # Specify the build folder
