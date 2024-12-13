@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import ReactLenis from 'lenis/react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -9,10 +8,8 @@ import Contact from './pages/Contact';
 import App from './pages/index/Index';
 import Members from './pages/index/components/Members';
 import Member from './pages/member/Member';
-import ScrollToTop from './components/scrollToTop/ScrollToTop';
 
 const Root = () => {
-    const [loading, setLoading] = useState(true);
 
     const router = createBrowserRouter([
         {
