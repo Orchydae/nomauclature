@@ -1,43 +1,49 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
     branches:
-      - main  # Trigger deploy only on pushes to the main branch
+      - main
 
 jobs:
-  deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code from the main branch
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Step 2: Debug directory structure (optional)
-      - name: Debug directory structure
-        run: ls -R
-
-      # Step 3: Set up Node.js (if needed for building your project)
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
-        with:
-          node-version: '18'  # Use your required Node.js version
 
-      # Step 4: Install dependencies and build the project
       - name: Install dependencies
-        run: |
-          npm ci
-          chmod +x node_modules/.bin/vite
-      - name: Build project
-        run: |
-          npm install
-          npm run build
+        uses: bahmutov/npm-install@v1
 
-      # Step 5: Deploy `dist` folder to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Build project
+        run: npm run build
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
         with:
-          branch: gh-pages  # Deploy to the gh-pages branch
-          folder: dist      # Specify the dist folder as the source
-          token: ${{ secrets.GITHUB_TOKEN }}  # Automatically use GitHub token to authenticate
+          name: production-files
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
