@@ -11,44 +11,50 @@ import Member from './pages/member/Member';
 
 const Root = () => {
 
-    const router = createBrowserRouter([
+    const router = createBrowserRouter(
+        [
+            {
+                path: "/",
+                element: <RootLayout />,
+                errorElement: <ErrorPage />,
+                children: [
+                    {
+                        path: "/",
+                        element: <App />,
+                    },
+                    {
+                        path: "/membres",
+                        element: <Members />,
+                    },
+                    {
+                        path: "/membre/:id", // Dynamic route with 'id' parameter
+                        element: <Member />,
+                    },
+                    // {
+                    //   path: "/portfolio",
+                    //   // element: <Portfolio />,
+                    // },
+                    // {
+                    //   path: "/approche",
+                    //   // element: <Approche />,
+                    // },
+                    {
+                        path: "/contact",
+                        element: <Contact />,
+                    },
+                    // Add more children routes here if needed
+                ]
+            },
+            {
+                path: "/404",
+                element: <ErrorPage />,
+            }
+            // Add more routes here if needed
+        ],
         {
-            element: <RootLayout />,
-            errorElement: <ErrorPage />,
-            children: [
-                {
-                    index: true,
-                    element: <App />,
-                },
-                {
-                    path: "/membres",
-                    element: <Members />,
-                },
-                {
-                  path: "/membre/:id", // Dynamic route with 'id' parameter
-                  element: <Member/>,
-                },
-                // {
-                //   path: "/portfolio",
-                //   // element: <Portfolio />,
-                // },
-                // {
-                //   path: "/approche",
-                //   // element: <Approche />,
-                // },
-                {
-                    path: "/contact",
-                    element: <Contact />,
-                },
-                // Add more children routes here if needed
-            ]
-        },
-        {
-            path: "/404",
-            element: <ErrorPage />,
+            basename: '/nomauclature',
         }
-        // Add more routes here if needed
-    ]);
+    );
 
     return (
         <ReactLenis root>
