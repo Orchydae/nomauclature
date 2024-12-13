@@ -53,7 +53,7 @@ const Root = () => {
     return (
         <ReactLenis root>
             <ParallaxProvider>
-                <RouterProvider router={router} basename="/nomauclature">
+                <RouterProvider router={router}>
                     {/*
                      Child elements are controlled by the RouterProvider
                      */}
