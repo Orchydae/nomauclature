@@ -8,7 +8,7 @@ import {
   Grid
 } from '@mui/material';
 
-export const FormComponent: React.FC = () => {
+function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -21,7 +21,7 @@ export const FormComponent: React.FC = () => {
 
   // Format the phone number as (XXX) XXX-XXXX
   const formatPhoneNumber = (value: string) => {
-    
+
     // Remove all non-numeric characters
     const cleaned = value.replace(/\D/g, '');
 
@@ -71,7 +71,7 @@ export const FormComponent: React.FC = () => {
     <Container maxWidth="sm">
       <Box sx={{ mt: 5 }}>
         <Typography variant="h4" align="center">
-          Vient jaser
+          Viens jaser
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
@@ -164,6 +164,6 @@ export const FormComponent: React.FC = () => {
       </Box>
     </Container>
   );
-};
+}
 
-export default FormComponent;
+export default Contact;

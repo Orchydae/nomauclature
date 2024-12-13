@@ -1,5 +1,5 @@
 .marquee-container {
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
     display: flex;
     overflow: hidden;
 
@@ -22,8 +22,9 @@
 }
 
 .marquee-text{ 
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-family: var(--title-outline-font);
-    transform: scaleY(2.2);
     font-size: calc(var(--dynamic-font-size) + var(--title-font-size));
+    font-weight: bold;
+    transform: scaleY(2);
 }

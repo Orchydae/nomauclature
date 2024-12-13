@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import {horizontalLoop} from '../../helpers/horizontalLoop';
+import {horizontalLoop} from './helpers/horizontalLoop.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Marquee.css';
 
@@ -21,7 +21,7 @@ const Marquee: React.FC<MarqueeProps> = ({ text, iconPath }) => {
         const marquees = gsap.utils.toArray('.marquee');
         const loop = horizontalLoop(marquees, {
             repeat: -1,
-            speed: 0.5,
+            speed: 0.7,
         });
 
         loopRef.current = loop;
