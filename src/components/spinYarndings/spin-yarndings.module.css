@@ -1,6 +1,0 @@
-.yarndings {
-    display: inline-block;
-    font-family: 'Yarndings 12';
-    font-size: clamp(0.7em, calc(1.5em + 4vw), 6vw);
-    position: relative;
-}
