@@ -9,8 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MagneticDirectionButton from '../../components/buttons/magneticDirection/MagneticDirectionButton';
 import SpinYarndings from '../../components/spinYarndings/SpinYarndings';
+import { socialMediaHandler } from './socialMediaHandler';
+import { contactClickHandler } from './ContactHandler';
 
-function Footer() {
+export function Footer() {
     const formatLocalTime = () => {
         const date = new Date();
         const hours = date.getHours();
@@ -21,7 +23,6 @@ function Footer() {
 
     const navigate = useNavigate();
     const [time, setTime] = useState(formatLocalTime());
-
 
     const handleContactClick = (type: "email" | "phone") => {
         const protocols = {
@@ -142,7 +143,7 @@ function Footer() {
                             borderRadius: '25px',
                             fontSize: '1em'
                         }}
-                        onClick={() => handleContactClick("email")}
+                        onClick={() => contactClickHandler("email")}
                     />
                     <MagneticDirectionButton
                         text="+1 514-123-4567"
@@ -153,7 +154,7 @@ function Footer() {
                             borderRadius: '25px',
                             fontSize: '1em'
                         }}
-                        onClick={() => handleContactClick("phone")}
+                        onClick={() => contactClickHandler("phone")}
                     />
                 </div>
             </div>
