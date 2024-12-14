@@ -48,8 +48,25 @@
         width: 250px;
         height: 50vw;
         max-height: 600px;
-        border-radius: calc(50vw / 2) calc(50vw / 2) 0 0;
+        border-radius: calc(75vw / 2) calc(75vw / 2) 0 0;
         overflow: hidden;
         background-size: cover;
     }
+}
+
+@media screen and (max-width: 768px) {
+    .heroContainer {
+        flex-direction: column-reverse;
+        padding: 15% 0;
+        
+        .leftSide {
+            top: 0;
+        }
+
+        .rightSide {
+            margin-bottom: 5vw;
+            width: 50%;
+        }
+    }
+    
 }

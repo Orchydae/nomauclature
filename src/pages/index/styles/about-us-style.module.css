@@ -32,9 +32,25 @@
 
         .description {
             font-family: "Be Vietnam Pro", sans-serif;
-            font-size: clamp(1em, calc(1.5em + 6vw), 2vw);
+            font-size: clamp(0.8em, calc(1.5em + 6vw), 2vw);
             font-weight: 300;
             flex: 3;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .aboutUsContainer {
+
+        .callToAction {
+
+            .buttonContainer {
+                flex: auto;
+            }
+
+            .description {
+                flex: 4;
+            }
         }
     }
 }

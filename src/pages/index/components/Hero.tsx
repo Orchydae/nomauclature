@@ -28,8 +28,8 @@ function Hero() {
                         width: 'auto', 
                         height: '100%',
                         position: 'relative',
-                        top: '-39px',
-                        left: '-220px'
+                        top: window.innerWidth < 768 ? '0%' : '-39px',
+                        left: window.innerWidth < 768 ? '-25%' : '-220px',
                     }}
                 />
             </div>

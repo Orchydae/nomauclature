@@ -123,12 +123,31 @@
     }
 }
 
-
-
 .menuContainer.active {
     width: 100%;
     height: 100%;
     border-radius: 0;
     transform: translate(0, 0);
-    background: var(--dark-color);
+    /* background: var(--dark-color); */
+}
+
+@media screen and (max-width: 768px) {
+    .menuContainer {
+        
+        .contentContainer {
+            flex-direction: column-reverse;
+            margin: 15% 10% 10% 10%;
+            gap: 2em;
+
+            .leftSide {
+                margin-left: 0;
+                
+            }
+
+            .rightSide {
+                align-items: flex-end;
+            }
+        }
+    }
+    
 }
