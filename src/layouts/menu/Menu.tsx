@@ -74,8 +74,8 @@ function Menu() {
                         </div>
                         <div className={styles.socialMediasContainer}>
                             <span className={styles.title}>Réseaux sociaux</span>
-                            <a className={styles.text} >Instagram: @nomauclature</a>
-                            <a className={styles.text}>LinkedIn: Nomàuclature</a>
+                            <a className={styles.socialMediaLink}>Instagram: @nomauclature</a>
+                            <a className={styles.socialMediaLink}>LinkedIn: Nomàuclature</a>
                         </div>
                     </div>
                     <div className={styles.rightSide}>
