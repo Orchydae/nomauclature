@@ -5,8 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './layouts/rootLayout/RootLayout';
 import ErrorPage from './pages/ErrorPage';
 import Contact from './pages/Contact';
-import App from './pages/index/Index';
-import Members from './pages/index/components/Members';
+import Index from './pages/index/Index';
 import Member from './pages/member/Member';
 
 const Root = () => {
@@ -20,11 +19,7 @@ const Root = () => {
                 children: [
                     {
                         path: "/",
-                        element: <App />,
-                    },
-                    {
-                        path: "/membres",
-                        element: <Members />,
+                        element: <Index />,
                     },
                     {
                         path: "/membre/:id", // Dynamic route with 'id' parameter
@@ -52,7 +47,7 @@ const Root = () => {
             // Add more routes here if needed
         ],
         {
-            basename: '/nomauclature',
+            basename: '/nomauclature', // Set the base URL for the router
         }
     );
 

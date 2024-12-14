@@ -85,7 +85,7 @@ function Menu() {
                         <ul>
                             <li onClick={() => handleMenuItemClick('/', "home")}>Home</li>
                             <li onClick={() => handleMenuItemClick('/', "about")}>About</li>
-                            <li>Services</li>
+                            <li onClick={() => handleMenuItemClick('/', "members")} >Membres</li>
                             <li>Portfolio</li>
                             <li>Contact</li>
                         </ul>

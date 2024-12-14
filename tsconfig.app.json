@@ -23,5 +23,4 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "public/Glass-crane.tsx"]
 }

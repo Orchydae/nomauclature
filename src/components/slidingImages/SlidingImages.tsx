@@ -84,7 +84,7 @@ function SlidingImages() {
                         >
                             <div className={styles.imageContainer}>
                                 <img
-                                    src={`/src/assets/heroSlidingImages/${project.src}`}
+                                    src={`assets/${project.src}`}
                                     alt="sliding-image"
                                 />
                             </div>
@@ -102,7 +102,7 @@ function SlidingImages() {
                         >
                             <div className={styles.imageContainer}>
                                 <img
-                                    src={`/src/assets/heroSlidingImages/${project.src}`}
+                                    src={`assets/${project.src}`}
                                     alt="sliding-imag3"
                                 />
                             </div>
