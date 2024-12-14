@@ -34,3 +34,18 @@
         } 
     }
 }
+
+@media screen and (max-width: 768px) {
+    .slidingImagesContainer {
+        .slider {
+            width: 200vw;
+            left: -50vw;
+
+            .project {
+                width: 50%;
+                height: 35vh;
+            }
+        }
+    }
+    
+}

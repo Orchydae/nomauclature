@@ -41,3 +41,11 @@
     width: 200px;
     height: 200px;
 }
+
+@media screen and (max-width: 768px) {
+    .buttonContainer {
+        width: 100px;
+        height: 100px;
+    }
+    
+}

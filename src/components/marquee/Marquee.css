@@ -24,7 +24,8 @@
 .marquee-text{ 
     color: var(--secondary-color);
     font-family: var(--title-outline-font);
-    font-size: calc(var(--dynamic-font-size) + var(--title-font-size));
+    font-size: clamp(3em, calc(20vw), 25vw);
+    /* font-size: calc(var(--dynamic-font-size) + var(--title-font-size)); */
     font-weight: bold;
     transform: scaleY(2);
 }

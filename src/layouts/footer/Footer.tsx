@@ -11,6 +11,15 @@ import MagneticDirectionButton from '../../components/buttons/magneticDirection/
 import SpinYarndings from '../../components/spinYarndings/SpinYarndings';
 
 import { socialMediaHandler } from '../../utils/socialMediaHandler';
+import { button, buttonGroup } from 'leva';
+
+const buttonStyle = { 
+    height: window.innerWidth < 768 ? '25px' : '50px',
+    width: 'fit-content',
+    padding: window.innerWidth < 768 ? '0 10px' : '0 25px',
+    borderRadius: '25px',
+    fontSize: window.innerWidth < 768 ? '0.7em' : '1em',
+}
 
 function Footer() {
     const formatLocalTime = () => {
@@ -69,24 +78,12 @@ function Footer() {
                 <div className={styles.contactContainer}>
                     <MagneticDirectionButton
                         text="info@nomauclature.com"
-                        style={{
-                            height: '50px',
-                            width: 'fit-content',
-                            padding: '0 25px',
-                            borderRadius: '25px',
-                            fontSize: '1em'
-                        }}
+                        style={buttonStyle}
                         onClick={() => handleContactClick("email")}
                     />
                     <MagneticDirectionButton
                         text="+1 514-123-4567"
-                        style={{
-                            height: '50px',
-                            width: 'fit-content',
-                            padding: '0 25px',
-                            borderRadius: '25px',
-                            fontSize: '1em'
-                        }}
+                        style={buttonStyle}
                         onClick={() => handleContactClick("phone")}
                     />
                 </div>
