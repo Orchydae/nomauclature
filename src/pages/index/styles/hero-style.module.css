@@ -57,15 +57,17 @@
 @media screen and (max-width: 768px) {
     .heroContainer {
         flex-direction: column-reverse;
-        padding: 15% 0;
+        padding: 25% 0;
         
         .leftSide {
             top: 0;
+            flex: 1;
         }
 
         .rightSide {
             margin-bottom: 5vw;
             width: 50%;
+            flex: 2;
         }
     }
     
