@@ -11,7 +11,6 @@ import MagneticDirectionButton from '../../components/buttons/magneticDirection/
 import SpinYarndings from '../../components/spinYarndings/SpinYarndings';
 
 import { socialMediaHandler } from '../../utils/socialMediaHandler';
-import { button, buttonGroup } from 'leva';
 
 const buttonStyle = { 
     height: window.innerWidth < 768 ? '25px' : '50px',
