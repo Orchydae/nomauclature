@@ -20,10 +20,10 @@ function Menu() {
             const htmlElement = document.querySelector('html') as HTMLElement;
             if (newMenuOpen) {
                 lenis?.lenis?.stop();
-                htmlElement.style.overflow = 'auto';
+                htmlElement.style.overflow = 'hidden'; // Prevent scrolling when menu is open
             } else {
                 lenis?.lenis?.start();
-                htmlElement.style.overflow = 'hidden';
+                htmlElement.style.overflow = 'auto'; // Allow scrolling when menu is closed
             }
 
             return newMenuOpen;
