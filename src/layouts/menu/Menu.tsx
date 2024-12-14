@@ -76,15 +76,12 @@ function Menu() {
                             <span className={styles.title}>Réseaux sociaux</span>
                             <a className={styles.text} >Instagram: @nomauclature</a>
                             <a className={styles.text}>LinkedIn: Nomàuclature</a>
-                            <div className={styles.socialMedia}>
-                                <i className="fab fa-instagram"></i>
-                            </div>
                         </div>
                     </div>
                     <div className={styles.rightSide}>
                         <ul>
-                            <li onClick={() => handleMenuItemClick('/', "home")}>Home</li>
-                            <li onClick={() => handleMenuItemClick('/', "about")}>About</li>
+                            <li onClick={() => handleMenuItemClick('/', "home")}>Accueil</li>
+                            <li onClick={() => handleMenuItemClick('/', "about")}>À propos</li>
                             <li onClick={() => handleMenuItemClick('/', "members")} >Membres</li>
                             <li>Portfolio</li>
                             <li>Contact</li>
