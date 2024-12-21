@@ -1,7 +1,7 @@
 import styles from './menu-style.module.css';
 
 import { useState, useContext } from 'react';
-import { LenisContext } from 'lenis/react';
+import { LenisContext } from '@studio-freight/react-lenis';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import menuBg from '../../assets/menuBg.jpg';
