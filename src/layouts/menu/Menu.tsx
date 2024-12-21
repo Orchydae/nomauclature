@@ -1,7 +1,7 @@
 import styles from './menu-style.module.css';
 
 import { useState, useContext } from 'react';
-import { LenisContext } from 'lenis/react';
+import { LenisContext } from '@studio-freight/react-lenis';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import menuBg from '../../assets/menuBg.jpg';
@@ -74,8 +74,8 @@ function Menu() {
                         </div>
                         <div className={styles.socialMediasContainer}>
                             <span className={styles.title}>Réseaux sociaux</span>
-                            <a className={styles.text} >Instagram: @nomauclature</a>
-                            <a className={styles.text}>LinkedIn: Nomàuclature</a>
+                            <a className={styles.socialMediaLink}>Instagram: @nomauclature</a>
+                            <a className={styles.socialMediaLink}>LinkedIn: Nomàuclature</a>
                         </div>
                     </div>
                     <div className={styles.rightSide}>
