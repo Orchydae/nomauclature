@@ -65,11 +65,18 @@
                     font-weight: bold;
                 }
 
-                .text {
-                    font-size: clamp(1em, 2vw, 2em);
+                .text,
+                .socialMediaLink {
+                    font-size: clamp(1.5em, 3vw, 3em);
+                    font-weight: bold;
+                }
+
+                .socialMediaLink:hover {
+                    text-decoration: underline;
+                    color: var(--primary-color);
+                    cursor: pointer;
                 }
             }
-            
         }
     }
 
@@ -106,15 +113,19 @@
                 &:nth-child(1):hover::before {
                     content: "1";
                 }
+
                 &:nth-child(2):hover::before {
                     content: "2";
                 }
+
                 &:nth-child(3):hover::before {
                     content: "3";
                 }
+
                 &:nth-child(4):hover::before {
                     content: "4";
                 }
+
                 &:nth-child(5):hover::before {
                     content: "5";
                 }
@@ -133,7 +144,7 @@
 
 @media screen and (max-width: 768px) {
     .menuContainer {
-        
+
         .contentContainer {
             flex-direction: column-reverse;
             margin: 15% 10% 10% 10%;
@@ -141,7 +152,7 @@
 
             .leftSide {
                 margin-left: 0;
-                
+
             }
 
             .rightSide {
@@ -149,5 +160,5 @@
             }
         }
     }
-    
+
 }
