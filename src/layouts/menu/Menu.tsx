@@ -72,9 +72,9 @@ function Menu() {
                 <div className={styles.contentContainer}>
                     <div className={styles.leftSide}>
                         <div className={styles.addressContainer}>
-                            <span className={styles.title}>Adresse</span>
-                            <span className={styles.text}>1234 Street Name</span>
-                            <span className={styles.text}>City, State, 12345</span>
+                            <span className={styles.title}>Localisation</span>
+                            <span className={styles.text}>Basé au Québec</span>
+                            <span className={styles.text}>Principalement à Longueuil</span>
                         </div>
                         <div className={styles.socialMediasContainer}>
                             <span className={styles.title}>Réseaux sociaux</span>

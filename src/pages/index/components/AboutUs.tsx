@@ -109,7 +109,7 @@ function AboutUs() {
                     start: 'top 80%',
                     end: 'bottom 50%',
                     // markers: true,
-                    toggleActions: 'play none reverse none',
+                    toggleActions: 'play none none none',
                 },
             });
 
@@ -126,7 +126,7 @@ function AboutUs() {
                     start: 'top 85%',
                     end: 'top 50%',
                     // markers: true,
-                    toggleActions: 'play none reverse none',
+                    toggleActions: 'play none none none',
                 },
             });
 
@@ -152,7 +152,7 @@ function AboutUs() {
                 <div className={styles.callToAction}>
 
                     <div className={styles.buttonContainer} ref={buttonContainerRef} >
-                        <MagneticDirectionButton text='Connaître' icon='✦' />
+                        <MagneticDirectionButton text='Connaître' />
                     </div>
                     <div className={styles.description} ref={descriptionRef} >
                         Simplicité et efficacité, vos aspirations au coeur de chaque création, insufflant
