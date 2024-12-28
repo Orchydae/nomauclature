@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import { LenisContext } from '@studio-freight/react-lenis';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+import nomauclatureLogo from '/NomauclatureLogoTransparent.svg';
 import menuBg from '../../assets/menuBg.jpg';
 
 function Menu() {
@@ -41,7 +42,7 @@ function Menu() {
             scrollToSection(section);
         }
 
-        toggleMenu();
+        if (menuOpen) toggleMenu();
     } 
 
     const scrollToSection = (section?: string) => {
@@ -56,7 +57,10 @@ function Menu() {
 
     return (
         <>
-            <div className={styles.menuButtonContainer}>
+            <div className={styles.menuHeaderContainer}>
+                <div className={styles.logoContainer} onClick={() => handleMenuItemClick('/', "home")} >
+                    <img src={nomauclatureLogo} alt="logo" />
+                </div>
                 <button onClick={toggleMenu} className={menuOpen ? styles.activeButton : ''}>
                     {menuOpen ? '-' : '+'}
                 </button>

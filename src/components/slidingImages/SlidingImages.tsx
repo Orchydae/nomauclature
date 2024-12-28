@@ -84,7 +84,7 @@ function SlidingImages() {
                         >
                             <div className={styles.imageContainer}>
                                 <img
-                                    src={`assets/${project.src}`}
+                                    src={`${import.meta.env.BASE_URL}/assets/${project.src}`} // Use import.meta.env.BASE_URL to get the base URL for vite.config.js
                                     alt="sliding-image"
                                 />
                             </div>
@@ -102,8 +102,8 @@ function SlidingImages() {
                         >
                             <div className={styles.imageContainer}>
                                 <img
-                                    src={`assets/${project.src}`}
-                                    alt="sliding-imag3"
+                                    src={`${import.meta.env.BASE_URL}/assets/${project.src}`}
+                                    alt="sliding-image"
                                 />
                             </div>
                         </div>
