@@ -12,14 +12,6 @@ import SpinYarndings from '../../components/spinYarndings/SpinYarndings';
 
 import { socialMediaHandler } from '../../utils/socialMediaHandler';
 
-const buttonStyle = { 
-    height: window.innerWidth < 768 ? '25px' : '50px',
-    width: 'fit-content',
-    padding: window.innerWidth < 768 ? '0 10px' : '0 25px',
-    borderRadius: '25px',
-    fontSize: window.innerWidth < 768 ? '0.7em' : '1em',
-}
-
 function Footer() {
     const formatLocalTime = () => {
         const date = new Date();
@@ -31,7 +23,23 @@ function Footer() {
 
     const navigate = useNavigate();
     const [time, setTime] = useState(formatLocalTime());
+    const [buttonStyle, setButtonStyle] = useState({ 
+        height: window.innerWidth < 768 ? '25px' : '50px',
+        width: 'fit-content',
+        padding: window.innerWidth < 768 ? '0 10px' : '0 25px',
+        borderRadius: '25px',
+        fontSize: window.innerWidth < 768 ? '0.7em' : '1em',
+    });
 
+    const handleResize = () => {
+        setButtonStyle({ 
+            height: window.innerWidth < 768 ? '25px' : '50px',
+            width: 'fit-content',
+            padding: window.innerWidth < 768 ? '0 10px' : '0 25px',
+            borderRadius: '25px',
+            fontSize: window.innerWidth < 768 ? '0.7em' : '1em',
+        });
+    }
 
     const handleContactClick = (type: "email" | "phone") => {
         const protocols = {
@@ -47,6 +55,11 @@ function Footer() {
         }, 60000); // Update the time every minute
 
         return () => clearInterval(intervalId); // Clear interval on component unmount
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (

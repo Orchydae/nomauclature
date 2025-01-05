@@ -47,7 +47,7 @@ const Root = () => {
             // Add more routes here if needed
         ],
         {
-            basename: '/nomauclature', // Set the base URL for the router
+            basename: '/nomauclature/', // Set the base URL for the router
         }
     );
 

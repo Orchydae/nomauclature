@@ -4,7 +4,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 10em;
-  background: black;
+  background: var(--dark-color);
   width: 100%;
   height: 105vh;
   z-index: -1;
