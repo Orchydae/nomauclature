@@ -3,6 +3,7 @@ interface VideoPlayerProps {
     src: string;
     controls?: boolean;
     autoPlay?: boolean;
+    playsInline?: boolean;
     loop?: boolean;
     muted?: boolean;
     style?: React.CSSProperties;
@@ -13,6 +14,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     src,
     controls,
     autoPlay,
+    playsInline,
     loop,
     muted,
     style
@@ -23,6 +25,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             src={src}
             controls={controls}
             autoPlay={autoPlay}
+            playsInline={playsInline}
             loop={loop}
             muted={muted}
             style={style}

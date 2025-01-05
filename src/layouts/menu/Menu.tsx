@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import { LenisContext } from '@studio-freight/react-lenis';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+import nomauclatureLogo from '/NomauclatureLogoTransparent.svg';
 import menuBg from '../../assets/menuBg.jpg';
 
 function Menu() {
@@ -41,7 +42,7 @@ function Menu() {
             scrollToSection(section);
         }
 
-        toggleMenu();
+        if (menuOpen) toggleMenu();
     } 
 
     const scrollToSection = (section?: string) => {
@@ -56,7 +57,10 @@ function Menu() {
 
     return (
         <>
-            <div className={styles.menuButtonContainer}>
+            <div className={styles.menuHeaderContainer}>
+                <div className={styles.logoContainer} onClick={() => handleMenuItemClick('/', "home")} >
+                    <img src={nomauclatureLogo} alt="logo" />
+                </div>
                 <button onClick={toggleMenu} className={menuOpen ? styles.activeButton : ''}>
                     {menuOpen ? '-' : '+'}
                 </button>
@@ -68,9 +72,9 @@ function Menu() {
                 <div className={styles.contentContainer}>
                     <div className={styles.leftSide}>
                         <div className={styles.addressContainer}>
-                            <span className={styles.title}>Adresse</span>
-                            <span className={styles.text}>1234 Street Name</span>
-                            <span className={styles.text}>City, State, 12345</span>
+                            <span className={styles.title}>Localisation</span>
+                            <span className={styles.text}>Basé au Québec</span>
+                            <span className={styles.text}>Principalement à Longueuil</span>
                         </div>
                         <div className={styles.socialMediasContainer}>
                             <span className={styles.title}>Réseaux sociaux</span>

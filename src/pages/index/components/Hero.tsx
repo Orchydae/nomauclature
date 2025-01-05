@@ -24,6 +24,7 @@ function Hero() {
                     autoPlay={true} 
                     loop={true}
                     muted={true}
+                    playsInline={true}
                     style={{
                         width: 'auto', 
                         height: '100%',
